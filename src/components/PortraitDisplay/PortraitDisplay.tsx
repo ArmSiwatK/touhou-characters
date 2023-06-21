@@ -1,67 +1,21 @@
-import React, { useState } from "react";
-import CharacterSelection from "../CharacterSelection/CharacterSelection";
-import EmotionButtons from "../EmotionButtons/EmotionButtons";
-import characters from "../../assets/characters.json";
+import React from "react";
 import "./PortraitDisplay.scss";
 
-const PortraitDisplay: React.FC = () => {
-  /*
-  <--------------- States and Variable --------------->
-  */
-  const [selectedEmotion, setSelectedEmotion] = useState("Neutral");
-  const [selectedCharacter, setSelectedCharacter] = useState<any>({
-    charId: "reimu",
-    name: "Hakurei Reimu",
-    title: "Shrine Maiden of Paradise",
-  });
+interface PortraitDisplayProps {
+  selectedCharacter: any;
+  getImagePath: (charId: string) => string;
+}
 
-  const emotions = [
-    "Angry",
-    "Confused",
-    "Happy",
-    "Neutral",
-    "Shocked",
-    "Tired",
-  ];
-
-  /*
-  <--------------- Functions --------------->
-  */
-
-  const handleEmotionSelection = (emotion: string) => {
-    setSelectedEmotion(emotion);
-  };
-
-  const handleCharacterSelection = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    const selectedCharId = event.target.value;
-    if (selectedCharId !== "") {
-      setSelectedCharacter(getCharacter(selectedCharId));
-    }
-  };
-
-  const getImagePath = (charId: string) =>
-    `/portraits/${selectedEmotion.toLowerCase()}/${charId}.png`;
-
-  const getCharacter = (charId: string) =>
-    characters.find((character) => character.charId === charId) || null;
-
+const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
+  selectedCharacter,
+  getImagePath,
+}) => {
   /*
   <--------------- Rendering --------------->
   */
 
   return (
     <div className="portrait-display">
-      <EmotionButtons
-        emotions={emotions}
-        selectedEmotion={selectedEmotion}
-        handleEmotionSelection={handleEmotionSelection}
-      />
-      <CharacterSelection
-        selectedCharacter={selectedCharacter}
-        handleCharacterSelection={handleCharacterSelection}
-      />
       {selectedCharacter && (
         <div className="character-info">
           <h2>{selectedCharacter.name}</h2>
