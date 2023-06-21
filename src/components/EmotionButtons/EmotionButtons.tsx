@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./EmotionButtons.scss";
 
 interface EmotionButtonsProps {
@@ -13,8 +13,48 @@ const EmotionButtons: React.FC<EmotionButtonsProps> = ({
   handleEmotionSelection,
 }) => {
   /*
+  <--------------- State --------------->
+  */
+
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  /*
+  <--------------- useEffect Hook --------------->
+  */
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  /*
   <--------------- Rendering --------------->
   */
+
+  if (isMobile) {
+    return (
+      <div className="emotion-buttons" id="responsive">
+        <label htmlFor="emotion-dropdown">Select Emotion:</label>
+        <select
+          id="emotion-dropdown"
+          value={selectedEmotion}
+          onChange={(e) => handleEmotionSelection(e.target.value)}
+        >
+          {emotions.map((emotion) => (
+            <option key={emotion} value={emotion}>
+              {emotion}
+            </option>
+          ))}
+        </select>
+      </div>
+    );
+  }
 
   return (
     <div className="emotion-buttons">

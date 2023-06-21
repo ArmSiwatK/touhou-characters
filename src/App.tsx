@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import EmotionButtons from "./components/EmotionButtons/EmotionButtons";
 import CharacterSelection from "./components/CharacterSelection/CharacterSelection";
+import EmotionButtons from "./components/EmotionButtons/EmotionButtons";
 import PortraitDisplay from "./components/PortraitDisplay/PortraitDisplay";
 import characters from "./assets/characters.json";
 import "./styles/App.scss";
@@ -56,15 +56,15 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
-      <EmotionButtons
-        emotions={emotions}
-        selectedEmotion={selectedEmotion}
-        handleEmotionSelection={handleEmotionSelection}
-      />
       <CharacterSelection
         characters={characters}
         selectedCharacter={selectedCharacter}
         handleCharacterSelection={handleCharacterSelection}
+      />
+      <EmotionButtons
+        emotions={emotions}
+        selectedEmotion={selectedEmotion}
+        handleEmotionSelection={handleEmotionSelection}
       />
       <PortraitDisplay
         selectedCharacter={selectedCharacter}
