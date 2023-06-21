@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import characters from "./assets/characters.json";
 import EmotionButtons from "./components/EmotionButtons/EmotionButtons";
 import CharacterSelection from "./components/CharacterSelection/CharacterSelection";
 import PortraitDisplay from "./components/PortraitDisplay/PortraitDisplay";
+import characters from "./assets/characters.json";
 import "./styles/App.scss";
 
 const App: React.FC = () => {
@@ -61,6 +61,7 @@ const App: React.FC = () => {
         handleEmotionSelection={handleEmotionSelection}
       />
       <CharacterSelection
+        characters={characters}
         selectedCharacter={selectedCharacter}
         handleCharacterSelection={handleCharacterSelection}
       />

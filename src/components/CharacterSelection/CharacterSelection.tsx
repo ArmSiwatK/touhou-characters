@@ -1,5 +1,4 @@
 import React from "react";
-import characters from "../../assets/characters.json";
 import "./CharacterSelection.scss";
 
 interface Character {
@@ -13,11 +12,13 @@ interface CharacterSelectionProps {
   handleCharacterSelection: (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => void;
+  characters: Character[];
 }
 
 const CharacterSelection: React.FC<CharacterSelectionProps> = ({
   selectedCharacter,
   handleCharacterSelection,
+  characters,
 }) => {
   /*
   <--------------- Rendering --------------->
