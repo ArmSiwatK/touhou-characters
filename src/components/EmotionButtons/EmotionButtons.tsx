@@ -12,6 +12,10 @@ const EmotionButtons: React.FC<EmotionButtonsProps> = ({
   selectedEmotion,
   handleEmotionSelection,
 }) => {
+  /*
+  <--------------- Rendering --------------->
+  */
+
   return (
     <div className="emotion-buttons">
       {emotions.map((emotion) => (
