@@ -36,7 +36,9 @@ const PortraitDisplay: React.FC = () => {
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
     const selectedCharId = event.target.value;
-    setSelectedCharacter(getCharacter(selectedCharId));
+    if (selectedCharId !== "") {
+      setSelectedCharacter(getCharacter(selectedCharId));
+    }
   };
 
   const getImagePath = (charId: string) =>
