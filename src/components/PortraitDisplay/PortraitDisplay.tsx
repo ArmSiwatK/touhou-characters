@@ -14,7 +14,7 @@ const PortraitDisplay: React.FC = () => {
   /*
   <--------------- States --------------->
   */
-  const [selectedEmotion, setSelectedEmotion] = useState<string>("Neutral");
+  const [selectedEmotion, setSelectedEmotion] = useState("Neutral");
   const [selectedCharacter, setSelectedCharacter] = useState<Character | null>({
     charId: "reimu",
     name: "Hakurei Reimu",
@@ -40,16 +40,12 @@ const PortraitDisplay: React.FC = () => {
     }
   };
 
-  const getImagePath = (charId: string) => {
-    return `/portraits/${selectedEmotion.toLowerCase()}/${charId}.png`;
-  };
+  const getImagePath = (charId: string) =>
+    `/portraits/${selectedEmotion.toLowerCase()}/${charId}.png`;
 
-  const getCharacter = (charId: string) => {
-    return (
-      characters.find((character: Character) => character.charId === charId) ||
-      null
-    );
-  };
+  const getCharacter = (charId: string) =>
+    characters.find((character: Character) => character.charId === charId) ||
+    null;
 
   /*
   <--------------- Rendering --------------->
