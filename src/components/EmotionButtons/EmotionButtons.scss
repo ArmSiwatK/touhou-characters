@@ -1,0 +1,28 @@
+.emotion-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  button {
+    margin: 0 5px;
+    padding: 12px 20px;
+    font-weight: normal;
+    font-size: 14px;
+    color: #333;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #e6e6e6;
+      cursor: pointer;
+    }
+
+    &.selected {
+      font-weight: bold;
+      background-color: #ffcc66;
+      color: #fff;
+    }
+  }
+}

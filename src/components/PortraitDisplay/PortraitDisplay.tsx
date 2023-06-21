@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import characters from "../../assets/characters.json";
+import CharacterSelection from "../CharacterSelection/CharacterSelection";
+import EmotionButtons from "../EmotionButtons/EmotionButtons";
 import "./PortraitDisplay.scss";
-
-const emotions = ["Angry", "Confused", "Happy", "Neutral", "Shocked", "Tired"];
 
 interface Character {
   charId: string;
@@ -12,7 +12,7 @@ interface Character {
 
 const PortraitDisplay: React.FC = () => {
   /*
-  <--------------- States --------------->
+  <--------------- States and Variable --------------->
   */
   const [selectedEmotion, setSelectedEmotion] = useState("Neutral");
   const [selectedCharacter, setSelectedCharacter] = useState<Character | null>({
@@ -20,6 +20,15 @@ const PortraitDisplay: React.FC = () => {
     name: "Hakurei Reimu",
     title: "Shrine Maiden of Paradise",
   });
+
+  const emotions = [
+    "Angry",
+    "Confused",
+    "Happy",
+    "Neutral",
+    "Shocked",
+    "Tired",
+  ];
 
   /*
   <--------------- Functions --------------->
@@ -53,32 +62,15 @@ const PortraitDisplay: React.FC = () => {
 
   return (
     <div className="portrait-display">
-      <div className="emotion-buttons">
-        {emotions.map((emotion) => (
-          <button
-            key={emotion}
-            onClick={() => handleEmotionSelection(emotion)}
-            className={selectedEmotion === emotion ? "selected" : ""}
-          >
-            {emotion}
-          </button>
-        ))}
-      </div>
-      <div className="character-dropdown">
-        <label htmlFor="characterDropdown">Select Character: </label>
-        <select
-          id="characterDropdown"
-          value={selectedCharacter?.charId || ""}
-          onChange={handleCharacterSelection}
-        >
-          <option value="">Select a character</option>
-          {characters.map((character: Character) => (
-            <option key={character.charId} value={character.charId}>
-              {character.name}
-            </option>
-          ))}
-        </select>
-      </div>
+      <EmotionButtons
+        emotions={emotions}
+        selectedEmotion={selectedEmotion}
+        handleEmotionSelection={handleEmotionSelection}
+      />
+      <CharacterSelection
+        selectedCharacter={selectedCharacter}
+        handleCharacterSelection={handleCharacterSelection}
+      />
       <div>
         {selectedCharacter && (
           <div className="character-info">
