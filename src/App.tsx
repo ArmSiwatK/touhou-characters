@@ -23,6 +23,7 @@ const App: React.FC = () => {
     "Happy",
     "Neutral",
     "Sad",
+    "Special",
     "Surprised",
   ];
 

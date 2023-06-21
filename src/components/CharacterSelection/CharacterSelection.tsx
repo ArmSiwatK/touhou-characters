@@ -32,7 +32,6 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({
         value={selectedCharacter?.charId || ""}
         onChange={handleCharacterSelection}
       >
-        <option value="">Select a character</option>
         {characters.map(({ charId, name }: Character) => (
           <option key={charId} value={charId}>
             {name}
