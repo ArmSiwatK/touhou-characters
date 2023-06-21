@@ -1,21 +1,15 @@
 import React, { useState } from "react";
-import characters from "../../assets/characters.json";
 import CharacterSelection from "../CharacterSelection/CharacterSelection";
 import EmotionButtons from "../EmotionButtons/EmotionButtons";
+import characters from "../../assets/characters.json";
 import "./PortraitDisplay.scss";
-
-interface Character {
-  charId: string;
-  name: string;
-  title: string;
-}
 
 const PortraitDisplay: React.FC = () => {
   /*
   <--------------- States and Variable --------------->
   */
   const [selectedEmotion, setSelectedEmotion] = useState("Neutral");
-  const [selectedCharacter, setSelectedCharacter] = useState<Character | null>({
+  const [selectedCharacter, setSelectedCharacter] = useState<any>({
     charId: "reimu",
     name: "Hakurei Reimu",
     title: "Shrine Maiden of Paradise",
@@ -42,19 +36,14 @@ const PortraitDisplay: React.FC = () => {
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
     const selectedCharId = event.target.value;
-
-    if (selectedCharId !== "") {
-      const character = getCharacter(selectedCharId);
-      setSelectedCharacter(character);
-    }
+    setSelectedCharacter(getCharacter(selectedCharId));
   };
 
   const getImagePath = (charId: string) =>
     `/portraits/${selectedEmotion.toLowerCase()}/${charId}.png`;
 
   const getCharacter = (charId: string) =>
-    characters.find((character: Character) => character.charId === charId) ||
-    null;
+    characters.find((character) => character.charId === charId) || null;
 
   /*
   <--------------- Rendering --------------->
@@ -71,18 +60,16 @@ const PortraitDisplay: React.FC = () => {
         selectedCharacter={selectedCharacter}
         handleCharacterSelection={handleCharacterSelection}
       />
-      <div>
-        {selectedCharacter && (
-          <div className="character-info">
-            <h2>{selectedCharacter.name}</h2>
-            <img
-              src={getImagePath(selectedCharacter.charId)}
-              alt={`Character portrait - ${selectedCharacter.name}`}
-            />
-            <h2>{selectedCharacter.title}</h2>
-          </div>
-        )}
-      </div>
+      {selectedCharacter && (
+        <div className="character-info">
+          <h2>{selectedCharacter.name}</h2>
+          <img
+            src={getImagePath(selectedCharacter.charId)}
+            alt={`Character portrait - ${selectedCharacter.name}`}
+          />
+          <h2>{selectedCharacter.title}</h2>
+        </div>
+      )}
     </div>
   );
 };
