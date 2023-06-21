@@ -19,6 +19,10 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({
   selectedCharacter,
   handleCharacterSelection,
 }) => {
+  /*
+  <--------------- Rendering --------------->
+  */
+
   return (
     <div className="character-selection">
       <label htmlFor="characterDropdown">Select Character: </label>
@@ -28,9 +32,9 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({
         onChange={handleCharacterSelection}
       >
         <option value="">Select a character</option>
-        {characters.map((character: Character) => (
-          <option key={character.charId} value={character.charId}>
-            {character.name}
+        {characters.map(({ charId, name }: Character) => (
+          <option key={charId} value={charId}>
+            {name}
           </option>
         ))}
       </select>
