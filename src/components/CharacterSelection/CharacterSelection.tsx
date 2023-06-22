@@ -19,9 +19,6 @@ interface CharacterSelectionProps {
   selectedCategory: string;
   setSelectedCharacter: (category: any) => void;
   setSelectedCategory: (category: string) => void;
-  handleCharacterSelection: (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => void;
 }
 
 /*
@@ -35,10 +32,9 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({
   selectedCategory,
   setSelectedCharacter,
   setSelectedCategory,
-  handleCharacterSelection,
 }) => {
   /*
-  <--------------- State and Variable --------------->
+  <--------------- Variable --------------->
   */
 
   const filteredCharacters =
@@ -49,8 +45,24 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({
         );
 
   /*
-  <--------------- Function --------------->
+  <--------------- Functions --------------->
   */
+
+  const handleCharacterSelection = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const selectedCharId = event.target.value;
+    if (selectedCharId !== "") {
+      const selectedCharacter = characters.find(
+        (character) => character.charId === selectedCharId
+      );
+      if (selectedCharacter) {
+        setSelectedCharacter(selectedCharacter);
+      }
+    }
+
+    event.target.blur();
+  };
 
   const handleCategorySelection = (
     event: React.ChangeEvent<HTMLSelectElement>
@@ -68,6 +80,8 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({
     if (firstCharacter) {
       setSelectedCharacter(firstCharacter);
     }
+
+    event.target.blur();
   };
 
   /*

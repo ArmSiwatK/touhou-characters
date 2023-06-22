@@ -69,25 +69,12 @@ const App: React.FC = () => {
     }
   };
 
-  const getCharacter = (charId: string) =>
-    getFilteredCharacters().find((character) => character.charId === charId) ||
-    null;
-
   const getImagePath = (charId: string) =>
     `/portraits/${selectedEmotion.toLowerCase()}/${charId}.png`;
 
   /*
   <--------------- Character Selection Functions --------------->
   */
-
-  const handleCharacterSelection = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    const selectedCharId = event.target.value;
-    if (selectedCharId !== "") {
-      setSelectedCharacter(getCharacter(selectedCharId));
-    }
-  };
 
   const handleNextCharacter = () => {
     const currentIndex = getFilteredCharacters().findIndex(
@@ -170,7 +157,6 @@ const App: React.FC = () => {
         selectedCategory={selectedCategory}
         setSelectedCharacter={setSelectedCharacter}
         setSelectedCategory={setSelectedCategory}
-        handleCharacterSelection={handleCharacterSelection}
       />
       <EmotionButtons
         emotions={emotions}
