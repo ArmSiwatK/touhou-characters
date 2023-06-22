@@ -9,5 +9,11 @@
     "charId": "marisa",
     "name": "Kirisame Marisa",
     "title": "Ordinary Magician"
+  },
+
+  {
+    "charId": "rumia",
+    "name": "Rumia",
+    "title": "Youkai Lurking in Darkness"
   }
 ]
