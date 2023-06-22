@@ -1,13 +1,28 @@
+/*
+<--------------- Imports and Interfaces --------------->
+*/
+
 import React, { useState, useEffect } from "react";
 import "./PortraitDisplay.scss";
 
+interface Character {
+  charId: string;
+  name: string;
+  title: string;
+  category: string;
+}
+
 interface PortraitDisplayProps {
-  selectedCharacter: any;
-  characters: any[];
+  selectedCharacter: Character;
+  characters: Character[];
   getImagePath: (charId: string) => string;
   handleNextCharacter: () => void;
   handlePreviousCharacter: () => void;
 }
+
+/*
+<--------------- Component --------------->
+*/
 
 const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   selectedCharacter,

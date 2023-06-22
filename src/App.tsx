@@ -1,5 +1,5 @@
 /*
-<--------------- Imports --------------->
+<--------------- Imports and Interface --------------->
 */
 
 import React, { useState, useEffect } from "react";
@@ -8,6 +8,13 @@ import EmotionButtons from "./components/EmotionButtons/EmotionButtons";
 import PortraitDisplay from "./components/PortraitDisplay/PortraitDisplay";
 import characters from "./assets/characters.json";
 import "./styles/App.scss";
+
+interface Character {
+  charId: string;
+  name: string;
+  title: string;
+  category: string;
+}
 
 /*
 <--------------- Component --------------->
@@ -20,10 +27,11 @@ const App: React.FC = () => {
 
   const [selectedEmotion, setSelectedEmotion] = useState("Neutral");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedCharacter, setSelectedCharacter] = useState<any>({
+  const [selectedCharacter, setSelectedCharacter] = useState<Character>({
     charId: "reimu",
     name: "Hakurei Reimu",
     title: "Shrine Maiden of Paradise",
+    category: "Protagonists",
   });
 
   const categories = [

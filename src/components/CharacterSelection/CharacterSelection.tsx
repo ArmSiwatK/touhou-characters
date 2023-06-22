@@ -17,7 +17,7 @@ interface CharacterSelectionProps {
   categories: string[];
   selectedCharacter: Character | null;
   selectedCategory: string;
-  setSelectedCharacter: (category: any) => void;
+  setSelectedCharacter: (character: Character) => void;
   setSelectedCategory: (category: string) => void;
 }
 
