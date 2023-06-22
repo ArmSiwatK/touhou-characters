@@ -64,70 +64,6 @@ const App: React.FC = () => {
   ];
 
   /*
-  <--------------- Character Selection Functions --------------->
-  */
-
-  const getFilteredCharacters = () => {
-    if (selectedCategory === "All") {
-      return characters;
-    } else {
-      return characters.filter(
-        (character) => character.category === selectedCategory
-      );
-    }
-  };
-
-  const handleNextCharacter = () => {
-    const currentIndex = getFilteredCharacters().findIndex(
-      (character) => character.charId === selectedCharacter?.charId
-    );
-    setSelectedCharacter(
-      getFilteredCharacters()[
-        (currentIndex + 1) % getFilteredCharacters().length
-      ]
-    );
-  };
-
-  const handlePreviousCharacter = () => {
-    const currentIndex = getFilteredCharacters().findIndex(
-      (character) => character.charId === selectedCharacter?.charId
-    );
-    setSelectedCharacter(
-      getFilteredCharacters()[
-        (currentIndex - 1 + getFilteredCharacters().length) %
-          getFilteredCharacters().length
-      ]
-    );
-  };
-
-  /*
-  <--------------- useEffect Hook --------------->
-  */
-
-  useEffect(() => {
-    const keyMap: { [key: string]: () => void } = {
-      a: handlePreviousCharacter,
-      A: handlePreviousCharacter,
-      d: handleNextCharacter,
-      D: handleNextCharacter,
-    };
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      const key = event.key.toLowerCase();
-      const action = keyMap[key];
-      if (action) {
-        action();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [handleNextCharacter, handlePreviousCharacter]);
-
-  /*
   <--------------- Rendering --------------->
   */
 
@@ -149,9 +85,9 @@ const App: React.FC = () => {
       <PortraitDisplay
         characters={characters}
         selectedCharacter={selectedCharacter}
+        selectedCategory={selectedCategory}
         selectedEmotion={selectedEmotion}
-        handleNextCharacter={handleNextCharacter}
-        handlePreviousCharacter={handlePreviousCharacter}
+        setSelectedCharacter={setSelectedCharacter}
       />
     </div>
   );

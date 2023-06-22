@@ -13,11 +13,11 @@ interface Character {
 }
 
 interface PortraitDisplayProps {
-  selectedCharacter: Character;
   characters: Character[];
+  selectedCharacter: Character;
+  selectedCategory: string;
   selectedEmotion: string;
-  handleNextCharacter: () => void;
-  handlePreviousCharacter: () => void;
+  setSelectedCharacter: (character: Character) => void;
 }
 
 /*
@@ -25,10 +25,11 @@ interface PortraitDisplayProps {
 */
 
 const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
+  characters,
   selectedCharacter,
+  selectedCategory,
   selectedEmotion,
-  handleNextCharacter,
-  handlePreviousCharacter,
+  setSelectedCharacter,
 }) => {
   /*
   <--------------- State --------------->
@@ -43,6 +44,39 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   const getImagePath = (charId: string) =>
     `/portraits/${selectedEmotion.toLowerCase()}/${charId}.png`;
 
+  const getFilteredCharacters = () => {
+    if (selectedCategory === "All") {
+      return characters;
+    } else {
+      return characters.filter(
+        (character) => character.category === selectedCategory
+      );
+    }
+  };
+
+  const handleNextCharacter = () => {
+    const currentIndex = getFilteredCharacters().findIndex(
+      (character) => character.charId === selectedCharacter?.charId
+    );
+    setSelectedCharacter(
+      getFilteredCharacters()[
+        (currentIndex + 1) % getFilteredCharacters().length
+      ]
+    );
+  };
+
+  const handlePreviousCharacter = () => {
+    const currentIndex = getFilteredCharacters().findIndex(
+      (character) => character.charId === selectedCharacter?.charId
+    );
+    setSelectedCharacter(
+      getFilteredCharacters()[
+        (currentIndex - 1 + getFilteredCharacters().length) %
+          getFilteredCharacters().length
+      ]
+    );
+  };
+
   /*
   <--------------- useEffect Hook --------------->
   */
@@ -56,6 +90,24 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const key = event.key.toLowerCase();
+
+      if (key === "a") {
+        handlePreviousCharacter();
+      } else if (key === "d") {
+        handleNextCharacter();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   /*
