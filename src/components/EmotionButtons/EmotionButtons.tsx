@@ -40,7 +40,7 @@ const EmotionButtons: React.FC<EmotionButtonsProps> = ({
   if (isMobile) {
     return (
       <div className="emotion-buttons" id="responsive">
-        <label htmlFor="emotion-dropdown">Select Emotion:</label>
+        <label htmlFor="emotion-dropdown">Emotion:</label>
         <select
           id="emotion-dropdown"
           value={selectedEmotion}

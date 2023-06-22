@@ -26,7 +26,7 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({
 
   return (
     <div className="character-selection">
-      <label htmlFor="character-dropdown">Select Character:</label>
+      <label htmlFor="character-dropdown">Character:</label>
       <select
         id="character-dropdown"
         value={selectedCharacter?.charId || ""}
