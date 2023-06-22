@@ -27,10 +27,6 @@ const App: React.FC = () => {
     "Surprised",
   ];
 
-  /*
-  <--------------- Functions --------------->
-  */
-
   const handleEmotionSelection = (emotion: string) => {
     setSelectedEmotion(emotion);
   };
@@ -49,6 +45,22 @@ const App: React.FC = () => {
 
   const getImagePath = (charId: string) =>
     `/portraits/${selectedEmotion.toLowerCase()}/${charId}.png`;
+
+  const handleNextCharacter = () => {
+    const currentIndex = characters.findIndex(
+      (character) => character.charId === selectedCharacter?.charId
+    );
+    setSelectedCharacter(characters[(currentIndex + 1) % characters.length]);
+  };
+
+  const handlePreviousCharacter = () => {
+    const currentIndex = characters.findIndex(
+      (character) => character.charId === selectedCharacter?.charId
+    );
+    setSelectedCharacter(
+      characters[(currentIndex - 1 + characters.length) % characters.length]
+    );
+  };
 
   /*
   <--------------- Rendering --------------->
@@ -69,6 +81,9 @@ const App: React.FC = () => {
       <PortraitDisplay
         selectedCharacter={selectedCharacter}
         getImagePath={getImagePath}
+        characters={characters}
+        handleNextCharacter={handleNextCharacter}
+        handlePreviousCharacter={handlePreviousCharacter}
       />
     </div>
   );

@@ -18,11 +18,15 @@
       color: #333;
     }
 
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 4px;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    .portrait-gallery {
+      display: flex;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+      }
     }
   }
 
