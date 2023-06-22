@@ -1,13 +1,13 @@
 /*
-<--------------- Imports and Interfaces --------------->
+<--------------- Imports and Interface --------------->
 */
 
 import React, { useState, useEffect } from "react";
 import { Character } from "../../utilities";
+import characters from "../../assets/characters.json";
 import "./PortraitDisplay.scss";
 
 interface PortraitDisplayProps {
-  characters: Character[];
   selectedCharacter: Character;
   selectedCategory: string;
   selectedEmotion: string;
@@ -19,7 +19,6 @@ interface PortraitDisplayProps {
 */
 
 const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
-  characters,
   selectedCharacter,
   selectedCategory,
   selectedEmotion,

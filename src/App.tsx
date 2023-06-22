@@ -6,8 +6,7 @@ import React, { useState } from "react";
 import CharacterSelection from "./components/CharacterSelection/CharacterSelection";
 import EmotionButtons from "./components/EmotionButtons/EmotionButtons";
 import PortraitDisplay from "./components/PortraitDisplay/PortraitDisplay";
-import { Character, categories, emotions } from "./utilities";
-import characters from "./assets/characters.json";
+import { Character } from "./utilities";
 import "./styles/App.scss";
 
 /*
@@ -35,20 +34,16 @@ const App: React.FC = () => {
   return (
     <div className="app">
       <CharacterSelection
-        characters={characters}
-        categories={categories}
         selectedCharacter={selectedCharacter}
         selectedCategory={selectedCategory}
         setSelectedCharacter={setSelectedCharacter}
         setSelectedCategory={setSelectedCategory}
       />
       <EmotionButtons
-        emotions={emotions}
         selectedEmotion={selectedEmotion}
         setSelectedEmotion={setSelectedEmotion}
       />
       <PortraitDisplay
-        characters={characters}
         selectedCharacter={selectedCharacter}
         selectedCategory={selectedCategory}
         selectedEmotion={selectedEmotion}

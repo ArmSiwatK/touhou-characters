@@ -1,14 +1,13 @@
 /*
-<--------------- Imports and Interfaces --------------->
+<--------------- Imports and Interface --------------->
 */
 
 import React from "react";
-import { Character } from "../../utilities";
+import { Character, categories } from "../../utilities";
+import characters from "../../assets/characters.json";
 import "./CharacterSelection.scss";
 
 interface CharacterSelectionProps {
-  characters: Character[];
-  categories: string[];
   selectedCharacter: Character | null;
   selectedCategory: string;
   setSelectedCharacter: (character: Character) => void;
@@ -20,8 +19,6 @@ interface CharacterSelectionProps {
 */
 
 const CharacterSelection: React.FC<CharacterSelectionProps> = ({
-  characters,
-  categories,
   selectedCharacter,
   selectedCategory,
   setSelectedCharacter,

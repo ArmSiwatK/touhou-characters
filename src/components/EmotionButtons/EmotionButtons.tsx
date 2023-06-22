@@ -3,10 +3,10 @@
 */
 
 import React, { useState, useEffect } from "react";
+import { emotions } from "../../utilities";
 import "./EmotionButtons.scss";
 
 interface EmotionButtonsProps {
-  emotions: string[];
   selectedEmotion: string;
   setSelectedEmotion: (emotion: string) => void;
 }
@@ -16,7 +16,6 @@ interface EmotionButtonsProps {
 */
 
 const EmotionButtons: React.FC<EmotionButtonsProps> = ({
-  emotions,
   selectedEmotion,
   setSelectedEmotion,
 }) => {
