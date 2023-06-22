@@ -15,5 +15,11 @@
     "charId": "rumia",
     "name": "Rumia",
     "title": "Youkai Lurking in Darkness"
+  },
+
+  {
+    "charId": "remilia",
+    "name": "Remilia Scarlet",
+    "title": "The Scarlet Devil"
   }
 ]
