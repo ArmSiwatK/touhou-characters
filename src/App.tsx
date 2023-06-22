@@ -151,6 +151,7 @@ const App: React.FC = () => {
         categories={categories}
         selectedCharacter={selectedCharacter}
         selectedCategory={selectedCategory}
+        setSelectedCharacter={setSelectedCharacter}
         setSelectedCategory={setSelectedCategory}
         handleCharacterSelection={handleCharacterSelection}
       />

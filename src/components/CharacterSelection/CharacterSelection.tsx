@@ -17,6 +17,7 @@ interface CharacterSelectionProps {
   categories: string[];
   selectedCharacter: Character | null;
   selectedCategory: string;
+  setSelectedCharacter: (category: any) => void;
   setSelectedCategory: (category: string) => void;
   handleCharacterSelection: (
     event: React.ChangeEvent<HTMLSelectElement>
@@ -32,6 +33,7 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({
   categories,
   selectedCharacter,
   selectedCategory,
+  setSelectedCharacter,
   setSelectedCategory,
   handleCharacterSelection,
 }) => {
@@ -53,7 +55,19 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({
   const handleCategorySelection = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
-    setSelectedCategory(event.target.value);
+    const selectedCategory = event.target.value;
+    setSelectedCategory(selectedCategory);
+
+    const firstCharacter =
+      selectedCategory === "All"
+        ? characters[0]
+        : characters.find(
+            (character) => character.category === selectedCategory
+          );
+
+    if (firstCharacter) {
+      setSelectedCharacter(firstCharacter);
+    }
   };
 
   /*
