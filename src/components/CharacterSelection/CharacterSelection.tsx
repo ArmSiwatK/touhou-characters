@@ -3,14 +3,8 @@
 */
 
 import React from "react";
+import { Character } from "../../utilities";
 import "./CharacterSelection.scss";
-
-interface Character {
-  charId: string;
-  name: string;
-  title: string;
-  category: string;
-}
 
 interface CharacterSelectionProps {
   characters: Character[];

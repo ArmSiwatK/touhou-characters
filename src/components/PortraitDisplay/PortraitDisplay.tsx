@@ -3,14 +3,8 @@
 */
 
 import React, { useState, useEffect } from "react";
+import { Character } from "../../utilities";
 import "./PortraitDisplay.scss";
-
-interface Character {
-  charId: string;
-  name: string;
-  title: string;
-  category: string;
-}
 
 interface PortraitDisplayProps {
   characters: Character[];
@@ -108,7 +102,7 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [handleNextCharacter, handlePreviousCharacter]);
 
   /*
   <--------------- Rendering --------------->
