@@ -76,31 +76,35 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({
 
   return (
     <div className="character-selection">
-      <label htmlFor="category-dropdown">Category:</label>
-      <select
-        id="category-dropdown"
-        value={selectedCategory}
-        onChange={handleCategorySelection}
-      >
-        {categories.map((category) => (
-          <option key={category} value={category}>
-            {category}
-          </option>
-        ))}
-      </select>
+      <div className="select-block">
+        <label htmlFor="category-dropdown">Category:</label>
+        <select
+          id="category-dropdown"
+          value={selectedCategory}
+          onChange={handleCategorySelection}
+        >
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+      </div>
 
-      <label htmlFor="character-dropdown">Character:</label>
-      <select
-        id="character-dropdown"
-        value={selectedCharacter?.charId || ""}
-        onChange={handleCharacterSelection}
-      >
-        {filteredCharacters.map(({ charId, name }: Character) => (
-          <option key={charId} value={charId}>
-            {name}
-          </option>
-        ))}
-      </select>
+      <div className="select-block">
+        <label htmlFor="character-dropdown">Character:</label>
+        <select
+          id="character-dropdown"
+          value={selectedCharacter?.charId || ""}
+          onChange={handleCharacterSelection}
+        >
+          {filteredCharacters.map(({ charId, name }: Character) => (
+            <option key={charId} value={charId}>
+              {name}
+            </option>
+          ))}
+        </select>
+      </div>
     </div>
   );
 };
