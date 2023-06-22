@@ -11,15 +11,17 @@
     display: flex;
     flex-direction: column;
 
-    h2 {
+    .character-name {
       font-size: 22px;
       font-weight: bold;
-      margin-bottom: 20px;
+      margin: 0 auto 20px;
       color: #333;
     }
 
-    .character-name {
-      margin-top: 0;
+    .character-title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #333;
     }
 
     .portrait-gallery {
