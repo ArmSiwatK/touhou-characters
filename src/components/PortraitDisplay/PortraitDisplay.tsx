@@ -25,12 +25,12 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
         <div className="character-info">
           <h2>{selectedCharacter.name}</h2>
           <div className="portrait-gallery">
-            <button onClick={handlePreviousCharacter}>&lt;</button>
+            <button onClick={handlePreviousCharacter}>&lt;&lt;&lt;</button>
             <img
               src={getImagePath(selectedCharacter.charId)}
               alt={`Character portrait - ${selectedCharacter.name}`}
             />
-            <button onClick={handleNextCharacter}>&gt;</button>
+            <button onClick={handleNextCharacter}>&gt;&gt;&gt;</button>
           </div>
           <h2>{selectedCharacter.title}</h2>
         </div>
