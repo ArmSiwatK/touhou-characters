@@ -74,5 +74,810 @@
     "name": "Flandre Scarlet",
     "title": "Sister of the Devil",
     "category": "Embodiment of Scarlet Devil"
+  },
+
+  {
+    "charId": "letty",
+    "name": "Letty Whiterock",
+    "title": "What Winter Left Behind",
+    "category": "Perfect Cherry Blossom"
+  },
+
+  {
+    "charId": "chen",
+    "name": "Chen",
+    "title": "Black Cat of Bad Omens",
+    "category": "Perfect Cherry Blossom"
+  },
+
+  {
+    "charId": "alice",
+    "name": "Alice Margatroid",
+    "title": "Seven-Colored Puppeteer",
+    "category": "Perfect Cherry Blossom"
+  },
+
+  {
+    "charId": "lilywhite",
+    "name": "Lily White",
+    "title": "Fairy Herald of Spring",
+    "category": "Perfect Cherry Blossom"
+  },
+
+  {
+    "charId": "lunasa",
+    "name": "Lunasa Prismriver",
+    "title": "Poltergeist Violinist",
+    "category": "Perfect Cherry Blossom"
+  },
+
+  {
+    "charId": "merlin",
+    "name": "Merlin Prismriver",
+    "title": "Poltergeist Trumpeteer",
+    "category": "Perfect Cherry Blossom"
+  },
+
+  {
+    "charId": "lyrica",
+    "name": "Lyrica Prismriver",
+    "title": "Poltergeist Keyboardist",
+    "category": "Perfect Cherry Blossom"
+  },
+
+  {
+    "charId": "youmu",
+    "name": "Konpaku Youmu",
+    "title": "Half-Human Half-Phantom Gardener",
+    "category": "Perfect Cherry Blossom"
+  },
+
+  {
+    "charId": "yuyuko",
+    "name": "Saigyouji Yuyuko",
+    "title": "Dreaming Ghost",
+    "category": "Perfect Cherry Blossom"
+  },
+
+  {
+    "charId": "ran",
+    "name": "Yakumo Ran",
+    "title": "Cunning Nine-Tailed Fox",
+    "category": "Perfect Cherry Blossom"
+  },
+
+  {
+    "charId": "yukari",
+    "name": "Yakumo Yukari",
+    "title": "Youkai of Boundaries",
+    "category": "Perfect Cherry Blossom"
+  },
+
+  {
+    "charId": "renko",
+    "name": "Usami Renko",
+    "title": "Physics Major",
+    "category": "Others"
+  },
+
+  {
+    "charId": "maribel",
+    "name": "Maribel Hearn",
+    "title": "Psychology Major",
+    "category": "Others"
+  },
+
+  {
+    "charId": "rinnosuke",
+    "name": "Morichika Rinnosuke",
+    "title": "Proprietor of Kourindou",
+    "category": "Others"
+  },
+
+  {
+    "charId": "tokiko",
+    "name": "Tokiko",
+    "title": "Crested Ibis Youkai",
+    "category": "Others"
+  },
+
+  {
+    "charId": "suika",
+    "name": "Ibuki Suika",
+    "title": "Tiny Night Parade of One Hundred Demons",
+    "category": "Others"
+  },
+
+  {
+    "charId": "wriggle",
+    "name": "Wriggle Nightbug",
+    "title": "Bug of Light Wriggling in the Dark",
+    "category": "Imperishable Night"
+  },
+
+  {
+    "charId": "mystia",
+    "name": "Mystia Lorelei",
+    "title": "Night Sparrow Apparition",
+    "category": "Imperishable Night"
+  },
+
+  {
+    "charId": "keine",
+    "name": "Kamishirasawa Keine",
+    "title": "Half Beast Who Eats History",
+    "category": "Imperishable Night"
+  },
+
+  {
+    "charId": "tewi",
+    "name": "Inaba Tewi",
+    "title": "Bare White Rabbit of Good Fortune",
+    "category": "Imperishable Night"
+  },
+
+  {
+    "charId": "reisen",
+    "name": "Reisen Udongein Inaba",
+    "title": "Lunatic Red Eyes",
+    "category": "Imperishable Night"
+  },
+
+  {
+    "charId": "eirin",
+    "name": "Yagokoro Eirin",
+    "title": "Brain of the Moon",
+    "category": "Imperishable Night"
+  },
+
+  {
+    "charId": "kaguya",
+    "name": "Houraisan Kaguya",
+    "title": "Eternal Princess",
+    "category": "Imperishable Night"
+  },
+
+  {
+    "charId": "mokou",
+    "name": "Fujiwara no Mokou",
+    "title": "Hourai in Form",
+    "category": "Imperishable Night"
+  },
+
+  {
+    "charId": "sunny",
+    "name": "Sunny Milk",
+    "title": "Radiant Light of the Sun",
+    "category": "Others"
+  },
+
+  {
+    "charId": "luna",
+    "name": "Luna Child",
+    "title": "Silent Light of the Moon",
+    "category": "Others"
+  },
+
+  {
+    "charId": "star",
+    "name": "Star Sapphire",
+    "title": "Showering Light of the Star",
+    "category": "Others"
+  },
+
+  {
+    "charId": "aya",
+    "name": "Shameimaru Aya",
+    "title": "Traditional Reporter of Fantasy",
+    "category": "Phantasmagoria of Flower View"
+  },
+
+  {
+    "charId": "medicine",
+    "name": "Medicine Melancholy",
+    "title": "Little Sweet Poison",
+    "category": "Phantasmagoria of Flower View"
+  },
+
+  {
+    "charId": "yuuka",
+    "name": "Kazami Yuuka",
+    "title": "Flower Master of the Four Seasons",
+    "category": "Phantasmagoria of Flower View"
+  },
+
+  {
+    "charId": "komachi",
+    "name": "Onozuka Komachi",
+    "title": "Guide of the Sanzu River",
+    "category": "Phantasmagoria of Flower View"
+  },
+
+  {
+    "charId": "eiki",
+    "name": "Shiki Eiki, Yamaxanadu",
+    "title": "Supreme Judge of Paradise",
+    "category": "Phantasmagoria of Flower View"
+  },
+
+  {
+    "charId": "toyohime",
+    "name": "Watatsuki no Toyohime",
+    "title": "Moon Princess Who Connects Seas and Mountains",
+    "category": "Others"
+  },
+
+  {
+    "charId": "yorihime",
+    "name": "Watatsuki no Yorihime",
+    "title": "Moon Princess Possessed by Divine Spirits",
+    "category": "Others"
+  },
+
+  {
+    "charId": "akyuu",
+    "name": "Hieda no Akyuu",
+    "title": "Memory of Gensokyo",
+    "category": "Others"
+  },
+
+  {
+    "charId": "shizuha",
+    "name": "Aki Shizuha",
+    "title": "Symbol of Loneliness and Demise",
+    "category": "Mountain of Faith"
+  },
+
+  {
+    "charId": "minoriko",
+    "name": "Aki Minoriko",
+    "title": "Symbol of Abundance and Harvest",
+    "category": "Mountain of Faith"
+  },
+
+  {
+    "charId": "hina",
+    "name": "Kagiyama Hina",
+    "title": "Secret God of Nagashi-Bina",
+    "category": "Mountain of Faith"
+  },
+
+  {
+    "charId": "nitori",
+    "name": "Kawashiro Nitori",
+    "title": "Underwater Engineer",
+    "category": "Mountain of Faith"
+  },
+
+  {
+    "charId": "momiji",
+    "name": "Inubashiri Momiji",
+    "title": "Subordinate Patrol Tengu",
+    "category": "Mountain of Faith"
+  },
+
+  {
+    "charId": "sanae",
+    "name": "Kochiya Sanae",
+    "title": "Deified Human of the Wind",
+    "category": "Mountain of Faith"
+  },
+
+  {
+    "charId": "kanako",
+    "name": "Yasaka Kanako",
+    "title": "Avatar of Mountains and Lakes",
+    "category": "Mountain of Faith"
+  },
+
+  {
+    "charId": "suwako",
+    "name": "Moriya Suwako",
+    "title": "Pinnacle of Native Gods",
+    "category": "Mountain of Faith"
+  },
+
+  {
+    "charId": "demoman",
+    "name": "Demoman",
+    "title": "One-Eyed Demolitions Expert",
+    "category": "Others"
+  },
+
+  {
+    "charId": "iku",
+    "name": "Nagae Iku",
+    "title": "Beautiful Scarlet Cloth",
+    "category": "Others"
+  },
+
+  {
+    "charId": "tenshi",
+    "name": "Hinanawi Tenshi",
+    "title": "Girl of Neither Perception nor Non-Perception",
+    "category": "Others"
+  },
+
+  {
+    "charId": "kisume",
+    "name": "Kisume",
+    "title": "Dreadful Wonder of the Well",
+    "category": "Subterranean Animism"
+  },
+
+  {
+    "charId": "yamame",
+    "name": "Kurodani Yamame",
+    "title": "Bright Net in the Dark Cave",
+    "category": "Subterranean Animism"
+  },
+
+  {
+    "charId": "parsee",
+    "name": "Mizuhashi Parsee",
+    "title": "Jealousy Beneath the Crust",
+    "category": "Subterranean Animism"
+  },
+
+  {
+    "charId": "yuugi",
+    "name": "Hoshiguma Yuugi",
+    "title": "Renowned Primordial Strength",
+    "category": "Subterranean Animism"
+  },
+
+  {
+    "charId": "satori",
+    "name": "Komeiji Satori",
+    "title": "Girl Who Even Vengeful Spirits Fear",
+    "category": "Subterranean Animism"
+  },
+
+  {
+    "charId": "orin",
+    "name": "Kaenbyou Rin",
+    "title": "Hell's Traffic Accident",
+    "category": "Subterranean Animism"
+  },
+
+  {
+    "charId": "okuu",
+    "name": "Reiuji Utsuho",
+    "title": "Scorching, Troublesome Divine Flame",
+    "category": "Subterranean Animism"
+  },
+
+  {
+    "charId": "koishi",
+    "name": "Komeiji Koishi",
+    "title": "Closed Eye of Love",
+    "category": "Subterranean Animism"
+  },
+
+  {
+    "charId": "nazrin",
+    "name": "Nazrin",
+    "title": "Little Dowser General",
+    "category": "Undefined Fantastic Object"
+  },
+
+  {
+    "charId": "kogasa",
+    "name": "Tatara Kogasa",
+    "title": "Cheery Forgotten Umbrella",
+    "category": "Undefined Fantastic Object"
+  },
+
+  {
+    "charId": "ichirin",
+    "name": "Kumoi Ichirin",
+    "title": "Great Wheel, Having Guarded and Been Guarded",
+    "category": "Undefined Fantastic Object"
+  },
+
+  {
+    "charId": "minamitsu",
+    "name": "Murasa Minamitsu",
+    "title": "Water-Bound Ghost",
+    "category": "Undefined Fantastic Object"
+  },
+
+  {
+    "charId": "shou",
+    "name": "Toramaru Shou",
+    "title": "Disciple of Bishamonten",
+    "category": "Undefined Fantastic Object"
+  },
+
+  {
+    "charId": "byakuren",
+    "name": "Hijiri Byakuren",
+    "title": "Mystic Abbess of a Youkai Temple",
+    "category": "Undefined Fantastic Object"
+  },
+
+  {
+    "charId": "nue",
+    "name": "Houjuu Nue",
+    "title": "Unidentified Fantastic-Flying Girl",
+    "category": "Undefined Fantastic Object"
+  },
+
+  {
+    "charId": "hatate",
+    "name": "Himekaidou Hatate",
+    "title": "Modern-Day Thoughtography Reporter",
+    "category": "Others"
+  },
+
+  {
+    "charId": "kasen",
+    "name": "Ibaraki Kasen",
+    "title": "One-Armed Horned Hermit",
+    "category": "Others"
+  },
+
+  {
+    "charId": "kyouko",
+    "name": "Kasodani Kyouko",
+    "title": "Sutra-Chanting Yamabiko",
+    "category": "Ten Desires"
+  },
+
+  {
+    "charId": "yoshika",
+    "name": "Miyako Yoshika",
+    "title": "Loyal Cadaver",
+    "category": "Ten Desires"
+  },
+
+  {
+    "charId": "seiga",
+    "name": "Kaku Seiga",
+    "title": "Wicked Hermit Who Passes Through Walls",
+    "category": "Ten Desires"
+  },
+
+  {
+    "charId": "tojiko",
+    "name": "Soga no Tojiko",
+    "title": "Ghost of the Children of the Gods",
+    "category": "Ten Desires"
+  },
+
+  {
+    "charId": "futo",
+    "name": "Mononobe no Futo",
+    "title": "Shikaisen from Ancient Japan",
+    "category": "Ten Desires"
+  },
+
+  {
+    "charId": "miko",
+    "name": "Toyosatomimi no Miko",
+    "title": "Heavenly Taoist",
+    "category": "Ten Desires"
+  },
+
+  {
+    "charId": "mamizou",
+    "name": "Futatsuiwa Mamizou",
+    "title": "Bake-Danuki, Ten Transformations",
+    "category": "Ten Desires"
+  },
+
+  {
+    "charId": "kosuzu",
+    "name": "Motoori Kosuzu",
+    "title": "Bibliophile with a Deciphering Eye",
+    "category": "Others"
+  },
+
+  {
+    "charId": "kokoro",
+    "name": "Hata no Kokoro",
+    "title": "Expressive Poker Face",
+    "category": "Others"
+  },
+
+  {
+    "charId": "wakasagihime",
+    "name": "Wakasagihime",
+    "title": "Mermaid in Freshwater",
+    "category": "Double Dealing Character"
+  },
+
+  {
+    "charId": "sekibanki",
+    "name": "Sekibanki",
+    "title": "Rokurokubi Oddity",
+    "category": "Double Dealing Character"
+  },
+
+  {
+    "charId": "kagerou",
+    "name": "Imaizumi Kagerou",
+    "title": "Loup-Garou of the Bamboo Forest",
+    "category": "Double Dealing Character"
+  },
+
+  {
+    "charId": "benben",
+    "name": "Tsukumo Benben",
+    "title": "Tsukumogami of a Worn Biwa",
+    "category": "Double Dealing Character"
+  },
+
+  {
+    "charId": "yatsuhashi",
+    "name": "Tsukumo Yatsuhashi",
+    "title": "Tsukumogami of a Worn Koto",
+    "category": "Double Dealing Character"
+  },
+
+  {
+    "charId": "seija",
+    "name": "Kijin Seija",
+    "title": "Counterattacking Amanojaku",
+    "category": "Double Dealing Character"
+  },
+
+  {
+    "charId": "shinmyoumaru",
+    "name": "Sukuna Shinmyoumaru",
+    "title": "Descendant of the Inchlings",
+    "category": "Double Dealing Character"
+  },
+
+  {
+    "charId": "raiko",
+    "name": "Horikawa Raiko",
+    "title": "Phantasmagoric Percussionist",
+    "category": "Double Dealing Character"
+  },
+
+  {
+    "charId": "sumireko",
+    "name": "Usami Sumireko",
+    "title": "First President of the Secret Sealing Club",
+    "category": "Others"
+  },
+
+  {
+    "charId": "seiran",
+    "name": "Seiran",
+    "title": "Turquoise Eagle-Rabbit",
+    "category": "Legacy of Lunatic Kingdom"
+  },
+
+  {
+    "charId": "ringo",
+    "name": "Ringo",
+    "title": "Mandarin Eagle-Rabbit",
+    "category": "Legacy of Lunatic Kingdom"
+  },
+
+  {
+    "charId": "doremy",
+    "name": "Doremy Sweet",
+    "title": "Ruler of Dreams",
+    "category": "Legacy of Lunatic Kingdom"
+  },
+
+  {
+    "charId": "sagume",
+    "name": "Kishin Sagume",
+    "title": "Goddess Who Invites Slips of Tongue",
+    "category": "Legacy of Lunatic Kingdom"
+  },
+
+  {
+    "charId": "clownpiece",
+    "name": "Clownpiece",
+    "title": "Fairy of Hell",
+    "category": "Legacy of Lunatic Kingdom"
+  },
+
+  {
+    "charId": "junko",
+    "name": "Junko",
+    "title": "　",
+    "category": "Legacy of Lunatic Kingdom"
+  },
+
+  {
+    "charId": "hecatia",
+    "name": "Hecatia Lapislazuli",
+    "title": "Goddess of Hell",
+    "category": "Legacy of Lunatic Kingdom"
+  },
+
+  {
+    "charId": "joon",
+    "name": "Yorigami Jo'on",
+    "title": "Most-Despicable and Disastrous God of Pestilence",
+    "category": "Others"
+  },
+
+  {
+    "charId": "shion",
+    "name": "Yorigami Shion",
+    "title": "Most-Despicable and Disastrous God of Poverty",
+    "category": "Others"
+  },
+
+  {
+    "charId": "larva",
+    "name": "Eternity Larva",
+    "title": "Butterfly Fairy Approaching Divinity",
+    "category": "Hidden Star in Four Seasons"
+  },
+
+  {
+    "charId": "nemuno",
+    "name": "Sakata Nemuno",
+    "title": "Yamauba Who Surpasses the Transient Barrier",
+    "category": "Hidden Star in Four Seasons"
+  },
+
+  {
+    "charId": "aunn",
+    "name": "Komano Aunn",
+    "title": "Guardian Beast Devoted to Gods and Buddhas",
+    "category": "Hidden Star in Four Seasons"
+  },
+
+  {
+    "charId": "narumi",
+    "name": "Yatadera Narumi",
+    "title": "Magical Jizō Manifested in the Forest",
+    "category": "Hidden Star in Four Seasons"
+  },
+
+  {
+    "charId": "satono",
+    "name": "Nishida Satono",
+    "title": "All-Too-Dangerous Backup Dancer",
+    "category": "Hidden Star in Four Seasons"
+  },
+
+  {
+    "charId": "mai",
+    "name": "Teireida Mai",
+    "title": "All-Too-Dangerous Backup Dancer",
+    "category": "Hidden Star in Four Seasons"
+  },
+
+  {
+    "charId": "okina",
+    "name": "Matara Okina",
+    "title": "Ultimate, Absolute Secret God",
+    "category": "Hidden Star in Four Seasons"
+  },
+
+  {
+    "charId": "eika",
+    "name": "Ebisu Eika",
+    "title": "Stillborn Idol of the Riverbank",
+    "category": "Wily Beast and Weakest Creature"
+  },
+
+  {
+    "charId": "urumi",
+    "name": "Ushizaki Urumi",
+    "title": "Parental Guardian of Ancient Fish",
+    "category": "Wily Beast and Weakest Creature"
+  },
+
+  {
+    "charId": "kutaka",
+    "name": "Niwatari Kutaka",
+    "title": "Clerical God over Hell's Checkpoint",
+    "category": "Wily Beast and Weakest Creature"
+  },
+
+  {
+    "charId": "yachie",
+    "name": "Kicchou Yachie",
+    "title": "Kiketsu Family Matriarch",
+    "category": "Wily Beast and Weakest Creature"
+  },
+
+  {
+    "charId": "mayumi",
+    "name": "Joutouguu Mayumi",
+    "title": "Haniwa Captain",
+    "category": "Wily Beast and Weakest Creature"
+  },
+
+  {
+    "charId": "keiki",
+    "name": "Haniyasushin Keiki",
+    "title": "Sculptor God Crafted by Utter Isolation",
+    "category": "Wily Beast and Weakest Creature"
+  },
+
+  {
+    "charId": "saki",
+    "name": "Kurokoma Saki",
+    "title": "Keiga Family Matriarch",
+    "category": "Wily Beast and Weakest Creature"
+  },
+
+  {
+    "charId": "miyoi",
+    "name": "Okunoda Miyoi",
+    "title": "Poster Girl of Geidontei",
+    "category": "Others"
+  },
+
+  {
+    "charId": "mizuchi",
+    "name": "Miyadeguchi Mizuchi",
+    "title": "Jailbreak King",
+    "category": "Others"
+  },
+
+  {
+    "charId": "yuuma",
+    "name": "Toutetsu Yuuma",
+    "title": "Gouyoku Alliance Matriarch",
+    "category": "Others"
+  },
+
+  {
+    "charId": "mike",
+    "name": "Goutokuji Mike",
+    "title": "Lucky Charm of Prosperous Commerce",
+    "category": "Unconnected Marketeers"
+  },
+
+  {
+    "charId": "takane",
+    "name": "Yamashiro Takane",
+    "title": "Business Youkai of the Mountain Recesses",
+    "category": "Unconnected Marketeers"
+  },
+
+  {
+    "charId": "sannyo",
+    "name": "Komakusa Sannyo",
+    "title": "Highland-Dwelling Yamajorou",
+    "category": "Unconnected Marketeers"
+  },
+
+  {
+    "charId": "misumaru",
+    "name": "Tamatsukuri Misumaru",
+    "title": "Genuine Magatama-Producing Artisan",
+    "category": "Unconnected Marketeers"
+  },
+
+  {
+    "charId": "tsukasa",
+    "name": "Kudamaki Tsukasa",
+    "title": "Wicked Whispering White Fox",
+    "category": "Unconnected Marketeers"
+  },
+
+  {
+    "charId": "megumu",
+    "name": "Iizunamaru Megumu",
+    "title": "Chief of the Crow Tengu",
+    "category": "Unconnected Marketeers"
+  },
+
+  {
+    "charId": "chimata",
+    "name": "Tenkyuu Chimata",
+    "title": "God of the Unowned",
+    "category": "Unconnected Marketeers"
+  },
+
+  {
+    "charId": "momoyo",
+    "name": "Himemushi Momoyo",
+    "title": "Onyx Dragon Eater",
+    "category": "Unconnected Marketeers"
   }
 ]
