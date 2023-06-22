@@ -15,7 +15,7 @@ interface Character {
 interface PortraitDisplayProps {
   selectedCharacter: Character;
   characters: Character[];
-  getImagePath: (charId: string) => string;
+  selectedEmotion: string;
   handleNextCharacter: () => void;
   handlePreviousCharacter: () => void;
 }
@@ -26,7 +26,7 @@ interface PortraitDisplayProps {
 
 const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   selectedCharacter,
-  getImagePath,
+  selectedEmotion,
   handleNextCharacter,
   handlePreviousCharacter,
 }) => {
@@ -35,6 +35,13 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   */
 
   const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  /*
+  <--------------- Function --------------->
+  */
+
+  const getImagePath = (charId: string) =>
+    `/portraits/${selectedEmotion.toLowerCase()}/${charId}.png`;
 
   /*
   <--------------- useEffect Hook --------------->

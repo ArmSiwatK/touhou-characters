@@ -64,7 +64,7 @@ const App: React.FC = () => {
   ];
 
   /*
-  <--------------- Getter Functions --------------->
+  <--------------- Character Selection Functions --------------->
   */
 
   const getFilteredCharacters = () => {
@@ -76,13 +76,6 @@ const App: React.FC = () => {
       );
     }
   };
-
-  const getImagePath = (charId: string) =>
-    `/portraits/${selectedEmotion.toLowerCase()}/${charId}.png`;
-
-  /*
-  <--------------- Character Selection Functions --------------->
-  */
 
   const handleNextCharacter = () => {
     const currentIndex = getFilteredCharacters().findIndex(
@@ -174,7 +167,7 @@ const App: React.FC = () => {
       <PortraitDisplay
         characters={characters}
         selectedCharacter={selectedCharacter}
-        getImagePath={getImagePath}
+        selectedEmotion={selectedEmotion}
         handleNextCharacter={handleNextCharacter}
         handlePreviousCharacter={handlePreviousCharacter}
       />
