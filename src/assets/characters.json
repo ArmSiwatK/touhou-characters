@@ -24,8 +24,44 @@
   },
 
   {
+    "charId": "cirno",
+    "name": "Cirno",
+    "title": "Fairy of the Ice"
+  },
+
+  {
+    "charId": "meiling",
+    "name": "Hong Meiling",
+    "title": "Chinese Girl"
+  },
+
+  {
+    "charId": "koakuma",
+    "name": "Koakuma",
+    "title": "Little Demon"
+  },
+
+  {
+    "charId": "patchouli",
+    "name": "Patchouli Knowledge",
+    "title": "Immovable Great Library"
+  },
+
+  {
+    "charId": "sakuya",
+    "name": "Izayoi Sakuya",
+    "title": "Perfect and Elegant Maid"
+  },
+
+  {
     "charId": "remilia",
     "name": "Remilia Scarlet",
     "title": "The Scarlet Devil"
+  },
+
+  {
+    "charId": "flandre",
+    "name": "Flandre Scarlet",
+    "title": "Sister of the Devil"
   }
 ]
