@@ -107,41 +107,28 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   <--------------- Rendering --------------->
   */
 
-  if (isMobile) {
-    return (
-      <div className="portrait-display">
-        {selectedCharacter && (
-          <div className="character-info">
-            <h2>{selectedCharacter.name}</h2>
-            <div className="portrait-gallery">
-              <img
-                src={getImagePath(selectedCharacter.charId)}
-                alt={`Character portrait - ${selectedCharacter.name}`}
-              />
-              <div>
-                <button onClick={handlePreviousCharacter}>&lt;&lt;&lt;</button>
-                <button onClick={handleNextCharacter}>&gt;&gt;&gt;</button>
-              </div>
-            </div>
-            <h2>{selectedCharacter.title}</h2>
-          </div>
-        )}
-      </div>
-    );
-  }
-
   return (
     <div className="portrait-display">
       {selectedCharacter && (
         <div className="character-info">
           <h2 className="character-name">{selectedCharacter.name}</h2>
           <div className="portrait-gallery">
-            <button onClick={handlePreviousCharacter}>&lt;&lt;&lt;</button>
+            {!isMobile && (
+              <button onClick={handlePreviousCharacter}>&lt;&lt;&lt;</button>
+            )}
             <img
               src={getImagePath(selectedCharacter.charId)}
               alt={`Character portrait - ${selectedCharacter.name}`}
             />
-            <button onClick={handleNextCharacter}>&gt;&gt;&gt;</button>
+            {!isMobile && (
+              <button onClick={handleNextCharacter}>&gt;&gt;&gt;</button>
+            )}
+            {isMobile && (
+              <div>
+                <button onClick={handlePreviousCharacter}>&lt;&lt;&lt;</button>
+                <button onClick={handleNextCharacter}>&gt;&gt;&gt;</button>
+              </div>
+            )}
           </div>
           <h2 className="character-title">{selectedCharacter.title}</h2>
         </div>

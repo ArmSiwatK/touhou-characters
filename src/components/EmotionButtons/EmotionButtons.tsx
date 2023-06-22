@@ -66,36 +66,34 @@ const EmotionButtons: React.FC<EmotionButtonsProps> = ({
   <--------------- Rendering --------------->
   */
 
-  if (isMobile) {
-    return (
-      <div className="emotion-buttons" id="responsive">
-        <label htmlFor="emotion-dropdown">Emotion:</label>
-        <select
-          id="emotion-dropdown"
-          value={selectedEmotion}
-          onChange={(e) => setSelectedEmotion(e.target.value)}
-        >
-          {emotions.map((emotion) => (
-            <option key={emotion} value={emotion}>
-              {emotion}
-            </option>
-          ))}
-        </select>
-      </div>
-    );
-  }
-
   return (
     <div className="emotion-buttons">
-      {emotions.map((emotion) => (
-        <button
-          key={emotion}
-          onClick={() => setSelectedEmotion(emotion)}
-          className={selectedEmotion === emotion ? "selected" : ""}
-        >
-          {emotion}
-        </button>
-      ))}
+      {isMobile ? (
+        <div>
+          <label htmlFor="emotion-dropdown">Emotion:</label>
+          <select
+            id="emotion-dropdown"
+            value={selectedEmotion}
+            onChange={(e) => setSelectedEmotion(e.target.value)}
+          >
+            {emotions.map((emotion) => (
+              <option key={emotion} value={emotion}>
+                {emotion}
+              </option>
+            ))}
+          </select>
+        </div>
+      ) : (
+        emotions.map((emotion) => (
+          <button
+            key={emotion}
+            onClick={() => setSelectedEmotion(emotion)}
+            className={selectedEmotion === emotion ? "selected" : ""}
+          >
+            {emotion}
+          </button>
+        ))
+      )}
     </div>
   );
 };
