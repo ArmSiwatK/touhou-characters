@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CharacterSelection from "./components/CharacterSelection/CharacterSelection";
 import EmotionButtons from "./components/EmotionButtons/EmotionButtons";
 import PortraitDisplay from "./components/PortraitDisplay/PortraitDisplay";
@@ -27,9 +27,19 @@ const App: React.FC = () => {
     "Surprised",
   ];
 
-  const handleEmotionSelection = (emotion: string) => {
-    setSelectedEmotion(emotion);
-  };
+  /*
+  <--------------- Getter Functions --------------->
+  */
+
+  const getCharacter = (charId: string) =>
+    characters.find((character) => character.charId === charId) || null;
+
+  const getImagePath = (charId: string) =>
+    `/portraits/${selectedEmotion.toLowerCase()}/${charId}.png`;
+
+  /*
+  <--------------- Character Selection Functions --------------->
+  */
 
   const handleCharacterSelection = (
     event: React.ChangeEvent<HTMLSelectElement>
@@ -39,12 +49,6 @@ const App: React.FC = () => {
       setSelectedCharacter(getCharacter(selectedCharId));
     }
   };
-
-  const getCharacter = (charId: string) =>
-    characters.find((character) => character.charId === charId) || null;
-
-  const getImagePath = (charId: string) =>
-    `/portraits/${selectedEmotion.toLowerCase()}/${charId}.png`;
 
   const handleNextCharacter = () => {
     const currentIndex = characters.findIndex(
@@ -63,6 +67,51 @@ const App: React.FC = () => {
   };
 
   /*
+  <--------------- Emotion Selection Function --------------->
+  */
+
+  const selectEmotion = (forward: boolean) => {
+    const currentIndex = emotions.findIndex(
+      (emotion) => emotion === selectedEmotion
+    );
+    const nextIndex =
+      (forward ? currentIndex + 1 : currentIndex - 1 + emotions.length) %
+      emotions.length;
+    setSelectedEmotion(emotions[nextIndex]);
+  };
+
+  /*
+  <--------------- useEffect Hook --------------->
+  */
+
+  useEffect(() => {
+    const keyMap: { [key: string]: () => void } = {
+      a: handlePreviousCharacter,
+      A: handlePreviousCharacter,
+      d: handleNextCharacter,
+      D: handleNextCharacter,
+      w: () => selectEmotion(true),
+      W: () => selectEmotion(true),
+      s: () => selectEmotion(false),
+      S: () => selectEmotion(false),
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const key = event.key.toLowerCase();
+      const action = keyMap[key];
+      if (action) {
+        action();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [handleNextCharacter, handlePreviousCharacter, selectEmotion]);
+
+  /*
   <--------------- Rendering --------------->
   */
 
@@ -76,12 +125,12 @@ const App: React.FC = () => {
       <EmotionButtons
         emotions={emotions}
         selectedEmotion={selectedEmotion}
-        handleEmotionSelection={handleEmotionSelection}
+        setSelectedEmotion={setSelectedEmotion}
       />
       <PortraitDisplay
+        characters={characters}
         selectedCharacter={selectedCharacter}
         getImagePath={getImagePath}
-        characters={characters}
         handleNextCharacter={handleNextCharacter}
         handlePreviousCharacter={handlePreviousCharacter}
       />

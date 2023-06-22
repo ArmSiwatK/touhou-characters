@@ -4,13 +4,13 @@ import "./EmotionButtons.scss";
 interface EmotionButtonsProps {
   emotions: string[];
   selectedEmotion: string;
-  handleEmotionSelection: (emotion: string) => void;
+  setSelectedEmotion: (emotion: string) => void;
 }
 
 const EmotionButtons: React.FC<EmotionButtonsProps> = ({
   emotions,
   selectedEmotion,
-  handleEmotionSelection,
+  setSelectedEmotion,
 }) => {
   /*
   <--------------- State --------------->
@@ -44,7 +44,7 @@ const EmotionButtons: React.FC<EmotionButtonsProps> = ({
         <select
           id="emotion-dropdown"
           value={selectedEmotion}
-          onChange={(e) => handleEmotionSelection(e.target.value)}
+          onChange={(e) => setSelectedEmotion(e.target.value)}
         >
           {emotions.map((emotion) => (
             <option key={emotion} value={emotion}>
@@ -61,7 +61,7 @@ const EmotionButtons: React.FC<EmotionButtonsProps> = ({
       {emotions.map((emotion) => (
         <button
           key={emotion}
-          onClick={() => handleEmotionSelection(emotion)}
+          onClick={() => setSelectedEmotion(emotion)}
           className={selectedEmotion === emotion ? "selected" : ""}
         >
           {emotion}
