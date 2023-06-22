@@ -1,3 +1,7 @@
+/*
+<--------------- Imports and Interface --------------->
+*/
+
 import React, { useState, useEffect } from "react";
 import "./EmotionButtons.scss";
 
@@ -6,6 +10,10 @@ interface EmotionButtonsProps {
   selectedEmotion: string;
   setSelectedEmotion: (emotion: string) => void;
 }
+
+/*
+<--------------- Component --------------->
+*/
 
 const EmotionButtons: React.FC<EmotionButtonsProps> = ({
   emotions,
@@ -19,8 +27,30 @@ const EmotionButtons: React.FC<EmotionButtonsProps> = ({
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   /*
-  <--------------- useEffect Hook --------------->
+  <--------------- Function --------------->
   */
+
+  const selectEmotion = (forward: boolean) => {
+    const currentIndex = emotions.indexOf(selectedEmotion);
+    const nextIndex =
+      (currentIndex + (forward ? 1 : -1) + emotions.length) % emotions.length;
+    setSelectedEmotion(emotions[nextIndex]);
+  };
+
+  /*
+  <--------------- useEffect Hooks --------------->
+  */
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const key = event.key.toLowerCase();
+      key === "w" ? selectEmotion(true) : key === "s" && selectEmotion(false);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedEmotion]);
 
   useEffect(() => {
     const handleResize = () => {

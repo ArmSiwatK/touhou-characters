@@ -101,20 +101,6 @@ const App: React.FC = () => {
   };
 
   /*
-  <--------------- Emotion Selection Function --------------->
-  */
-
-  const selectEmotion = (forward: boolean) => {
-    const currentIndex = emotions.findIndex(
-      (emotion) => emotion === selectedEmotion
-    );
-    const nextIndex =
-      (forward ? currentIndex + 1 : currentIndex - 1 + emotions.length) %
-      emotions.length;
-    setSelectedEmotion(emotions[nextIndex]);
-  };
-
-  /*
   <--------------- useEffect Hook --------------->
   */
 
@@ -124,10 +110,6 @@ const App: React.FC = () => {
       A: handlePreviousCharacter,
       d: handleNextCharacter,
       D: handleNextCharacter,
-      w: () => selectEmotion(true),
-      W: () => selectEmotion(true),
-      s: () => selectEmotion(false),
-      S: () => selectEmotion(false),
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -143,7 +125,7 @@ const App: React.FC = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [handleNextCharacter, handlePreviousCharacter, selectEmotion]);
+  }, [handleNextCharacter, handlePreviousCharacter]);
 
   /*
   <--------------- Rendering --------------->
