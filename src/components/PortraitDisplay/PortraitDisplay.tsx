@@ -67,7 +67,7 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
     <div className="portrait-display">
       {selectedCharacter && (
         <div className="character-info">
-          <h2>{selectedCharacter.name}</h2>
+          <h2 className="character-name">{selectedCharacter.name}</h2>
           <div className="portrait-gallery">
             <button onClick={handlePreviousCharacter}>&lt;&lt;&lt;</button>
             <img
@@ -76,7 +76,7 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
             />
             <button onClick={handleNextCharacter}>&gt;&gt;&gt;</button>
           </div>
-          <h2>{selectedCharacter.title}</h2>
+          <h2 className="character-title">{selectedCharacter.title}</h2>
         </div>
       )}
     </div>
