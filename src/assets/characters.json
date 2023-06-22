@@ -2,66 +2,77 @@
   {
     "charId": "reimu",
     "name": "Hakurei Reimu",
-    "title": "Shrine Maiden of Paradise"
+    "title": "Shrine Maiden of Paradise",
+    "category": "Protagonists"
   },
 
   {
     "charId": "marisa",
     "name": "Kirisame Marisa",
-    "title": "Ordinary Magician"
+    "title": "Ordinary Magician",
+    "category": "Protagonists"
   },
 
   {
     "charId": "rumia",
     "name": "Rumia",
-    "title": "Youkai Lurking in Darkness"
+    "title": "Youkai Lurking in Darkness",
+    "category": "Embodiment of Scarlet Devil"
   },
 
   {
     "charId": "daiyousei",
     "name": "Daiyousei",
-    "title": "Big Fairy"
+    "title": "Big Fairy",
+    "category": "Embodiment of Scarlet Devil"
   },
 
   {
     "charId": "cirno",
     "name": "Cirno",
-    "title": "Fairy of the Ice"
+    "title": "Fairy of the Ice",
+    "category": "Embodiment of Scarlet Devil"
   },
 
   {
     "charId": "meiling",
     "name": "Hong Meiling",
-    "title": "Chinese Girl"
+    "title": "Chinese Girl",
+    "category": "Embodiment of Scarlet Devil"
   },
 
   {
     "charId": "koakuma",
     "name": "Koakuma",
-    "title": "Little Demon"
+    "title": "Little Demon",
+    "category": "Embodiment of Scarlet Devil"
   },
 
   {
     "charId": "patchouli",
     "name": "Patchouli Knowledge",
-    "title": "Immovable Great Library"
+    "title": "Immovable Great Library",
+    "category": "Embodiment of Scarlet Devil"
   },
 
   {
     "charId": "sakuya",
     "name": "Izayoi Sakuya",
-    "title": "Perfect and Elegant Maid"
+    "title": "Perfect and Elegant Maid",
+    "category": "Embodiment of Scarlet Devil"
   },
 
   {
     "charId": "remilia",
     "name": "Remilia Scarlet",
-    "title": "The Scarlet Devil"
+    "title": "Scarlet Devil",
+    "category": "Embodiment of Scarlet Devil"
   },
 
   {
     "charId": "flandre",
     "name": "Flandre Scarlet",
-    "title": "Sister of the Devil"
+    "title": "Sister of the Devil",
+    "category": "Embodiment of Scarlet Devil"
   }
 ]

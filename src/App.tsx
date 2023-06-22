@@ -1,3 +1,7 @@
+/*
+<--------------- Imports --------------->
+*/
+
 import React, { useState, useEffect } from "react";
 import CharacterSelection from "./components/CharacterSelection/CharacterSelection";
 import EmotionButtons from "./components/EmotionButtons/EmotionButtons";
@@ -5,17 +9,24 @@ import PortraitDisplay from "./components/PortraitDisplay/PortraitDisplay";
 import characters from "./assets/characters.json";
 import "./styles/App.scss";
 
+/*
+<--------------- Component --------------->
+*/
+
 const App: React.FC = () => {
   /*
-  <--------------- States and Variable --------------->
+  <--------------- States and Variables --------------->
   */
 
   const [selectedEmotion, setSelectedEmotion] = useState("Neutral");
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedCharacter, setSelectedCharacter] = useState<any>({
     charId: "reimu",
     name: "Hakurei Reimu",
     title: "Shrine Maiden of Paradise",
   });
+
+  const categories = ["All", "Protagonists", "Embodiment of Scarlet Devil"];
 
   const emotions = [
     "Angry",
@@ -31,8 +42,19 @@ const App: React.FC = () => {
   <--------------- Getter Functions --------------->
   */
 
+  const getFilteredCharacters = () => {
+    if (selectedCategory === "All") {
+      return characters;
+    } else {
+      return characters.filter(
+        (character) => character.category === selectedCategory
+      );
+    }
+  };
+
   const getCharacter = (charId: string) =>
-    characters.find((character) => character.charId === charId) || null;
+    getFilteredCharacters().find((character) => character.charId === charId) ||
+    null;
 
   const getImagePath = (charId: string) =>
     `/portraits/${selectedEmotion.toLowerCase()}/${charId}.png`;
@@ -51,18 +73,25 @@ const App: React.FC = () => {
   };
 
   const handleNextCharacter = () => {
-    const currentIndex = characters.findIndex(
-      (character) => character.charId === selectedCharacter?.charId
-    );
-    setSelectedCharacter(characters[(currentIndex + 1) % characters.length]);
-  };
-
-  const handlePreviousCharacter = () => {
-    const currentIndex = characters.findIndex(
+    const currentIndex = getFilteredCharacters().findIndex(
       (character) => character.charId === selectedCharacter?.charId
     );
     setSelectedCharacter(
-      characters[(currentIndex - 1 + characters.length) % characters.length]
+      getFilteredCharacters()[
+        (currentIndex + 1) % getFilteredCharacters().length
+      ]
+    );
+  };
+
+  const handlePreviousCharacter = () => {
+    const currentIndex = getFilteredCharacters().findIndex(
+      (character) => character.charId === selectedCharacter?.charId
+    );
+    setSelectedCharacter(
+      getFilteredCharacters()[
+        (currentIndex - 1 + getFilteredCharacters().length) %
+          getFilteredCharacters().length
+      ]
     );
   };
 
@@ -119,7 +148,10 @@ const App: React.FC = () => {
     <div className="app">
       <CharacterSelection
         characters={characters}
+        categories={categories}
         selectedCharacter={selectedCharacter}
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
         handleCharacterSelection={handleCharacterSelection}
       />
       <EmotionButtons
