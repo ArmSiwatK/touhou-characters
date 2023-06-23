@@ -1,3 +1,7 @@
+/*
+<--------------- Imports and Interface --------------->
+*/
+
 import React from "react";
 import { Character } from "../../utilities";
 import characters from "../../assets/characters.json";
@@ -9,11 +13,18 @@ interface CharacterProfilesProps {
   setSelectedCharacter: (character: Character) => void;
 }
 
+/*
+<--------------- Component --------------->
+*/
+
 const CharacterProfiles: React.FC<CharacterProfilesProps> = ({
   selectedCharacter,
   selectedCategory,
   setSelectedCharacter,
 }) => {
+  /*
+  <--------------- Functions --------------->
+  */
   const getFilteredCharacters = () => {
     return selectedCategory === "All"
       ? characters
@@ -25,6 +36,10 @@ const CharacterProfiles: React.FC<CharacterProfilesProps> = ({
   const handleCharacterClick = (character: Character) => {
     setSelectedCharacter(character);
   };
+
+  /*
+  <--------------- Rendering --------------->
+  */
 
   const filteredCharacters = getFilteredCharacters();
 
