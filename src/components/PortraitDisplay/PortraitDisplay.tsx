@@ -47,27 +47,32 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
     }
   };
 
-  const handleNextCharacter = () => {
+  const getNextCharacter = () => {
     const currentIndex = getFilteredCharacters().findIndex(
       (character) => character.charId === selectedCharacter?.charId
     );
-    setSelectedCharacter(
-      getFilteredCharacters()[
-        (currentIndex + 1) % getFilteredCharacters().length
-      ]
+    const nextIndex = (currentIndex + 1) % getFilteredCharacters().length;
+    return getFilteredCharacters()[nextIndex];
+  };
+
+  const getPreviousCharacter = () => {
+    const currentIndex = getFilteredCharacters().findIndex(
+      (character) => character.charId === selectedCharacter?.charId
     );
+    const previousIndex =
+      (currentIndex - 1 + getFilteredCharacters().length) %
+      getFilteredCharacters().length;
+    return getFilteredCharacters()[previousIndex];
+  };
+
+  const handleNextCharacter = () => {
+    const nextCharacter = getNextCharacter();
+    setSelectedCharacter(nextCharacter);
   };
 
   const handlePreviousCharacter = () => {
-    const currentIndex = getFilteredCharacters().findIndex(
-      (character) => character.charId === selectedCharacter?.charId
-    );
-    setSelectedCharacter(
-      getFilteredCharacters()[
-        (currentIndex - 1 + getFilteredCharacters().length) %
-          getFilteredCharacters().length
-      ]
-    );
+    const previousCharacter = getPreviousCharacter();
+    setSelectedCharacter(previousCharacter);
   };
 
   /*
@@ -107,6 +112,9 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   <--------------- Rendering --------------->
   */
 
+  const previousCharacter = getPreviousCharacter();
+  const nextCharacter = getNextCharacter();
+
   return (
     <div className="portrait-display">
       {selectedCharacter && (
@@ -116,10 +124,23 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
             {!isMobile && (
               <button onClick={handlePreviousCharacter}>&lt;&lt;&lt;</button>
             )}
-            <img
-              src={getImagePath(selectedCharacter.charId)}
-              alt={`Character portrait - ${selectedCharacter.name}`}
-            />
+            {[previousCharacter, selectedCharacter, nextCharacter].map(
+              (character) => (
+                <div
+                  className={`portrait-item ${
+                    character.charId === selectedCharacter.charId
+                      ? "selected"
+                      : ""
+                  }`}
+                  key={character.charId}
+                >
+                  <img
+                    src={getImagePath(character.charId)}
+                    alt={`Character portrait - ${character.name}`}
+                  />
+                </div>
+              )
+            )}
             {!isMobile && (
               <button onClick={handleNextCharacter}>&gt;&gt;&gt;</button>
             )}

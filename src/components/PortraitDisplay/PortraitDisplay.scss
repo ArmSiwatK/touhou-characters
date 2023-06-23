@@ -29,17 +29,26 @@
       align-items: center;
       gap: 10px;
 
-      img {
-        width: 100%;
-        height: auto;
-        background: linear-gradient(
-          to bottom,
-          rgba(211, 211, 211, 0.25) 0%,
-          white 100%
-        );
-        border-radius: 4px;
-        box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
-        z-index: 1;
+      .portrait-item {
+        opacity: 0.5; /* Set opacity to 0.5 for non-selected images */
+        transition: opacity 0.3s ease; /* Add transition for smooth animation */
+
+        &.selected {
+          opacity: 1; /* Set opacity to 1 for selected image */
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          background: linear-gradient(
+            to bottom,
+            rgba(211, 211, 211, 0.25) 0%,
+            white 100%
+          );
+          border-radius: 4px;
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+          z-index: 1;
+        }
       }
 
       button {
