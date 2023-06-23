@@ -34,9 +34,6 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   <--------------- Function --------------->
   */
 
-  const getImagePath = (charId: string) =>
-    `/portraits/${selectedEmotion.toLowerCase()}/${charId}.png`;
-
   const getFilteredCharacters = () => {
     if (selectedCategory === "All") {
       return characters;
@@ -130,12 +127,14 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
                   className={`portrait-item ${
                     character.charId === selectedCharacter.charId
                       ? "selected"
-                      : ""
+                      : "side"
                   }`}
                   key={character.charId}
                 >
                   <img
-                    src={getImagePath(character.charId)}
+                    src={`/portraits/${selectedEmotion.toLowerCase()}/${
+                      character.charId
+                    }.png`}
                     alt={`Character portrait - ${character.name}`}
                   />
                 </div>

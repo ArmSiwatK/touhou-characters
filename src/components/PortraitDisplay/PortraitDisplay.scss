@@ -30,11 +30,15 @@
       gap: 10px;
 
       .portrait-item {
-        opacity: 0.5; /* Set opacity to 0.5 for non-selected images */
-        transition: opacity 0.3s ease; /* Add transition for smooth animation */
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
 
         &.selected {
-          opacity: 1; /* Set opacity to 1 for selected image */
+          opacity: 1;
+        }
+
+        &.side:hover {
+          opacity: 0.75;
         }
 
         img {
