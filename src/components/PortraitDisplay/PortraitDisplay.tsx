@@ -130,10 +130,14 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
                   onClick={() => setSelectedCharacter(character)}
                 >
                   <img
-                    src={`/portraits/${selectedEmotion.toLowerCase()}/${
-                      character.charId
-                    }.png`}
-                    alt={`Character portrait - ${character.name}`}
+                    src={
+                      character.charId === selectedCharacter.charId
+                        ? `/portraits/${selectedEmotion.toLowerCase()}/${
+                            character.charId
+                          }.png`
+                        : `/portraits/neutral/${character.charId}.png`
+                    }
+                    alt={`Character portrait – ${character.name}`}
                   />
                 </div>
               )
