@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import CharacterSelection from "./components/CharacterSelection/CharacterSelection";
 import EmotionButtons from "./components/EmotionButtons/EmotionButtons";
 import PortraitDisplay from "./components/PortraitDisplay/PortraitDisplay";
+import BackgroundGallery from "./components/BackgroundGallery/BackgroundGallery";
 import { Character } from "./utilities";
 import "./styles/App.scss";
 
@@ -15,7 +16,7 @@ import "./styles/App.scss";
 
 const App: React.FC = () => {
   /*
-  <--------------- States and Variables --------------->
+  <--------------- States --------------->
   */
 
   const [selectedEmotion, setSelectedEmotion] = useState("Neutral");
@@ -49,6 +50,7 @@ const App: React.FC = () => {
         selectedEmotion={selectedEmotion}
         setSelectedCharacter={setSelectedCharacter}
       />
+      <BackgroundGallery selectedCharacter={selectedCharacter} />
     </div>
   );
 };
