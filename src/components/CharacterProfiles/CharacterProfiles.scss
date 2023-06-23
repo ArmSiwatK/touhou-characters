@@ -1,0 +1,17 @@
+.character-profiles {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.character-profile {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &.selected {
+    opacity: 1;
+  }
+}

@@ -50,7 +50,11 @@ const App: React.FC = () => {
         selectedEmotion={selectedEmotion}
         setSelectedCharacter={setSelectedCharacter}
       />
-      <CharacterProfiles setSelectedCharacter={setSelectedCharacter} />
+      <CharacterProfiles
+        selectedCharacter={selectedCharacter}
+        selectedCategory={selectedCategory}
+        setSelectedCharacter={setSelectedCharacter}
+      />
     </div>
   );
 };
