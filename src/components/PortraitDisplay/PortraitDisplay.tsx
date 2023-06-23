@@ -118,9 +118,6 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
         <div className="character-info">
           <h2 className="character-name">{selectedCharacter.name}</h2>
           <div className="portrait-gallery">
-            {!isMobile && (
-              <button onClick={handlePreviousCharacter}>&lt;&lt;&lt;</button>
-            )}
             {[previousCharacter, selectedCharacter, nextCharacter].map(
               (character) => (
                 <div
@@ -130,6 +127,7 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
                       : "side"
                   }`}
                   key={character.charId}
+                  onClick={() => setSelectedCharacter(character)}
                 >
                   <img
                     src={`/portraits/${selectedEmotion.toLowerCase()}/${
@@ -139,9 +137,6 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
                   />
                 </div>
               )
-            )}
-            {!isMobile && (
-              <button onClick={handleNextCharacter}>&gt;&gt;&gt;</button>
             )}
             {isMobile && (
               <div>
