@@ -35,41 +35,39 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   */
 
   const getFilteredCharacters = () => {
-    if (selectedCategory === "All") {
-      return characters;
-    } else {
-      return characters.filter(
-        (character) => character.category === selectedCategory
-      );
-    }
+    return selectedCategory === "All"
+      ? characters
+      : characters.filter(
+          (character) => character.category === selectedCategory
+        );
   };
 
   const getNextCharacter = () => {
-    const currentIndex = getFilteredCharacters().findIndex(
+    const filteredCharacters = getFilteredCharacters();
+    const currentIndex = filteredCharacters.findIndex(
       (character) => character.charId === selectedCharacter?.charId
     );
-    const nextIndex = (currentIndex + 1) % getFilteredCharacters().length;
-    return getFilteredCharacters()[nextIndex];
+    const nextIndex = (currentIndex + 1) % filteredCharacters.length;
+    return filteredCharacters[nextIndex];
   };
 
   const getPreviousCharacter = () => {
-    const currentIndex = getFilteredCharacters().findIndex(
+    const filteredCharacters = getFilteredCharacters();
+    const currentIndex = filteredCharacters.findIndex(
       (character) => character.charId === selectedCharacter?.charId
     );
     const previousIndex =
-      (currentIndex - 1 + getFilteredCharacters().length) %
-      getFilteredCharacters().length;
-    return getFilteredCharacters()[previousIndex];
+      (currentIndex - 1 + filteredCharacters.length) %
+      filteredCharacters.length;
+    return filteredCharacters[previousIndex];
   };
 
   const handleNextCharacter = () => {
-    const nextCharacter = getNextCharacter();
-    setSelectedCharacter(nextCharacter);
+    setSelectedCharacter(getNextCharacter());
   };
 
   const handlePreviousCharacter = () => {
-    const previousCharacter = getPreviousCharacter();
-    setSelectedCharacter(previousCharacter);
+    setSelectedCharacter(getPreviousCharacter());
   };
 
   /*
