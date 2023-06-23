@@ -116,49 +116,52 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
         <div className="character-info">
           <h2 className="character-name">{selectedCharacter.name}</h2>
           <div className="portrait-gallery">
-            {!isMobile &&
-              [previousCharacter, selectedCharacter, nextCharacter].map(
-                (character) => (
-                  <div
-                    className={`portrait-item ${
-                      character.charId === selectedCharacter.charId
-                        ? "selected"
-                        : "side"
-                    }`}
-                    key={character.charId}
-                    onClick={() => setSelectedCharacter(character)}
-                  >
-                    <img
-                      src={
+            <>
+              {!isMobile &&
+                [previousCharacter, selectedCharacter, nextCharacter].map(
+                  (character) => (
+                    <div
+                      className={`portrait-item ${
                         character.charId === selectedCharacter.charId
-                          ? `/portraits/${selectedEmotion.toLowerCase()}/${
-                              character.charId
-                            }.png`
-                          : `/portraits/neutral/${character.charId}.png`
-                      }
-                      alt={`Character portrait – ${character.name}`}
-                    />
-                  </div>
-                )
-              )}
+                          ? "selected"
+                          : "side"
+                      }`}
+                      key={character.charId}
+                      onClick={() => setSelectedCharacter(character)}
+                    >
+                      <img
+                        src={
+                          character.charId === selectedCharacter.charId
+                            ? `/portraits/${selectedEmotion.toLowerCase()}/${
+                                character.charId
+                              }.png`
+                            : `/portraits/neutral/${character.charId}.png`
+                        }
+                        alt={`Character portrait – ${character.name}`}
+                      />
+                    </div>
+                  )
+                )}
+              <h2 className="character-title">{selectedCharacter.title}</h2>
+            </>
             {isMobile && (
-              <div className="portrait-item selected">
-                <img
-                  src={`/portraits/${selectedEmotion.toLowerCase()}/${
-                    selectedCharacter.charId
-                  }.png`}
-                  alt={`Character portrait – ${selectedCharacter.name}`}
-                />
-              </div>
-            )}
-            {isMobile && (
-              <div>
-                <button onClick={handlePreviousCharacter}>&lt;&lt;&lt;</button>
-                <button onClick={handleNextCharacter}>&gt;&gt;&gt;</button>
-              </div>
+              <>
+                <div className="portrait-item selected">
+                  <img
+                    src={`/portraits/${selectedEmotion.toLowerCase()}/${
+                      selectedCharacter.charId
+                    }.png`}
+                    alt={`Character portrait – ${selectedCharacter.name}`}
+                  />
+                </div>
+                <h2 className="character-title">{selectedCharacter.title}</h2>
+                <div className="gallery-buttons">
+                  <button onClick={handlePreviousCharacter}>◄</button>
+                  <button onClick={handleNextCharacter}>►</button>
+                </div>
+              </>
             )}
           </div>
-          <h2 className="character-title">{selectedCharacter.title}</h2>
         </div>
       )}
     </div>

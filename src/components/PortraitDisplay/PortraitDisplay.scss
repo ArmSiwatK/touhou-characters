@@ -16,6 +16,10 @@
       font-weight: bold;
       margin: 0 auto 20px;
       color: #333;
+
+      @media (max-width: 768px) {
+        margin-top: 30px;
+      }
     }
 
     .character-title {
@@ -56,9 +60,9 @@
       }
 
       button {
-        margin: 0 5px;
-        padding: 12px 20px;
-        font-size: 14px;
+        margin: 0 24px;
+        padding: 8px 32px;
+        font-size: 32px;
         color: #333;
         background-color: #f2f2f2;
         border: none;
@@ -74,6 +78,10 @@
       @media (max-width: 768px) {
         flex-direction: column;
       }
+    }
+
+    .gallery-buttons {
+      margin-bottom: 30px;
     }
   }
 
