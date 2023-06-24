@@ -46,15 +46,18 @@ const CharacterProfiles: React.FC<CharacterProfilesProps> = ({
   return (
     <div className="character-profiles">
       {filteredCharacters.map((character) => (
-        <img
-          key={character.charId}
-          src={`/profiles/${character.charId}.webp`}
-          alt={character.name}
-          onClick={() => handleCharacterClick(character)}
+        <div
           className={`character-profile ${
             selectedCharacter.charId === character.charId ? "selected" : ""
           }`}
-        />
+          key={character.charId}
+          onClick={() => handleCharacterClick(character)}
+        >
+          <img
+            src={`/profiles/${character.charId}.webp`}
+            alt={character.name}
+          />
+        </div>
       ))}
     </div>
   );

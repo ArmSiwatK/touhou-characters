@@ -12,10 +12,18 @@
 }
 
 .character-profile {
-  width: 150px;
-  border-radius: 50%;
   opacity: 0.5;
   transition: opacity 0.3s ease;
+
+  img {
+    width: 150px;
+    border-radius: 50%;
+    background: linear-gradient(
+      to top,
+      rgba(211, 211, 211, 0.25) 0%,
+      white 100%
+    );
+  }
 
   &:hover {
     opacity: 0.75;
