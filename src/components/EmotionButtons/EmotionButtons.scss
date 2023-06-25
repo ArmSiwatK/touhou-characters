@@ -50,4 +50,14 @@
       outline: none;
     }
   }
+
+  .responsive {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    button {
+      padding: 8px 30px;
+    }
+  }
 }

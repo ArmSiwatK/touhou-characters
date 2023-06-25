@@ -25,11 +25,11 @@ export const categories = [
 ];
 
 export const emotions = [
-  "Angry",
-  "Confused",
-  "Happy",
-  "Neutral",
-  "Sad",
-  "Special",
-  "Surprised",
+  { name: "Angry", emoji: "😡" },
+  { name: "Confused", emoji: "😕" },
+  { name: "Happy", emoji: "😄" },
+  { name: "Neutral", emoji: "😐" },
+  { name: "Sad", emoji: "😢" },
+  { name: "Special", emoji: "😶" },
+  { name: "Surprised", emoji: "😲" },
 ];

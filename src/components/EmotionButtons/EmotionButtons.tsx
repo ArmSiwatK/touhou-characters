@@ -24,16 +24,18 @@ const EmotionButtons: React.FC<EmotionButtonsProps> = ({
   */
 
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [currentEmotionIndex, setCurrentEmotionIndex] = useState<number>(3);
 
   /*
   <--------------- Function --------------->
   */
 
   const selectEmotion = (forward: boolean) => {
-    const currentIndex = emotions.indexOf(selectedEmotion);
     const nextIndex =
-      (currentIndex + (forward ? 1 : -1) + emotions.length) % emotions.length;
-    setSelectedEmotion(emotions[nextIndex]);
+      (currentEmotionIndex + (forward ? 1 : -1) + emotions.length) %
+      emotions.length;
+    setCurrentEmotionIndex(nextIndex);
+    setSelectedEmotion(emotions[nextIndex].name);
   };
 
   /*
@@ -49,7 +51,7 @@ const EmotionButtons: React.FC<EmotionButtonsProps> = ({
     window.addEventListener("keydown", handleKeyDown);
 
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedEmotion]);
+  }, [currentEmotionIndex]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -69,28 +71,21 @@ const EmotionButtons: React.FC<EmotionButtonsProps> = ({
   return (
     <div className="emotion-buttons">
       {isMobile ? (
-        <div>
-          <label htmlFor="emotion-dropdown">Emotion:</label>
-          <select
-            id="emotion-dropdown"
-            value={selectedEmotion}
-            onChange={(e) => setSelectedEmotion(e.target.value)}
-          >
-            {emotions.map((emotion) => (
-              <option key={emotion} value={emotion}>
-                {emotion}
-              </option>
-            ))}
-          </select>
+        <div className="responsive">
+          <button onClick={() => selectEmotion(false)}>&#8249;</button>
+          <div className="selected-emoji">
+            {emotions[currentEmotionIndex].emoji}
+          </div>
+          <button onClick={() => selectEmotion(true)}>&#8250;</button>
         </div>
       ) : (
         emotions.map((emotion) => (
           <button
-            key={emotion}
-            onClick={() => setSelectedEmotion(emotion)}
-            className={selectedEmotion === emotion ? "selected" : ""}
+            key={emotion.name}
+            onClick={() => setSelectedEmotion(emotion.name)}
+            className={selectedEmotion === emotion.name ? "selected" : ""}
           >
-            {emotion}
+            {emotion.emoji}
           </button>
         ))
       )}
