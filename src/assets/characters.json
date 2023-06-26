@@ -3,881 +3,1007 @@
     "charId": "reimu",
     "name": "Hakurei Reimu",
     "title": "Shrine Maiden of Paradise",
-    "category": "Protagonists"
+    "category": "Protagonists",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Reimu_Hakurei"
   },
 
   {
     "charId": "marisa",
     "name": "Kirisame Marisa",
     "title": "Ordinary Magician",
-    "category": "Protagonists"
+    "category": "Protagonists",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Marisa_Kirisame"
   },
 
   {
     "charId": "kirin",
     "name": "Satsuki Rin",
     "title": "Erhu-Playing Qilin",
-    "category": "Protagonists"
+    "category": "Protagonists",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Rin_Satsuki"
   },
 
   {
     "charId": "rumia",
     "name": "Rumia",
     "title": "Youkai Lurking in Darkness",
-    "category": "Embodiment of Scarlet Devil"
+    "category": "Embodiment of Scarlet Devil",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Rumia"
   },
 
   {
     "charId": "daiyousei",
     "name": "Daiyousei",
     "title": "Big Fairy",
-    "category": "Embodiment of Scarlet Devil"
+    "category": "Embodiment of Scarlet Devil",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Daiyousei"
   },
 
   {
     "charId": "cirno",
     "name": "Cirno",
     "title": "Fairy of the Ice",
-    "category": "Embodiment of Scarlet Devil"
+    "category": "Embodiment of Scarlet Devil",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "meiling",
     "name": "Hong Meiling",
     "title": "Chinese Girl",
-    "category": "Embodiment of Scarlet Devil"
+    "category": "Embodiment of Scarlet Devil",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Hong_Meiling"
   },
 
   {
     "charId": "koakuma",
     "name": "Koakuma",
     "title": "Little Demon",
-    "category": "Embodiment of Scarlet Devil"
+    "category": "Embodiment of Scarlet Devil",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Koakuma"
   },
 
   {
     "charId": "patchouli",
     "name": "Patchouli Knowledge",
     "title": "Immovable Great Library",
-    "category": "Embodiment of Scarlet Devil"
+    "category": "Embodiment of Scarlet Devil",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Patchouli_Knowledge"
   },
 
   {
     "charId": "sakuya",
     "name": "Izayoi Sakuya",
     "title": "Perfect and Elegant Maid",
-    "category": "Embodiment of Scarlet Devil"
+    "category": "Embodiment of Scarlet Devil",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Sakuya_Izayoi"
   },
 
   {
     "charId": "remilia",
     "name": "Remilia Scarlet",
     "title": "Scarlet Devil",
-    "category": "Embodiment of Scarlet Devil"
+    "category": "Embodiment of Scarlet Devil",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Remilia_Scarlet"
   },
 
   {
     "charId": "flandre",
     "name": "Flandre Scarlet",
     "title": "Sister of the Devil",
-    "category": "Embodiment of Scarlet Devil"
+    "category": "Embodiment of Scarlet Devil",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Flandre_Scarlet"
   },
 
   {
     "charId": "letty",
     "name": "Letty Whiterock",
     "title": "What Winter Left Behind",
-    "category": "Perfect Cherry Blossom"
+    "category": "Perfect Cherry Blossom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Letty_Whiterock"
   },
 
   {
     "charId": "chen",
     "name": "Chen",
     "title": "Black Cat of Bad Omens",
-    "category": "Perfect Cherry Blossom"
+    "category": "Perfect Cherry Blossom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Chen"
   },
 
   {
     "charId": "alice",
     "name": "Alice Margatroid",
     "title": "Seven-Colored Puppeteer",
-    "category": "Perfect Cherry Blossom"
+    "category": "Perfect Cherry Blossom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Alice_Margatroid"
   },
 
   {
     "charId": "lilywhite",
     "name": "Lily White",
     "title": "Fairy Herald of Spring",
-    "category": "Perfect Cherry Blossom"
+    "category": "Perfect Cherry Blossom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Lily_White"
   },
 
   {
     "charId": "lunasa",
     "name": "Lunasa Prismriver",
     "title": "Poltergeist Violinist",
-    "category": "Perfect Cherry Blossom"
+    "category": "Perfect Cherry Blossom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Lunasa_Prismriver"
   },
 
   {
     "charId": "merlin",
     "name": "Merlin Prismriver",
     "title": "Poltergeist Trumpeteer",
-    "category": "Perfect Cherry Blossom"
+    "category": "Perfect Cherry Blossom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Merlin_Prismriver"
   },
 
   {
     "charId": "lyrica",
     "name": "Lyrica Prismriver",
     "title": "Poltergeist Keyboardist",
-    "category": "Perfect Cherry Blossom"
+    "category": "Perfect Cherry Blossom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Lyrica_Prismriver"
   },
 
   {
     "charId": "youmu",
     "name": "Konpaku Youmu",
     "title": "Half-Human Half-Phantom Gardener",
-    "category": "Perfect Cherry Blossom"
+    "category": "Perfect Cherry Blossom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Youmu_Konpaku"
   },
 
   {
     "charId": "yuyuko",
     "name": "Saigyouji Yuyuko",
     "title": "Dreaming Ghost",
-    "category": "Perfect Cherry Blossom"
+    "category": "Perfect Cherry Blossom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Yuyuko_Saigyouji"
   },
 
   {
     "charId": "ran",
     "name": "Yakumo Ran",
     "title": "Cunning Nine-Tailed Fox",
-    "category": "Perfect Cherry Blossom"
+    "category": "Perfect Cherry Blossom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Ran_Yakumo"
   },
 
   {
     "charId": "yukari",
     "name": "Yakumo Yukari",
     "title": "Youkai of Boundaries",
-    "category": "Perfect Cherry Blossom"
+    "category": "Perfect Cherry Blossom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Yukari_Yakumo"
   },
 
   {
     "charId": "renko",
     "name": "Usami Renko",
     "title": "Physics Major",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Renko_Usami"
   },
 
   {
     "charId": "maribel",
     "name": "Maribel Hearn",
     "title": "Psychology Major",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Maribel_Hearn"
   },
 
   {
     "charId": "rinnosuke",
     "name": "Morichika Rinnosuke",
     "title": "Proprietor of Kourindou",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Rinnosuke_Morichika"
   },
 
   {
     "charId": "tokiko",
     "name": "Tokiko",
     "title": "Crested Ibis Youkai",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Tokiko"
   },
 
   {
     "charId": "suika",
     "name": "Ibuki Suika",
     "title": "Tiny Night Parade of One Hundred Demons",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Suika_Ibuki"
   },
 
   {
     "charId": "wriggle",
     "name": "Wriggle Nightbug",
     "title": "Bug of Light Wriggling in the Dark",
-    "category": "Imperishable Night"
+    "category": "Imperishable Night",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Wriggle_Nightbug"
   },
 
   {
     "charId": "mystia",
     "name": "Mystia Lorelei",
     "title": "Night Sparrow Apparition",
-    "category": "Imperishable Night"
+    "category": "Imperishable Night",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Mystia_Lorelei"
   },
 
   {
     "charId": "keine",
     "name": "Kamishirasawa Keine",
     "title": "Half Beast Who Eats History",
-    "category": "Imperishable Night"
+    "category": "Imperishable Night",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Keine_Kamishirasawa"
   },
 
   {
     "charId": "tewi",
     "name": "Inaba Tewi",
     "title": "Bare White Rabbit of Good Fortune",
-    "category": "Imperishable Night"
+    "category": "Imperishable Night",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Tewi_Inaba"
   },
 
   {
     "charId": "reisen",
     "name": "Reisen Udongein Inaba",
     "title": "Lunatic Red Eyes",
-    "category": "Imperishable Night"
+    "category": "Imperishable Night",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Reisen_Udongein_Inaba"
   },
 
   {
     "charId": "eirin",
     "name": "Yagokoro Eirin",
     "title": "Brain of the Moon",
-    "category": "Imperishable Night"
+    "category": "Imperishable Night",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Eirin_Yagokoro"
   },
 
   {
     "charId": "kaguya",
     "name": "Houraisan Kaguya",
     "title": "Eternal Princess",
-    "category": "Imperishable Night"
+    "category": "Imperishable Night",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Kaguya_Houraisan"
   },
 
   {
     "charId": "mokou",
     "name": "Fujiwara no Mokou",
     "title": "Hourai in Form",
-    "category": "Imperishable Night"
+    "category": "Imperishable Night",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Fujiwara_no_Mokou"
   },
 
   {
     "charId": "sunny",
     "name": "Sunny Milk",
     "title": "Radiant Light of the Sun",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "luna",
     "name": "Luna Child",
     "title": "Silent Light of the Moon",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "star",
     "name": "Star Sapphire",
     "title": "Showering Light of the Star",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "aya",
     "name": "Shameimaru Aya",
     "title": "Traditional Reporter of Fantasy",
-    "category": "Phantasmagoria of Flower View"
+    "category": "Phantasmagoria of Flower View",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "medicine",
     "name": "Medicine Melancholy",
     "title": "Little Sweet Poison",
-    "category": "Phantasmagoria of Flower View"
+    "category": "Phantasmagoria of Flower View",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "yuuka",
     "name": "Kazami Yuuka",
     "title": "Flower Master of the Four Seasons",
-    "category": "Phantasmagoria of Flower View"
+    "category": "Phantasmagoria of Flower View",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "komachi",
     "name": "Onozuka Komachi",
     "title": "Guide of the Sanzu River",
-    "category": "Phantasmagoria of Flower View"
+    "category": "Phantasmagoria of Flower View",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "eiki",
     "name": "Shiki Eiki, Yamaxanadu",
     "title": "Supreme Judge of Paradise",
-    "category": "Phantasmagoria of Flower View"
+    "category": "Phantasmagoria of Flower View",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "toyohime",
     "name": "Watatsuki no Toyohime",
     "title": "Moon Princess Who Connects Seas and Mountains",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "yorihime",
     "name": "Watatsuki no Yorihime",
     "title": "Moon Princess Possessed by Divine Spirits",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "akyuu",
     "name": "Hieda no Akyuu",
     "title": "Memory of Gensokyo",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "shizuha",
     "name": "Aki Shizuha",
     "title": "Symbol of Loneliness and Demise",
-    "category": "Mountain of Faith"
+    "category": "Mountain of Faith",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "minoriko",
     "name": "Aki Minoriko",
     "title": "Symbol of Abundance and Harvest",
-    "category": "Mountain of Faith"
+    "category": "Mountain of Faith",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "hina",
     "name": "Kagiyama Hina",
     "title": "Secret God of Nagashi-Bina",
-    "category": "Mountain of Faith"
+    "category": "Mountain of Faith",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "nitori",
     "name": "Kawashiro Nitori",
     "title": "Underwater Engineer",
-    "category": "Mountain of Faith"
+    "category": "Mountain of Faith",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "momiji",
     "name": "Inubashiri Momiji",
     "title": "Subordinate Patrol Tengu",
-    "category": "Mountain of Faith"
+    "category": "Mountain of Faith",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "sanae",
     "name": "Kochiya Sanae",
     "title": "Deified Human of the Wind",
-    "category": "Mountain of Faith"
+    "category": "Mountain of Faith",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "kanako",
     "name": "Yasaka Kanako",
     "title": "Avatar of Mountains and Lakes",
-    "category": "Mountain of Faith"
+    "category": "Mountain of Faith",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "suwako",
     "name": "Moriya Suwako",
     "title": "Pinnacle of Native Gods",
-    "category": "Mountain of Faith"
+    "category": "Mountain of Faith",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "iku",
     "name": "Nagae Iku",
     "title": "Beautiful Scarlet Cloth",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "tenshi",
     "name": "Hinanawi Tenshi",
     "title": "Girl of Neither Perception nor Non-Perception",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "kisume",
     "name": "Kisume",
     "title": "Dreadful Wonder of the Well",
-    "category": "Subterranean Animism"
+    "category": "Subterranean Animism",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "yamame",
     "name": "Kurodani Yamame",
     "title": "Bright Net in the Dark Cave",
-    "category": "Subterranean Animism"
+    "category": "Subterranean Animism",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "parsee",
     "name": "Mizuhashi Parsee",
     "title": "Jealousy Beneath the Crust",
-    "category": "Subterranean Animism"
+    "category": "Subterranean Animism",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "yuugi",
     "name": "Hoshiguma Yuugi",
     "title": "Renowned Primordial Strength",
-    "category": "Subterranean Animism"
+    "category": "Subterranean Animism",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "satori",
     "name": "Komeiji Satori",
     "title": "Girl Who Even Vengeful Spirits Fear",
-    "category": "Subterranean Animism"
+    "category": "Subterranean Animism",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "orin",
     "name": "Kaenbyou Rin",
     "title": "Hell's Traffic Accident",
-    "category": "Subterranean Animism"
+    "category": "Subterranean Animism",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "okuu",
     "name": "Reiuji Utsuho",
     "title": "Scorching, Troublesome Divine Flame",
-    "category": "Subterranean Animism"
+    "category": "Subterranean Animism",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "koishi",
     "name": "Komeiji Koishi",
     "title": "Closed Eye of Love",
-    "category": "Subterranean Animism"
+    "category": "Subterranean Animism",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "nazrin",
     "name": "Nazrin",
     "title": "Little Dowser General",
-    "category": "Undefined Fantastic Object"
+    "category": "Undefined Fantastic Object",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "kogasa",
     "name": "Tatara Kogasa",
     "title": "Cheery Forgotten Umbrella",
-    "category": "Undefined Fantastic Object"
+    "category": "Undefined Fantastic Object",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "ichirin",
     "name": "Kumoi Ichirin",
     "title": "Great Wheel, Having Guarded and Been Guarded",
-    "category": "Undefined Fantastic Object"
+    "category": "Undefined Fantastic Object",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "minamitsu",
     "name": "Murasa Minamitsu",
     "title": "Water-Bound Ghost",
-    "category": "Undefined Fantastic Object"
+    "category": "Undefined Fantastic Object",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "shou",
     "name": "Toramaru Shou",
     "title": "Disciple of Bishamonten",
-    "category": "Undefined Fantastic Object"
+    "category": "Undefined Fantastic Object",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "byakuren",
     "name": "Hijiri Byakuren",
     "title": "Mystic Abbess of a Youkai Temple",
-    "category": "Undefined Fantastic Object"
+    "category": "Undefined Fantastic Object",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "nue",
     "name": "Houjuu Nue",
     "title": "Unidentified Fantastic-Flying Girl",
-    "category": "Undefined Fantastic Object"
+    "category": "Undefined Fantastic Object",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "hatate",
     "name": "Himekaidou Hatate",
     "title": "Modern-Day Thoughtography Reporter",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "kasen",
     "name": "Ibaraki Kasen",
     "title": "One-Armed Horned Hermit",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "kyouko",
     "name": "Kasodani Kyouko",
     "title": "Sutra-Chanting Yamabiko",
-    "category": "Ten Desires"
+    "category": "Ten Desires",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "yoshika",
     "name": "Miyako Yoshika",
     "title": "Loyal Cadaver",
-    "category": "Ten Desires"
+    "category": "Ten Desires",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "seiga",
     "name": "Kaku Seiga",
     "title": "Wicked Hermit Who Passes Through Walls",
-    "category": "Ten Desires"
+    "category": "Ten Desires",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "tojiko",
     "name": "Soga no Tojiko",
     "title": "Ghost of the Children of the Gods",
-    "category": "Ten Desires"
+    "category": "Ten Desires",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "futo",
     "name": "Mononobe no Futo",
     "title": "Shikaisen from Ancient Japan",
-    "category": "Ten Desires"
+    "category": "Ten Desires",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "miko",
     "name": "Toyosatomimi no Miko",
     "title": "Heavenly Taoist",
-    "category": "Ten Desires"
+    "category": "Ten Desires",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "mamizou",
     "name": "Futatsuiwa Mamizou",
     "title": "Bake-Danuki, Ten Transformations",
-    "category": "Ten Desires"
+    "category": "Ten Desires",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "kosuzu",
     "name": "Motoori Kosuzu",
     "title": "Bibliophile with a Deciphering Eye",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "kokoro",
     "name": "Hata no Kokoro",
     "title": "Expressive Poker Face",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "wakasagihime",
     "name": "Wakasagihime",
     "title": "Mermaid in Freshwater",
-    "category": "Double Dealing Character"
+    "category": "Double Dealing Character",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "sekibanki",
     "name": "Sekibanki",
     "title": "Rokurokubi Oddity",
-    "category": "Double Dealing Character"
+    "category": "Double Dealing Character",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "kagerou",
     "name": "Imaizumi Kagerou",
     "title": "Loup-Garou of the Bamboo Forest",
-    "category": "Double Dealing Character"
+    "category": "Double Dealing Character",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "benben",
     "name": "Tsukumo Benben",
     "title": "Tsukumogami of a Worn Biwa",
-    "category": "Double Dealing Character"
+    "category": "Double Dealing Character",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "yatsuhashi",
     "name": "Tsukumo Yatsuhashi",
     "title": "Tsukumogami of a Worn Koto",
-    "category": "Double Dealing Character"
+    "category": "Double Dealing Character",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "seija",
     "name": "Kijin Seija",
     "title": "Counterattacking Amanojaku",
-    "category": "Double Dealing Character"
+    "category": "Double Dealing Character",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "shinmyoumaru",
     "name": "Sukuna Shinmyoumaru",
     "title": "Descendant of the Inchlings",
-    "category": "Double Dealing Character"
+    "category": "Double Dealing Character",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "raiko",
     "name": "Horikawa Raiko",
     "title": "Phantasmagoric Percussionist",
-    "category": "Double Dealing Character"
+    "category": "Double Dealing Character",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "sumireko",
     "name": "Usami Sumireko",
     "title": "First President of the Secret Sealing Club",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "seiran",
     "name": "Seiran",
     "title": "Turquoise Eagle-Rabbit",
-    "category": "Legacy of Lunatic Kingdom"
+    "category": "Legacy of Lunatic Kingdom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "ringo",
     "name": "Ringo",
     "title": "Mandarin Eagle-Rabbit",
-    "category": "Legacy of Lunatic Kingdom"
+    "category": "Legacy of Lunatic Kingdom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "doremy",
     "name": "Doremy Sweet",
     "title": "Ruler of Dreams",
-    "category": "Legacy of Lunatic Kingdom"
+    "category": "Legacy of Lunatic Kingdom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "sagume",
     "name": "Kishin Sagume",
     "title": "Goddess Who Invites Slips of Tongue",
-    "category": "Legacy of Lunatic Kingdom"
+    "category": "Legacy of Lunatic Kingdom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "clownpiece",
     "name": "Clownpiece",
     "title": "Fairy of Hell",
-    "category": "Legacy of Lunatic Kingdom"
+    "category": "Legacy of Lunatic Kingdom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "junko",
     "name": "Junko",
     "title": "　",
-    "category": "Legacy of Lunatic Kingdom"
+    "category": "Legacy of Lunatic Kingdom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "hecatia",
     "name": "Hecatia Lapislazuli",
     "title": "Goddess of Hell",
-    "category": "Legacy of Lunatic Kingdom"
+    "category": "Legacy of Lunatic Kingdom",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "joon",
     "name": "Yorigami Jo'on",
     "title": "Most-Despicable and Disastrous God of Pestilence",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "shion",
     "name": "Yorigami Shion",
     "title": "Most-Despicable and Disastrous God of Poverty",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "larva",
     "name": "Eternity Larva",
     "title": "Butterfly Fairy Approaching Divinity",
-    "category": "Hidden Star in Four Seasons"
+    "category": "Hidden Star in Four Seasons",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "nemuno",
     "name": "Sakata Nemuno",
     "title": "Yamauba Who Surpasses the Transient Barrier",
-    "category": "Hidden Star in Four Seasons"
+    "category": "Hidden Star in Four Seasons",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "aunn",
     "name": "Komano Aunn",
     "title": "Guardian Beast Devoted to Gods and Buddhas",
-    "category": "Hidden Star in Four Seasons"
+    "category": "Hidden Star in Four Seasons",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "narumi",
     "name": "Yatadera Narumi",
     "title": "Magical Jizō Manifested in the Forest",
-    "category": "Hidden Star in Four Seasons"
+    "category": "Hidden Star in Four Seasons",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "satono",
     "name": "Nishida Satono",
     "title": "All-Too-Dangerous Backup Dancer",
-    "category": "Hidden Star in Four Seasons"
+    "category": "Hidden Star in Four Seasons",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "mai",
     "name": "Teireida Mai",
     "title": "All-Too-Dangerous Backup Dancer",
-    "category": "Hidden Star in Four Seasons"
+    "category": "Hidden Star in Four Seasons",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "okina",
     "name": "Matara Okina",
     "title": "Ultimate, Absolute Secret God",
-    "category": "Hidden Star in Four Seasons"
+    "category": "Hidden Star in Four Seasons",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "eika",
     "name": "Ebisu Eika",
     "title": "Stillborn Idol of the Riverbank",
-    "category": "Wily Beast and Weakest Creature"
+    "category": "Wily Beast and Weakest Creature",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "urumi",
     "name": "Ushizaki Urumi",
     "title": "Parental Guardian of Ancient Fish",
-    "category": "Wily Beast and Weakest Creature"
+    "category": "Wily Beast and Weakest Creature",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "kutaka",
     "name": "Niwatari Kutaka",
     "title": "Clerical God over Hell's Checkpoint",
-    "category": "Wily Beast and Weakest Creature"
+    "category": "Wily Beast and Weakest Creature",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "yachie",
     "name": "Kicchou Yachie",
     "title": "Kiketsu Family Matriarch",
-    "category": "Wily Beast and Weakest Creature"
+    "category": "Wily Beast and Weakest Creature",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "mayumi",
     "name": "Joutouguu Mayumi",
     "title": "Haniwa Captain",
-    "category": "Wily Beast and Weakest Creature"
+    "category": "Wily Beast and Weakest Creature",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "keiki",
     "name": "Haniyasushin Keiki",
     "title": "Sculptor God Crafted by Utter Isolation",
-    "category": "Wily Beast and Weakest Creature"
+    "category": "Wily Beast and Weakest Creature",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "saki",
     "name": "Kurokoma Saki",
     "title": "Keiga Family Matriarch",
-    "category": "Wily Beast and Weakest Creature"
+    "category": "Wily Beast and Weakest Creature",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "miyoi",
     "name": "Okunoda Miyoi",
     "title": "Poster Girl of Geidontei",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "mizuchi",
     "name": "Miyadeguchi Mizuchi",
     "title": "Jailbreak King",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "yuuma",
     "name": "Toutetsu Yuuma",
     "title": "Gouyoku Alliance Matriarch",
-    "category": "Others"
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "mike",
     "name": "Goutokuji Mike",
     "title": "Lucky Charm of Prosperous Commerce",
-    "category": "Unconnected Marketeers"
+    "category": "Unconnected Marketeers",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "takane",
     "name": "Yamashiro Takane",
     "title": "Business Youkai of the Mountain Recesses",
-    "category": "Unconnected Marketeers"
+    "category": "Unconnected Marketeers",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "sannyo",
     "name": "Komakusa Sannyo",
     "title": "Highland-Dwelling Yamajorou",
-    "category": "Unconnected Marketeers"
+    "category": "Unconnected Marketeers",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "misumaru",
     "name": "Tamatsukuri Misumaru",
     "title": "Genuine Magatama-Producing Artisan",
-    "category": "Unconnected Marketeers"
+    "category": "Unconnected Marketeers",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "tsukasa",
     "name": "Kudamaki Tsukasa",
     "title": "Wicked Whispering White Fox",
-    "category": "Unconnected Marketeers"
+    "category": "Unconnected Marketeers",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "megumu",
     "name": "Iizunamaru Megumu",
     "title": "Chief of the Crow Tengu",
-    "category": "Unconnected Marketeers"
+    "category": "Unconnected Marketeers",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "chimata",
     "name": "Tenkyuu Chimata",
     "title": "God of the Unowned",
-    "category": "Unconnected Marketeers"
+    "category": "Unconnected Marketeers",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   },
 
   {
     "charId": "momoyo",
     "name": "Himemushi Momoyo",
     "title": "Onyx Dragon Eater",
-    "category": "Unconnected Marketeers"
+    "category": "Unconnected Marketeers",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
   }
 ]

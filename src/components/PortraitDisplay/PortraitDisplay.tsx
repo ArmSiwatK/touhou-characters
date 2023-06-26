@@ -128,24 +128,39 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
                     key={character.charId}
                     onClick={() => setSelectedCharacter(character)}
                   >
-                    <img
-                      src={
-                        character.charId === selectedCharacter.charId
-                          ? `/characters/${character.charId}/${character.charId}-${selectedEmotion}.webp`
-                          : `/characters/${character.charId}/${character.charId}-neutral.webp`
-                      }
-                      alt={`Character portrait – ${character.name}`}
-                    />
+                    {character.charId === selectedCharacter.charId ? (
+                      <a
+                        href={selectedCharacter.wikiUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src={`/characters/${character.charId}/${character.charId}-${selectedEmotion}.webp`}
+                          alt={`Character portrait – ${character.name}`}
+                        />
+                      </a>
+                    ) : (
+                      <img
+                        src={`/characters/${character.charId}/${character.charId}-neutral.webp`}
+                        alt={`Character portrait – ${character.name}`}
+                      />
+                    )}
                   </div>
                 )
               )}
             {isMobile && (
               <>
                 <div className="portrait-item selected">
-                  <img
-                    src={`/characters/${selectedCharacter.charId}/${selectedCharacter.charId}-${selectedEmotion}.webp`}
-                    alt={`Character portrait – ${selectedCharacter.name}`}
-                  />
+                  <a
+                    href={selectedCharacter.wikiUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={`/characters/${selectedCharacter.charId}/${selectedCharacter.charId}-${selectedEmotion}.webp`}
+                      alt={`Character portrait – ${selectedCharacter.name}`}
+                    />
+                  </a>
                 </div>
                 <h2 className="character-title">{selectedCharacter.title}</h2>
                 <div className="gallery-buttons">

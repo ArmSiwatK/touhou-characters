@@ -26,6 +26,7 @@ const App: React.FC = () => {
     name: "Hakurei Reimu",
     title: "Shrine Maiden of Paradise",
     category: "Protagonists",
+    wikiUrl: "https://en.touhouwiki.net/wiki/Reimu_Hakurei",
   });
 
   /*
