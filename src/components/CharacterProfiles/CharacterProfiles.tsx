@@ -103,7 +103,7 @@ const CharacterProfiles: React.FC<CharacterProfilesProps> = ({
           onClick={() => handleCharacterClick(character)}
         >
           <img
-            src={`/profiles/${character.charId}.webp`}
+            src={`/characters/${character.charId}/${character.charId}-profile.webp`}
             alt={character.name}
           />
         </div>
