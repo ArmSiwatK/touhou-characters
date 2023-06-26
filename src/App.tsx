@@ -19,7 +19,7 @@ const App: React.FC = () => {
   <--------------- States --------------->
   */
 
-  const [selectedEmotion, setSelectedEmotion] = useState("Neutral");
+  const [selectedEmotion, setSelectedEmotion] = useState("neutral");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedCharacter, setSelectedCharacter] = useState<Character>({
     charId: "reimu",

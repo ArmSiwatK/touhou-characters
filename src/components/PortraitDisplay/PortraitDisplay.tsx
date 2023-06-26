@@ -131,10 +131,8 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
                     <img
                       src={
                         character.charId === selectedCharacter.charId
-                          ? `/portraits/${selectedEmotion.toLowerCase()}/${
-                              character.charId
-                            }.webp`
-                          : `/portraits/neutral/${character.charId}.webp`
+                          ? `/portraits/${selectedEmotion}/${character.charId}-${selectedEmotion}.webp`
+                          : `/portraits/neutral/${character.charId}-neutral.webp`
                       }
                       alt={`Character portrait – ${character.name}`}
                     />
@@ -145,9 +143,7 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
               <>
                 <div className="portrait-item selected">
                   <img
-                    src={`/portraits/${selectedEmotion.toLowerCase()}/${
-                      selectedCharacter.charId
-                    }.webp`}
+                    src={`/portraits/${selectedEmotion}/${selectedCharacter.charId}-${selectedEmotion}.webp`}
                     alt={`Character portrait – ${selectedCharacter.name}`}
                   />
                 </div>
