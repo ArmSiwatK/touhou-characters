@@ -292,7 +292,7 @@
     "name": "Sunny Milk",
     "title": "Radiant Light of the Sun",
     "category": "Others",
-    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Sunny_Milk"
   },
 
   {
@@ -300,7 +300,7 @@
     "name": "Luna Child",
     "title": "Silent Light of the Moon",
     "category": "Others",
-    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Luna_Child"
   },
 
   {
@@ -308,7 +308,7 @@
     "name": "Star Sapphire",
     "title": "Showering Light of the Star",
     "category": "Others",
-    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Star_Sapphire"
   },
 
   {
@@ -316,7 +316,7 @@
     "name": "Shameimaru Aya",
     "title": "Traditional Reporter of Fantasy",
     "category": "Phantasmagoria of Flower View",
-    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Aya_Shameimaru"
   },
 
   {
@@ -324,7 +324,7 @@
     "name": "Medicine Melancholy",
     "title": "Little Sweet Poison",
     "category": "Phantasmagoria of Flower View",
-    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Medicine_Melancholy"
   },
 
   {
@@ -332,7 +332,7 @@
     "name": "Kazami Yuuka",
     "title": "Flower Master of the Four Seasons",
     "category": "Phantasmagoria of Flower View",
-    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Yuuka_Kazami"
   },
 
   {
@@ -340,7 +340,7 @@
     "name": "Onozuka Komachi",
     "title": "Guide of the Sanzu River",
     "category": "Phantasmagoria of Flower View",
-    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Komachi_Onozuka"
   },
 
   {
@@ -348,7 +348,15 @@
     "name": "Shiki Eiki, Yamaxanadu",
     "title": "Supreme Judge of Paradise",
     "category": "Phantasmagoria of Flower View",
-    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Eiki_Shiki,_Yamaxanadu"
+  },
+
+  {
+    "charId": "reisen",
+    "name": "Reisen",
+    "title": "Rabbit of the Moon",
+    "category": "Others",
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Reisen"
   },
 
   {
@@ -356,7 +364,7 @@
     "name": "Watatsuki no Toyohime",
     "title": "Moon Princess Who Connects Seas and Mountains",
     "category": "Others",
-    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Watatsuki_no_Toyohime"
   },
 
   {
@@ -364,7 +372,7 @@
     "name": "Watatsuki no Yorihime",
     "title": "Moon Princess Possessed by Divine Spirits",
     "category": "Others",
-    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Watatsuki_no_Yorihime"
   },
 
   {
@@ -372,7 +380,7 @@
     "name": "Hieda no Akyuu",
     "title": "Memory of Gensokyo",
     "category": "Others",
-    "wikiUrl": "https://en.touhouwiki.net/wiki/Cirno"
+    "wikiUrl": "https://en.touhouwiki.net/wiki/Hieda_no_Akyuu"
   },
 
   {
