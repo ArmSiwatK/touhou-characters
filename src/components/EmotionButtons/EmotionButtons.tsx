@@ -56,7 +56,7 @@ const EmotionButtons: React.FC<EmotionButtonsProps> = ({
 
       return () => window.removeEventListener("keydown", handleKeyDown);
     }
-  }, [currentEmotionIndex]);
+  }, [selectEmotion]);
 
   useEffect(() => {
     const handleResize = () => {
