@@ -4,10 +4,12 @@
 
 import React, { useState } from "react";
 import CharacterSelection from "./components/CharacterSelection/CharacterSelection";
+import SearchBar from "./components/SearchBar/SearchBar";
 import EmotionButtons from "./components/EmotionButtons/EmotionButtons";
 import PortraitDisplay from "./components/PortraitDisplay/PortraitDisplay";
 import CharacterProfiles from "./components/CharacterProfiles/CharacterProfiles";
 import { Character } from "./utilities";
+import characters from "./assets/characters.json";
 import "./styles/App.scss";
 
 /*
@@ -19,15 +21,11 @@ const App: React.FC = () => {
   <--------------- States --------------->
   */
 
-  const [selectedEmotion, setSelectedEmotion] = useState("neutral");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedCharacter, setSelectedCharacter] = useState<Character>({
-    charId: "reimu",
-    name: "Hakurei Reimu",
-    title: "Shrine Maiden of Paradise",
-    category: "Protagonists",
-    wikiUrl: "https://en.touhouwiki.net/wiki/Reimu_Hakurei",
-  });
+  const [selectedEmotion, setSelectedEmotion] = useState("neutral");
+  const [selectedCharacter, setSelectedCharacter] = useState<Character>(
+    characters[0]
+  );
 
   /*
   <--------------- Rendering --------------->
@@ -41,6 +39,7 @@ const App: React.FC = () => {
         setSelectedCharacter={setSelectedCharacter}
         setSelectedCategory={setSelectedCategory}
       />
+      <SearchBar setSelectedCharacter={setSelectedCharacter} />
       <EmotionButtons
         selectedEmotion={selectedEmotion}
         setSelectedEmotion={setSelectedEmotion}
