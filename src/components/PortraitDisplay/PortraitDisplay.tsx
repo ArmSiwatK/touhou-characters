@@ -3,7 +3,7 @@
 */
 
 import React, { useState, useEffect } from "react";
-import { Character, emotions } from "../../utilities";
+import { Character } from "../../utilities";
 import characters from "../../assets/characters.json";
 import "./PortraitDisplay.scss";
 
@@ -29,7 +29,6 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   */
 
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [isImagesLoaded, setIsImagesLoaded] = useState<boolean>(false);
 
   /*
   <--------------- Function --------------->
@@ -71,20 +70,6 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
     setSelectedCharacter(getPreviousCharacter());
   };
 
-  const preloadCharacterEmotionImages = (characterId: string) => {
-    const characterFolder = `./characters/${characterId}/`;
-
-    const promises = emotions.map((emotion) => {
-      return new Promise<void>((resolve) => {
-        const image = new Image();
-        image.onload = () => resolve();
-        image.src = `${characterFolder}${characterId}-${emotion.name}.webp`;
-      });
-    });
-
-    return Promise.all(promises);
-  };
-
   /*
   <--------------- useEffect Hook --------------->
   */
@@ -118,32 +103,12 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
     };
   }, [handleNextCharacter, handlePreviousCharacter]);
 
-  useEffect(() => {
-    const preloadImages = async () => {
-      setIsImagesLoaded(false);
-
-      await Promise.all(
-        characters.map((character) =>
-          preloadCharacterEmotionImages(character.charId)
-        )
-      );
-
-      setIsImagesLoaded(true);
-    };
-
-    preloadImages();
-  }, []);
-
   /*
   <--------------- Rendering --------------->
   */
 
   const previousCharacter = getPreviousCharacter();
   const nextCharacter = getNextCharacter();
-
-  if (!isImagesLoaded) {
-    return <div className="portrait-display">Loading...</div>;
-  }
 
   return (
     <div className="portrait-display">
