@@ -57,12 +57,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
       selectedCategory
     );
 
-    const selectedCharacter = filteredCharacters.find(
-      ({ category }) => category === selectedCategory
-    );
-
-    if (selectedCharacter) {
-      setSelectedCharacter(selectedCharacter);
+    if (filteredCharacters.length > 0) {
+      setSelectedCharacter(filteredCharacters[0]);
     }
   };
 
