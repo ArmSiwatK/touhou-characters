@@ -85,6 +85,18 @@ const CharacterProfiles: React.FC<CharacterProfilesProps> = ({
     };
   }, []);
 
+  useEffect(() => {
+    const preloadCharacterProfileImages = (characterId: string) => {
+      const characterFolder = `./characters/${characterId}/`;
+      const profileImage = new Image();
+      profileImage.src = `${characterFolder}${characterId}-profile.webp`;
+    };
+
+    characters.forEach((character) => {
+      preloadCharacterProfileImages(character.charId);
+    });
+  }, []);
+
   /*
   <--------------- Rendering --------------->
   */

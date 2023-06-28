@@ -2,13 +2,12 @@
 <--------------- Imports --------------->
 */
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import CharacterSelection from "./components/CharacterSelection/CharacterSelection";
 import EmotionButtons from "./components/EmotionButtons/EmotionButtons";
 import PortraitDisplay from "./components/PortraitDisplay/PortraitDisplay";
 import CharacterProfiles from "./components/CharacterProfiles/CharacterProfiles";
-import { Character, emotions } from "./utilities";
-import characters from "./assets/characters.json";
+import { Character } from "./utilities";
 import "./styles/App.scss";
 
 /*
@@ -29,28 +28,6 @@ const App: React.FC = () => {
     category: "Protagonists",
     wikiUrl: "https://en.touhouwiki.net/wiki/Reimu_Hakurei",
   });
-
-  /*
-  <--------------- useEffect Hook --------------->
-  */
-
-  useEffect(() => {
-    const preloadCharacterImages = (characterId: string) => {
-      const characterFolder = `./characters/${characterId}/`;
-      emotions.forEach((emotion) => {
-        const image = new Image();
-        image.src = `${characterFolder}${characterId}-${emotion.name}.webp`;
-      });
-      // Preload the profile image
-      const profileImage = new Image();
-      profileImage.src = `${characterFolder}${characterId}-profile.webp`;
-    };
-
-    // Preload images for all characters
-    characters.forEach((character) => {
-      preloadCharacterImages(character.charId);
-    });
-  }, []);
 
   /*
   <--------------- Rendering --------------->

@@ -3,7 +3,7 @@
 */
 
 import React, { useState, useEffect } from "react";
-import { Character } from "../../utilities";
+import { Character, emotions } from "../../utilities";
 import characters from "../../assets/characters.json";
 import "./PortraitDisplay.scss";
 
@@ -102,6 +102,20 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [handleNextCharacter, handlePreviousCharacter]);
+
+  useEffect(() => {
+    const preloadCharacterEmotionImages = (characterId: string) => {
+      const characterFolder = `./characters/${characterId}/`;
+      emotions.forEach((emotion) => {
+        const image = new Image();
+        image.src = `${characterFolder}${characterId}-${emotion.name}.webp`;
+      });
+    };
+
+    characters.forEach((character) => {
+      preloadCharacterEmotionImages(character.charId);
+    });
+  }, []);
 
   /*
   <--------------- Rendering --------------->
