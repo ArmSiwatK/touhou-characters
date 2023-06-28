@@ -44,7 +44,10 @@ const App: React.FC = () => {
           setSelectedCharacter={setSelectedCharacter}
           setSelectedCategory={setSelectedCategory}
         />
-        <SearchBar setSelectedCharacter={setSelectedCharacter} />
+        <SearchBar
+          selectedCategory={selectedCategory}
+          setSelectedCharacter={setSelectedCharacter}
+        />
         <EmotionButtons
           selectedEmotion={selectedEmotion}
           setSelectedEmotion={setSelectedEmotion}

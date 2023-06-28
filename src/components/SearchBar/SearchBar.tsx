@@ -9,6 +9,7 @@ import characters from "../../assets/characters.json";
 import "./SearchBar.scss";
 
 interface SearchBarProps {
+  selectedCategory: string;
   setSelectedCharacter: (character: Character) => void;
 }
 
@@ -16,7 +17,10 @@ interface SearchBarProps {
 <--------------- Component --------------->
 */
 
-const SearchBar: React.FC<SearchBarProps> = ({ setSelectedCharacter }) => {
+const SearchBar: React.FC<SearchBarProps> = ({
+  selectedCategory,
+  setSelectedCharacter,
+}) => {
   /*
   <--------------- States and Variable --------------->
   */
@@ -36,11 +40,14 @@ const SearchBar: React.FC<SearchBarProps> = ({ setSelectedCharacter }) => {
     setQuery(value);
 
     const filteredSuggestions = characters
-      .filter(({ name, charId }) =>
-        [name, charId.toString()].some((property) =>
+      .filter(({ name, charId, category }) => {
+        const isInSelectedCategory =
+          selectedCategory === "All" || category === selectedCategory;
+        const matchesQuery = [name, charId.toString()].some((property) =>
           property.toLowerCase().includes(value.toLowerCase())
-        )
-      )
+        );
+        return isInSelectedCategory && matchesQuery;
+      })
       .map(({ name }) => name);
 
     setSuggestions(filteredSuggestions);
