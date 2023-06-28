@@ -2,7 +2,13 @@
 <--------------- Imports and Interface --------------->
 */
 
-import React, { useState, ChangeEvent, KeyboardEvent, useRef } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  ChangeEvent,
+  KeyboardEvent,
+} from "react";
 import { Character } from "../../utilities/utilities";
 import { useKeyboardContext } from "../../utilities/KeyboardContext";
 import characters from "../../assets/characters.json";
@@ -148,11 +154,29 @@ const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   /*
+  <--------------- useEffect Hook --------------->
+  */
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const searchBar = document.getElementById("search-bar");
+      if (searchBar && !searchBar.contains(event.target as Node)) {
+        setShowSuggestions(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  /*
   <--------------- Rendering --------------->
   */
 
   return (
-    <div className="search-bar">
+    <div className="search-bar" id="search-bar">
       <input
         type="text"
         placeholder="Search characters..."
