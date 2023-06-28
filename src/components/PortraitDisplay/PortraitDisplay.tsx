@@ -29,6 +29,7 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   */
 
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [isImagesLoaded, setIsImagesLoaded] = useState<boolean>(false);
 
   /*
   <--------------- Function --------------->
@@ -70,6 +71,20 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
     setSelectedCharacter(getPreviousCharacter());
   };
 
+  const preloadCharacterEmotionImages = (characterId: string) => {
+    const characterFolder = `./characters/${characterId}/`;
+
+    const promises = emotions.map((emotion) => {
+      return new Promise<void>((resolve) => {
+        const image = new Image();
+        image.onload = () => resolve();
+        image.src = `${characterFolder}${characterId}-${emotion.name}.webp`;
+      });
+    });
+
+    return Promise.all(promises);
+  };
+
   /*
   <--------------- useEffect Hook --------------->
   */
@@ -104,17 +119,19 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   }, [handleNextCharacter, handlePreviousCharacter]);
 
   useEffect(() => {
-    const preloadCharacterEmotionImages = (characterId: string) => {
-      const characterFolder = `./characters/${characterId}/`;
-      emotions.forEach((emotion) => {
-        const image = new Image();
-        image.src = `${characterFolder}${characterId}-${emotion.name}.webp`;
-      });
+    const preloadImages = async () => {
+      setIsImagesLoaded(false);
+
+      await Promise.all(
+        characters.map((character) =>
+          preloadCharacterEmotionImages(character.charId)
+        )
+      );
+
+      setIsImagesLoaded(true);
     };
 
-    characters.forEach((character) => {
-      preloadCharacterEmotionImages(character.charId);
-    });
+    preloadImages();
   }, []);
 
   /*
@@ -123,6 +140,10 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
 
   const previousCharacter = getPreviousCharacter();
   const nextCharacter = getNextCharacter();
+
+  if (!isImagesLoaded) {
+    return <div className="portrait-display">Loading...</div>;
+  }
 
   return (
     <div className="portrait-display">
