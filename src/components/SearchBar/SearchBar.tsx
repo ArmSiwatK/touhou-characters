@@ -33,34 +33,38 @@ const SearchBar: React.FC<SearchBarProps> = ({ setSelectedCharacter }) => {
     setQuery(value);
 
     const filteredSuggestions = characters
-      .filter(
-        (character) =>
-          character.name.toLowerCase().includes(value.toLowerCase()) ||
-          character.charId.toString().includes(value.toLowerCase())
+      .filter(({ name, charId }) =>
+        [name, charId.toString()].some((property) =>
+          property.toLowerCase().includes(value.toLowerCase())
+        )
       )
-      .map((character) => character.name);
-    setSuggestions(filteredSuggestions);
+      .map(({ name }) => name);
 
+    setSuggestions(filteredSuggestions);
     setShowSuggestions(value !== "");
   };
 
   const handleSearch = () => {
-    const filteredCharacters = characters.filter(
-      (character) =>
-        character.name.toLowerCase().includes(query.toLowerCase()) ||
-        character.charId.toString().includes(query.toLowerCase())
+    const filteredCharacters = characters.filter(({ name, charId }) =>
+      [name, charId.toString()].some((property) =>
+        property.toLowerCase().includes(query.toLowerCase())
+      )
     );
-    if (filteredCharacters.length > 0) {
-      setSelectedCharacter(filteredCharacters[0]);
-    } else {
-      setSelectedCharacter(characters[0]);
-    }
+
+    setSelectedCharacter(filteredCharacters[0] || characters[0]);
   };
 
   const handleSuggestionClick = (suggestion: string) => {
     setQuery(suggestion);
-    handleSearch();
     setShowSuggestions(false);
+
+    const filteredCharacters = characters.filter(({ name, charId }) =>
+      [name, charId.toString()].some((property) =>
+        property.toLowerCase().includes(suggestion.toLowerCase())
+      )
+    );
+
+    setSelectedCharacter(filteredCharacters[0] || characters[0]);
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
