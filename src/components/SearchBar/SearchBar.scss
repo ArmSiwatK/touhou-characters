@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 45px;
+  position: relative;
 
   input {
     flex: 1;
@@ -15,9 +16,8 @@
 
   .suggestions {
     position: absolute;
-    top: 18%;
-    left: 42%;
-    width: 10%;
+    top: 125%;
+    width: 100%;
     background-color: #ffffff;
     border: 1px solid #ccc;
     padding: 0;
