@@ -110,6 +110,61 @@ const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   /*
+  <--------------- Keydown Functions --------------->
+  */
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    const selectedIndex = selectedSuggestionIndex;
+    const suggestionCount = suggestions.length;
+
+    const handleArrowDown = () => {
+      setSelectedSuggestionIndex((selectedIndex + 1) % suggestionCount);
+      selectedSuggestionRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "nearest",
+      });
+    };
+
+    const handleArrowUp = () => {
+      setSelectedSuggestionIndex(
+        (selectedIndex - 1 + suggestionCount) % suggestionCount
+      );
+      selectedSuggestionRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "nearest",
+      });
+    };
+
+    const handleEnter = () => {
+      e.preventDefault();
+      if (selectedIndex !== -1) {
+        handleSuggestionClick(suggestions[selectedIndex]);
+      } else {
+        handleSearch();
+      }
+      setShowSuggestions(false);
+    };
+
+    switch (e.key) {
+      case "ArrowDown":
+        e.preventDefault();
+        handleArrowDown();
+        break;
+      case "ArrowUp":
+        e.preventDefault();
+        handleArrowUp();
+        break;
+      case "Enter":
+        handleEnter();
+        break;
+      default:
+        break;
+    }
+  };
+
+  /*
   <--------------- Handler Functions --------------->
   */
 
@@ -119,38 +174,6 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
   const handleBlur = () => {
     setDisableKeyBindings(false);
-  };
-
-  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "ArrowDown") {
-      e.preventDefault();
-      setSelectedSuggestionIndex(
-        (prevIndex) => (prevIndex + 1) % suggestions.length
-      );
-      selectedSuggestionRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "nearest",
-      });
-    } else if (e.key === "ArrowUp") {
-      e.preventDefault();
-      setSelectedSuggestionIndex(
-        (prevIndex) => (prevIndex - 1 + suggestions.length) % suggestions.length
-      );
-      selectedSuggestionRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "nearest",
-      });
-    } else if (e.key === "Enter") {
-      e.preventDefault();
-      if (selectedSuggestionIndex !== -1) {
-        handleSuggestionClick(suggestions[selectedSuggestionIndex]);
-      } else {
-        handleSearch();
-      }
-      setShowSuggestions(false);
-    }
   };
 
   /*
