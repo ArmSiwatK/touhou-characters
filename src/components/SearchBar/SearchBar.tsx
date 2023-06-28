@@ -35,23 +35,50 @@ const SearchBar: React.FC<SearchBarProps> = ({
   <--------------- Functions --------------->
   */
 
+  const filterCharacters = (
+    characters: Character[],
+    query: string,
+    selectedCategory: string
+  ) => {
+    return characters.filter(({ name, charId, category }) => {
+      const isInSelectedCategory =
+        selectedCategory === "All" || category === selectedCategory;
+      const matchesQuery = [name, charId.toString()].some((property) =>
+        property.toLowerCase().includes(query.toLowerCase())
+      );
+      return isInSelectedCategory && matchesQuery;
+    });
+  };
+
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setQuery(value);
 
-    const filteredSuggestions = characters
-      .filter(({ name, charId, category }) => {
-        const isInSelectedCategory =
-          selectedCategory === "All" || category === selectedCategory;
-        const matchesQuery = [name, charId.toString()].some((property) =>
-          property.toLowerCase().includes(value.toLowerCase())
-        );
-        return isInSelectedCategory && matchesQuery;
-      })
-      .map(({ name }) => name);
+    const filteredCharacters = filterCharacters(
+      characters,
+      value,
+      selectedCategory
+    );
+    const filteredSuggestions = filteredCharacters.map(({ name }) => name);
 
     setSuggestions(filteredSuggestions);
     setShowSuggestions(value !== "");
+  };
+
+  const handleSearch = () => {
+    const filteredCharacters = filterCharacters(
+      characters,
+      query,
+      selectedCategory
+    );
+
+    const selectedCharacter = filteredCharacters.find(
+      ({ category }) => category === selectedCategory
+    );
+
+    if (selectedCharacter) {
+      setSelectedCharacter(selectedCharacter);
+    }
   };
 
   const handleFocus = () => {
@@ -60,16 +87,6 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
   const handleBlur = () => {
     setDisableKeyBindings(false);
-  };
-
-  const handleSearch = () => {
-    const filteredCharacters = characters.filter(({ name, charId }) =>
-      [name, charId.toString()].some((property) =>
-        property.toLowerCase().includes(query.toLowerCase())
-      )
-    );
-
-    setSelectedCharacter(filteredCharacters[0] || characters[0]);
   };
 
   const handleSuggestionClick = (suggestion: string) => {
