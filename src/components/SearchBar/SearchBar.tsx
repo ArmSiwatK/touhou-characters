@@ -3,8 +3,8 @@
 */
 
 import React, { useState, ChangeEvent, KeyboardEvent } from "react";
-import { Character } from "../../utilities";
-import { useKeyboardContext } from "../../KeyboardContext";
+import { Character } from "../../utilities/utilities";
+import { useKeyboardContext } from "../../utilities/KeyboardContext";
 import characters from "../../assets/characters.json";
 import "./SearchBar.scss";
 

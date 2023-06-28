@@ -3,8 +3,8 @@
 */
 
 import React, { useState, useEffect } from "react";
-import { Character, emotions } from "../../utilities";
-import { useKeyboardContext } from "../../KeyboardContext";
+import { Character, emotions } from "../../utilities/utilities";
+import { useKeyboardContext } from "../../utilities/KeyboardContext";
 import characters from "../../assets/characters.json";
 import "./PortraitDisplay.scss";
 

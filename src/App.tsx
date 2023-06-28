@@ -8,8 +8,8 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import EmotionButtons from "./components/EmotionButtons/EmotionButtons";
 import PortraitDisplay from "./components/PortraitDisplay/PortraitDisplay";
 import CharacterProfiles from "./components/CharacterProfiles/CharacterProfiles";
-import { Character } from "./utilities";
-import { KeyboardProvider } from "./KeyboardContext";
+import { Character } from "./utilities/utilities";
+import { KeyboardProvider } from "./utilities/KeyboardContext";
 import characters from "./assets/characters.json";
 import "./styles/App.scss";
 

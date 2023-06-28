@@ -3,8 +3,8 @@
 */
 
 import React, { useState, useEffect } from "react";
-import { emotions } from "../../utilities";
-import { useKeyboardContext } from "../../KeyboardContext";
+import { emotions } from "../../utilities/utilities";
+import { useKeyboardContext } from "../../utilities/KeyboardContext";
 import "./EmotionButtons.scss";
 
 interface EmotionButtonsProps {

@@ -3,7 +3,7 @@
 */
 
 import React from "react";
-import { Character, categories } from "../../utilities";
+import { Character, categories } from "../../utilities/utilities";
 import characters from "../../assets/characters.json";
 import "./CharacterSelection.scss";
 

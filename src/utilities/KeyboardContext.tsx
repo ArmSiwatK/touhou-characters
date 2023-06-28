@@ -1,3 +1,7 @@
+/*
+<--------------- Imports and Interface --------------->
+*/
+
 import React, { createContext, useContext, useState } from "react";
 
 interface KeyboardContextType {
@@ -6,10 +10,18 @@ interface KeyboardContextType {
   children?: React.ReactNode;
 }
 
+/*
+<--------------- Context --------------->
+*/
+
 const KeyboardContext = createContext<KeyboardContextType>({
   disableKeyBindings: false,
   setDisableKeyBindings: () => {},
 });
+
+/*
+<--------------- Exports --------------->
+*/
 
 export const useKeyboardContext = () => useContext(KeyboardContext);
 
