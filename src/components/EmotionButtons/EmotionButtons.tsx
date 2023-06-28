@@ -4,6 +4,7 @@
 
 import React, { useState, useEffect } from "react";
 import { emotions } from "../../utilities";
+import { useKeyboardContext } from "../../KeyboardContext";
 import "./EmotionButtons.scss";
 
 interface EmotionButtonsProps {
@@ -20,11 +21,13 @@ const EmotionButtons: React.FC<EmotionButtonsProps> = ({
   setSelectedEmotion,
 }) => {
   /*
-  <--------------- State --------------->
+  <--------------- States and Variable --------------->
   */
 
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [currentEmotionIndex, setCurrentEmotionIndex] = useState<number>(3);
+
+  const { disableKeyBindings } = useKeyboardContext();
 
   /*
   <--------------- Function --------------->
@@ -43,14 +46,16 @@ const EmotionButtons: React.FC<EmotionButtonsProps> = ({
   */
 
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      const key = event.key.toLowerCase();
-      key === "w" ? selectEmotion(true) : key === "s" && selectEmotion(false);
-    };
+    if (!disableKeyBindings) {
+      const handleKeyDown = (event: KeyboardEvent) => {
+        const key = event.key.toLowerCase();
+        key === "w" ? selectEmotion(true) : key === "s" && selectEmotion(false);
+      };
 
-    window.addEventListener("keydown", handleKeyDown);
+      window.addEventListener("keydown", handleKeyDown);
 
-    return () => window.removeEventListener("keydown", handleKeyDown);
+      return () => window.removeEventListener("keydown", handleKeyDown);
+    }
   }, [currentEmotionIndex]);
 
   useEffect(() => {

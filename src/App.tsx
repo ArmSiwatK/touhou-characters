@@ -9,6 +9,7 @@ import EmotionButtons from "./components/EmotionButtons/EmotionButtons";
 import PortraitDisplay from "./components/PortraitDisplay/PortraitDisplay";
 import CharacterProfiles from "./components/CharacterProfiles/CharacterProfiles";
 import { Character } from "./utilities";
+import { KeyboardProvider } from "./KeyboardContext";
 import characters from "./assets/characters.json";
 import "./styles/App.scss";
 
@@ -32,30 +33,35 @@ const App: React.FC = () => {
   */
 
   return (
-    <div className="app">
-      <CharacterSelection
-        selectedCharacter={selectedCharacter}
-        selectedCategory={selectedCategory}
-        setSelectedCharacter={setSelectedCharacter}
-        setSelectedCategory={setSelectedCategory}
-      />
-      <SearchBar setSelectedCharacter={setSelectedCharacter} />
-      <EmotionButtons
-        selectedEmotion={selectedEmotion}
-        setSelectedEmotion={setSelectedEmotion}
-      />
-      <PortraitDisplay
-        selectedCharacter={selectedCharacter}
-        selectedCategory={selectedCategory}
-        selectedEmotion={selectedEmotion}
-        setSelectedCharacter={setSelectedCharacter}
-      />
-      <CharacterProfiles
-        selectedCharacter={selectedCharacter}
-        selectedCategory={selectedCategory}
-        setSelectedCharacter={setSelectedCharacter}
-      />
-    </div>
+    <KeyboardProvider
+      disableKeyBindings={false}
+      setDisableKeyBindings={() => {}}
+    >
+      <div className="app">
+        <CharacterSelection
+          selectedCharacter={selectedCharacter}
+          selectedCategory={selectedCategory}
+          setSelectedCharacter={setSelectedCharacter}
+          setSelectedCategory={setSelectedCategory}
+        />
+        <SearchBar setSelectedCharacter={setSelectedCharacter} />
+        <EmotionButtons
+          selectedEmotion={selectedEmotion}
+          setSelectedEmotion={setSelectedEmotion}
+        />
+        <PortraitDisplay
+          selectedCharacter={selectedCharacter}
+          selectedCategory={selectedCategory}
+          selectedEmotion={selectedEmotion}
+          setSelectedCharacter={setSelectedCharacter}
+        />
+        <CharacterProfiles
+          selectedCharacter={selectedCharacter}
+          selectedCategory={selectedCategory}
+          setSelectedCharacter={setSelectedCharacter}
+        />
+      </div>
+    </KeyboardProvider>
   );
 };
 

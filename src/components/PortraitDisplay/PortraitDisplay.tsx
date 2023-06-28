@@ -4,6 +4,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Character, emotions } from "../../utilities";
+import { useKeyboardContext } from "../../KeyboardContext";
 import characters from "../../assets/characters.json";
 import "./PortraitDisplay.scss";
 
@@ -25,11 +26,13 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   setSelectedCharacter,
 }) => {
   /*
-  <--------------- States --------------->
+  <--------------- States and Variable --------------->
   */
 
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isImagesLoaded, setIsImagesLoaded] = useState<boolean>(false);
+
+  const { disableKeyBindings } = useKeyboardContext();
 
   /*
   <--------------- Functions --------------->
@@ -101,21 +104,23 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   }, []);
 
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      const key = event.key.toLowerCase();
+    if (!disableKeyBindings) {
+      const handleKeyDown = (event: KeyboardEvent) => {
+        const key = event.key.toLowerCase();
 
-      if (key === "a") {
-        handlePreviousCharacter();
-      } else if (key === "d") {
-        handleNextCharacter();
-      }
-    };
+        if (key === "a") {
+          handlePreviousCharacter();
+        } else if (key === "d") {
+          handleNextCharacter();
+        }
+      };
 
-    window.addEventListener("keydown", handleKeyDown);
+      window.addEventListener("keydown", handleKeyDown);
 
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
+      return () => {
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    }
   }, [handleNextCharacter, handlePreviousCharacter]);
 
   useEffect(() => {

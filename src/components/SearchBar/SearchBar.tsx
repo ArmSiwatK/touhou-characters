@@ -4,6 +4,7 @@
 
 import React, { useState, ChangeEvent, KeyboardEvent } from "react";
 import { Character } from "../../utilities";
+import { useKeyboardContext } from "../../KeyboardContext";
 import characters from "../../assets/characters.json";
 import "./SearchBar.scss";
 
@@ -17,12 +18,14 @@ interface SearchBarProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({ setSelectedCharacter }) => {
   /*
-  <--------------- State --------------->
+  <--------------- States and Variable --------------->
   */
 
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+
+  const { setDisableKeyBindings } = useKeyboardContext();
 
   /*
   <--------------- Functions --------------->
@@ -42,6 +45,14 @@ const SearchBar: React.FC<SearchBarProps> = ({ setSelectedCharacter }) => {
 
     setSuggestions(filteredSuggestions);
     setShowSuggestions(value !== "");
+  };
+
+  const handleFocus = () => {
+    setDisableKeyBindings(true);
+  };
+
+  const handleBlur = () => {
+    setDisableKeyBindings(false);
   };
 
   const handleSearch = () => {
@@ -85,6 +96,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ setSelectedCharacter }) => {
         placeholder="Search characters..."
         value={query}
         onChange={handleInputChange}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
         onKeyDown={handleKeyDown}
       />
       {showSuggestions && (
