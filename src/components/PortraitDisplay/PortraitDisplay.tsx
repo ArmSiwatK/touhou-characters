@@ -25,14 +25,14 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   setSelectedCharacter,
 }) => {
   /*
-  <--------------- State --------------->
+  <--------------- States --------------->
   */
 
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isImagesLoaded, setIsImagesLoaded] = useState<boolean>(false);
 
   /*
-  <--------------- Function --------------->
+  <--------------- Functions --------------->
   */
 
   const getFilteredCharacters = () => {
@@ -86,7 +86,7 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   };
 
   /*
-  <--------------- useEffect Hook --------------->
+  <--------------- useEffect Hooks --------------->
   */
 
   useEffect(() => {

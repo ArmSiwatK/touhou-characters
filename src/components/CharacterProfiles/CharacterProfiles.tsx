@@ -74,7 +74,7 @@ const CharacterProfiles: React.FC<CharacterProfilesProps> = ({
   };
 
   /*
-  <--------------- useEffect Hook --------------->
+  <--------------- useEffect Hooks --------------->
   */
 
   useEffect(() => {
