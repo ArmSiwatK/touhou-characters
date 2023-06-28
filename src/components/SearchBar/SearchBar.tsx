@@ -32,7 +32,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   const { setDisableKeyBindings } = useKeyboardContext();
 
   /*
-  <--------------- Functions --------------->
+  <--------------- Search Functions --------------->
   */
 
   const filterCharacters = (
@@ -48,21 +48,6 @@ const SearchBar: React.FC<SearchBarProps> = ({
       );
       return isInSelectedCategory && matchesQuery;
     });
-  };
-
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setQuery(value);
-
-    const filteredCharacters = filterCharacters(
-      characters,
-      value,
-      selectedCategory
-    );
-    const filteredSuggestions = filteredCharacters.map(({ name }) => name);
-
-    setSuggestions(filteredSuggestions);
-    setShowSuggestions(value !== "");
   };
 
   const handleSearch = () => {
@@ -81,12 +66,23 @@ const SearchBar: React.FC<SearchBarProps> = ({
     }
   };
 
-  const handleFocus = () => {
-    setDisableKeyBindings(true);
-  };
+  /*
+  <--------------- Suggestion Functions --------------->
+  */
 
-  const handleBlur = () => {
-    setDisableKeyBindings(false);
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setQuery(value);
+
+    const filteredCharacters = filterCharacters(
+      characters,
+      value,
+      selectedCategory
+    );
+    const filteredSuggestions = filteredCharacters.map(({ name }) => name);
+
+    setSuggestions(filteredSuggestions);
+    setShowSuggestions(value !== "");
   };
 
   const handleSuggestionClick = (suggestion: string) => {
@@ -100,6 +96,18 @@ const SearchBar: React.FC<SearchBarProps> = ({
     );
 
     setSelectedCharacter(filteredCharacters[0] || characters[0]);
+  };
+
+  /*
+  <--------------- Handler Functions --------------->
+  */
+
+  const handleFocus = () => {
+    setDisableKeyBindings(true);
+  };
+
+  const handleBlur = () => {
+    setDisableKeyBindings(false);
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
