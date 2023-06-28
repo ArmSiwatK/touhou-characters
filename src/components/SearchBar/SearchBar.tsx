@@ -2,7 +2,7 @@
 <--------------- Imports and Interface --------------->
 */
 
-import React, { useState, ChangeEvent, KeyboardEvent } from "react";
+import React, { useState, ChangeEvent, KeyboardEvent, useRef } from "react";
 import { Character } from "../../utilities/utilities";
 import { useKeyboardContext } from "../../utilities/KeyboardContext";
 import characters from "../../assets/characters.json";
@@ -28,6 +28,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [selectedSuggestionIndex, setSelectedSuggestionIndex] =
+    useState<number>(-1);
+
+  const selectedSuggestionRef = useRef<HTMLLIElement>(null);
 
   const { setDisableKeyBindings } = useKeyboardContext();
 
@@ -69,6 +73,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setQuery(value);
+    setSelectedSuggestionIndex(-1);
 
     const filteredCharacters = filterCharacters(
       characters,
@@ -94,6 +99,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
     setSelectedCharacter(filteredCharacters[0] || characters[0]);
   };
 
+  const handleSuggestionHover = (index: number) => {
+    setSelectedSuggestionIndex(index);
+  };
+
   /*
   <--------------- Handler Functions --------------->
   */
@@ -107,8 +116,33 @@ const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      handleSearch();
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setSelectedSuggestionIndex(
+        (prevIndex) => (prevIndex + 1) % suggestions.length
+      );
+      selectedSuggestionRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "nearest",
+      });
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setSelectedSuggestionIndex(
+        (prevIndex) => (prevIndex - 1 + suggestions.length) % suggestions.length
+      );
+      selectedSuggestionRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "nearest",
+      });
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      if (selectedSuggestionIndex !== -1) {
+        handleSuggestionClick(suggestions[selectedSuggestionIndex]);
+      } else {
+        handleSearch();
+      }
       setShowSuggestions(false);
     }
   };
@@ -131,7 +165,15 @@ const SearchBar: React.FC<SearchBarProps> = ({
       {showSuggestions && (
         <ul className="suggestions">
           {suggestions.map((suggestion, index) => (
-            <li key={index} onClick={() => handleSuggestionClick(suggestion)}>
+            <li
+              key={index}
+              onClick={() => handleSuggestionClick(suggestion)}
+              onMouseEnter={() => handleSuggestionHover(index)}
+              className={index === selectedSuggestionIndex ? "selected" : ""}
+              ref={
+                index === selectedSuggestionIndex ? selectedSuggestionRef : null
+              }
+            >
               {suggestion}
             </li>
           ))}
