@@ -43,6 +43,10 @@ const CharacterProfiles: React.FC<CharacterProfilesProps> = ({
 
   const handleCharacterClick = (character: Character) => {
     setSelectedCharacter(character);
+
+    if (selectedCategory === "All" || selectedCategory === "Others") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   const handleResize = () => {
