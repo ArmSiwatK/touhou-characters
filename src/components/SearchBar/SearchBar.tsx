@@ -7,7 +7,7 @@ import React, { useState, useEffect, useRef, ChangeEvent } from "react";
 import SearchSuggestions from "./SearchSuggestions";
 import handleKeyDown from "./SearchBarKeys";
 import { filterCharacters, getFilteredSuggestions } from "./SearchBarUtils";
-import { SearchBarProps } from "../../utilities/utilities";
+import { SearchBarProps } from "../../utilities/Interfaces";
 import { useKeyboardContext } from "../../utilities/KeyboardContext";
 import characters from "../../assets/characters.json";
 import "./SearchBar.scss";

@@ -3,7 +3,7 @@
 */
 
 import React, { useEffect, useState } from "react";
-import { Character, CharacterProfilesProps } from "../../utilities/utilities";
+import { Character, CharacterProfilesProps } from "../../utilities/Interfaces";
 import characters from "../../assets/characters.json";
 import "./CharacterProfiles.scss";
 

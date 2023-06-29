@@ -3,7 +3,7 @@
 */
 
 import React, { createContext, useContext, useState } from "react";
-import { KeyboardContextType } from "./utilities";
+import { KeyboardContextType } from "./Interfaces";
 
 /*
 <--------------- Context --------------->

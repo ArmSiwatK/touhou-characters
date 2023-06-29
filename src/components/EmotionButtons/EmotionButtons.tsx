@@ -3,8 +3,9 @@
 */
 
 import React, { useState, useEffect } from "react";
-import { emotions, EmotionButtonsProps } from "../../utilities/utilities";
+import { EmotionButtonsProps } from "../../utilities/Interfaces";
 import { useKeyboardContext } from "../../utilities/KeyboardContext";
+import emotions from "../../assets/emotions.json";
 import "./EmotionButtons.scss";
 
 /*

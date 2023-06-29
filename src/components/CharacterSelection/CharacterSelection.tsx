@@ -3,12 +3,9 @@
 */
 
 import React from "react";
-import {
-  categories,
-  Character,
-  CharacterSelectionProps,
-} from "../../utilities/utilities";
+import { Character, CharacterSelectionProps } from "../../utilities/Interfaces";
 import characters from "../../assets/characters.json";
+import categories from "../../assets/categories.json";
 import "./CharacterSelection.scss";
 
 /*

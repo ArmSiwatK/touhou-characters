@@ -3,7 +3,7 @@
 */
 
 import React from "react";
-import { PortraitDisplayRenderingProps } from "../../utilities/utilities";
+import { PortraitDisplayRenderingProps } from "../../utilities/Interfaces";
 
 /*
 <--------------- Component --------------->

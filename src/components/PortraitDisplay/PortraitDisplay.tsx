@@ -4,9 +4,11 @@
 
 import React, { useState, useEffect } from "react";
 import PortraitDisplayRendering from "./PortraitDisplayRendering";
-import { emotions, PortraitDisplayProps } from "../../utilities/utilities";
+import { PortraitDisplayProps } from "../../utilities/Interfaces";
 import { useKeyboardContext } from "../../utilities/KeyboardContext";
 import characters from "../../assets/characters.json";
+import emotions from "../../assets/emotions.json";
+
 import "./PortraitDisplay.scss";
 
 /*

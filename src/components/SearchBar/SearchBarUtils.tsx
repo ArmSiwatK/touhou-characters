@@ -2,7 +2,7 @@
 <--------------- Imports --------------->
 */
 
-import { Character } from "../../utilities/utilities";
+import { Character } from "../../utilities/Interfaces";
 import characters from "../../assets/characters.json";
 
 /*

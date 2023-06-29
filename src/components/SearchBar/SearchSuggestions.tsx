@@ -3,7 +3,7 @@
 */
 
 import React from "react";
-import { SearchSuggestionsProps } from "../../utilities/utilities";
+import { SearchSuggestionsProps } from "../../utilities/Interfaces";
 
 /*
 <--------------- Component --------------->
