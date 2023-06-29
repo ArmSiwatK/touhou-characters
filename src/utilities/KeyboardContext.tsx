@@ -1,14 +1,9 @@
 /*
-<--------------- Imports and Interface --------------->
+<--------------- Imports --------------->
 */
 
 import React, { createContext, useContext, useState } from "react";
-
-interface KeyboardContextType {
-  disableKeyBindings: boolean;
-  setDisableKeyBindings: (disable: boolean) => void;
-  children?: React.ReactNode;
-}
+import { KeyboardContextType } from "./utilities";
 
 /*
 <--------------- Context --------------->

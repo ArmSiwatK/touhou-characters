@@ -3,15 +3,9 @@
 */
 
 import React, { useEffect, useState } from "react";
-import { Character } from "../../utilities/utilities";
+import { Character, CharacterProfilesProps } from "../../utilities/utilities";
 import characters from "../../assets/characters.json";
 import "./CharacterProfiles.scss";
-
-interface CharacterProfilesProps {
-  selectedCharacter: Character;
-  selectedCategory: string;
-  setSelectedCharacter: (character: Character) => void;
-}
 
 /*
 <--------------- Component --------------->

@@ -1,18 +1,15 @@
 /*
-<--------------- Imports and Interface --------------->
+<--------------- Imports --------------->
 */
 
 import React from "react";
-import { Character, categories } from "../../utilities/utilities";
+import {
+  categories,
+  Character,
+  CharacterSelectionProps,
+} from "../../utilities/utilities";
 import characters from "../../assets/characters.json";
 import "./CharacterSelection.scss";
-
-interface CharacterSelectionProps {
-  selectedCharacter: Character | null;
-  selectedCategory: string;
-  setSelectedCharacter: (character: Character) => void;
-  setSelectedCategory: (category: string) => void;
-}
 
 /*
 <--------------- Component --------------->

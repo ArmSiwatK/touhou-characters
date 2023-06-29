@@ -1,5 +1,5 @@
 /*
-<--------------- Imports and Interface --------------->
+<--------------- Imports --------------->
 */
 
 import React, { useState, useEffect, useRef, ChangeEvent } from "react";
@@ -7,15 +7,10 @@ import React, { useState, useEffect, useRef, ChangeEvent } from "react";
 import SearchSuggestions from "./SearchSuggestions";
 import handleKeyDown from "./SearchBarKeys";
 import { filterCharacters, getFilteredSuggestions } from "./SearchBarUtils";
-import { Character } from "../../utilities/utilities";
+import { SearchBarProps } from "../../utilities/utilities";
 import { useKeyboardContext } from "../../utilities/KeyboardContext";
 import characters from "../../assets/characters.json";
 import "./SearchBar.scss";
-
-interface SearchBarProps {
-  selectedCategory: string;
-  setSelectedCharacter: (character: Character) => void;
-}
 
 /*
 <--------------- Component --------------->

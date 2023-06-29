@@ -3,18 +3,11 @@
 */
 
 import React from "react";
-import { Character } from "../../utilities/utilities";
+import { PortraitDisplayRenderingProps } from "../../utilities/utilities";
 
-interface PortraitDisplayRenderingProps {
-  isMobile: boolean;
-  previousCharacter: Character;
-  selectedCharacter: Character;
-  nextCharacter: Character;
-  selectedEmotion: string;
-  setSelectedCharacter: (character: Character) => void;
-  handlePreviousCharacter: () => void;
-  handleNextCharacter: () => void;
-}
+/*
+<--------------- Component --------------->
+*/
 
 const PortraitDisplayRendering: React.FC<PortraitDisplayRenderingProps> = ({
   isMobile,
@@ -26,6 +19,9 @@ const PortraitDisplayRendering: React.FC<PortraitDisplayRenderingProps> = ({
   handlePreviousCharacter,
   handleNextCharacter,
 }) => {
+  /*
+  <--------------- Rendering --------------->
+  */
   return (
     <div className="portrait-display" id="portrait-display">
       {selectedCharacter && (

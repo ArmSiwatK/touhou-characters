@@ -1,16 +1,11 @@
 /*
-<--------------- Imports and Interface --------------->
+<--------------- Imports --------------->
 */
 
 import React, { useState, useEffect } from "react";
-import { emotions } from "../../utilities/utilities";
+import { emotions, EmotionButtonsProps } from "../../utilities/utilities";
 import { useKeyboardContext } from "../../utilities/KeyboardContext";
 import "./EmotionButtons.scss";
-
-interface EmotionButtonsProps {
-  selectedEmotion: string;
-  setSelectedEmotion: (emotion: string) => void;
-}
 
 /*
 <--------------- Component --------------->
@@ -46,6 +41,17 @@ const EmotionButtons: React.FC<EmotionButtonsProps> = ({
   */
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
     if (!disableKeyBindings) {
       const handleKeyDown = (event: KeyboardEvent) => {
         const key = event.key.toLowerCase();
@@ -57,17 +63,6 @@ const EmotionButtons: React.FC<EmotionButtonsProps> = ({
       return () => window.removeEventListener("keydown", handleKeyDown);
     }
   }, [selectEmotion]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   /*
   <--------------- Rendering --------------->

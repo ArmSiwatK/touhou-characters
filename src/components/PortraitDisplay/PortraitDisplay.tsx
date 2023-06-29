@@ -1,20 +1,13 @@
 /*
-<--------------- Imports and Interface --------------->
+<--------------- Imports --------------->
 */
 
 import React, { useState, useEffect } from "react";
 import PortraitDisplayRendering from "./PortraitDisplayRendering";
-import { Character, emotions } from "../../utilities/utilities";
+import { emotions, PortraitDisplayProps } from "../../utilities/utilities";
 import { useKeyboardContext } from "../../utilities/KeyboardContext";
 import characters from "../../assets/characters.json";
 import "./PortraitDisplay.scss";
-
-interface PortraitDisplayProps {
-  selectedCharacter: Character;
-  selectedCategory: string;
-  selectedEmotion: string;
-  setSelectedCharacter: (character: Character) => void;
-}
 
 /*
 <--------------- Component --------------->

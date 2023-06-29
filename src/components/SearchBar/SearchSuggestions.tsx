@@ -1,16 +1,9 @@
 /*
-<--------------- Imports and Interface --------------->
+<--------------- Imports --------------->
 */
 
 import React from "react";
-
-interface SearchSuggestionsProps {
-  suggestions: string[];
-  selectedSuggestionIndex: number;
-  selectedSuggestionRef: React.RefObject<HTMLLIElement>;
-  handleSuggestionClick: (suggestion: string) => void;
-  handleSuggestionHover: (index: number) => void;
-}
+import { SearchSuggestionsProps } from "../../utilities/utilities";
 
 /*
 <--------------- Component --------------->
