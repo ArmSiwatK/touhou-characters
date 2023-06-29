@@ -3,12 +3,12 @@
 */
 
 import React, { useState, useEffect } from "react";
-import PortraitDisplayRendering from "./PortraitDisplayRendering";
+import { getNextCharacter, getPreviousCharacter } from "./PortraitDisplayUtils";
 import { PortraitDisplayProps } from "../../utilities/Interfaces";
 import { useKeyboardContext } from "../../utilities/KeyboardContext";
+import PortraitDisplayRendering from "./PortraitDisplayRendering";
 import characters from "../../assets/characters.json";
 import emotions from "../../assets/emotions.json";
-
 import "./PortraitDisplay.scss";
 
 /*
@@ -33,44 +33,24 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   const { disableKeyBindings } = useKeyboardContext();
 
   /*
-  <--------------- Functions --------------->
+  <--------------- Character Functions --------------->
   */
 
-  const getFilteredCharacters = () => {
-    return selectedCategory === "All"
-      ? characters
-      : characters.filter(
-          (character) => character.category === selectedCategory
-        );
-  };
-
-  const getNextCharacter = () => {
-    const filteredCharacters = getFilteredCharacters();
-    const currentIndex = filteredCharacters.findIndex(
-      (character) => character.charId === selectedCharacter?.charId
-    );
-    const nextIndex = (currentIndex + 1) % filteredCharacters.length;
-    return filteredCharacters[nextIndex];
-  };
-
-  const getPreviousCharacter = () => {
-    const filteredCharacters = getFilteredCharacters();
-    const currentIndex = filteredCharacters.findIndex(
-      (character) => character.charId === selectedCharacter?.charId
-    );
-    const previousIndex =
-      (currentIndex - 1 + filteredCharacters.length) %
-      filteredCharacters.length;
-    return filteredCharacters[previousIndex];
-  };
-
   const handleNextCharacter = () => {
-    setSelectedCharacter(getNextCharacter());
+    setSelectedCharacter(getNextCharacter(selectedCharacter, selectedCategory));
   };
 
   const handlePreviousCharacter = () => {
-    setSelectedCharacter(getPreviousCharacter());
+    setSelectedCharacter(
+      getPreviousCharacter(selectedCharacter, selectedCategory)
+    );
   };
+
+  const previousCharacter = getPreviousCharacter(
+    selectedCharacter,
+    selectedCategory
+  );
+  const nextCharacter = getNextCharacter(selectedCharacter, selectedCategory);
 
   /*
   <--------------- Preloading Images --------------->
@@ -147,9 +127,6 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   /*
   <--------------- Rendering --------------->
   */
-
-  const previousCharacter = getPreviousCharacter();
-  const nextCharacter = getNextCharacter();
 
   if (!isPortraitsLoaded) {
     return <div className="portrait-display">Loading...</div>;
