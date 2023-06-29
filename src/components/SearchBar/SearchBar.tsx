@@ -9,6 +9,9 @@ import React, {
   ChangeEvent,
   KeyboardEvent,
 } from "react";
+
+import SearchSuggestions from "./SearchSuggestions";
+import { filterCharacters, getFilteredSuggestions } from "./SearchBarUtils";
 import { Character } from "../../utilities/utilities";
 import { useKeyboardContext } from "../../utilities/KeyboardContext";
 import characters from "../../assets/characters.json";
@@ -42,23 +45,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
   const { setDisableKeyBindings } = useKeyboardContext();
 
   /*
-  <--------------- Search Functions --------------->
+  <--------------- Search Function --------------->
   */
-
-  const filterCharacters = (
-    characters: Character[],
-    query: string,
-    selectedCategory: string
-  ) => {
-    return characters.filter(({ name, charId, category }) => {
-      const isInSelectedCategory =
-        selectedCategory === "All" || category === selectedCategory;
-      const matchesQuery = [name, charId.toString()].some((property) =>
-        property.toLowerCase().includes(query.toLowerCase())
-      );
-      return isInSelectedCategory && matchesQuery;
-    });
-  };
 
   const handleSearch = () => {
     const filteredCharacters = filterCharacters(
@@ -81,12 +69,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
     setQuery(value);
     setSelectedSuggestionIndex(-1);
 
-    const filteredCharacters = filterCharacters(
-      characters,
-      value,
-      selectedCategory
-    );
-    const filteredSuggestions = filteredCharacters.map(({ name }) => name);
+    const filteredSuggestions = getFilteredSuggestions(value, selectedCategory);
 
     setSuggestions(filteredSuggestions);
     setShowSuggestions(value !== "");
@@ -210,21 +193,13 @@ const SearchBar: React.FC<SearchBarProps> = ({
         onKeyDown={handleKeyDown}
       />
       {showSuggestions && (
-        <ul className="suggestions">
-          {suggestions.map((suggestion, index) => (
-            <li
-              key={index}
-              onClick={() => handleSuggestionClick(suggestion)}
-              onMouseEnter={() => handleSuggestionHover(index)}
-              className={index === selectedSuggestionIndex ? "selected" : ""}
-              ref={
-                index === selectedSuggestionIndex ? selectedSuggestionRef : null
-              }
-            >
-              {suggestion}
-            </li>
-          ))}
-        </ul>
+        <SearchSuggestions
+          suggestions={suggestions}
+          selectedSuggestionIndex={selectedSuggestionIndex}
+          selectedSuggestionRef={selectedSuggestionRef}
+          handleSuggestionClick={handleSuggestionClick}
+          handleSuggestionHover={handleSuggestionHover}
+        />
       )}
       <button onClick={handleSearch}>Search</button>
     </div>
