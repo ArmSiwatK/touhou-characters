@@ -27,9 +27,8 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
 
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isImagesLoaded, setIsImagesLoaded] = useState<boolean>(false);
-  const [imageCache, setImageCache] = useState<{
-    [key: string]: HTMLImageElement;
-  }>({});
+
+  let imageCache: { [key: string]: HTMLImageElement } = {};
 
   const { disableKeyBindings } = useKeyboardContext();
 
@@ -84,10 +83,7 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
       return new Promise<void>((resolve) => {
         const image = new Image();
         image.onload = () => {
-          setImageCache((prevCache) => ({
-            ...prevCache,
-            [`${characterId}-${emotion.name}`]: image,
-          }));
+          imageCache[`${characterId}-${emotion.name}`] = image;
           resolve();
         };
         image.src = `${characterFolder}${characterId}-${emotion.name}.webp`;
