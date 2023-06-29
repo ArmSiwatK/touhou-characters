@@ -1,14 +1,43 @@
 /*
-<--------------- Import --------------->
+<--------------- Imports --------------->
 */
 
 import { KeyboardEvent } from "react";
+import { Character } from "../../utilities/Interfaces";
+import characters from "../../assets/characters.json";
 
 /*
-<--------------- Export --------------->
+<--------------- Functions --------------->
 */
 
-const handleKeyDown = (
+export const filterCharacters = (
+  characters: Character[],
+  query: string,
+  selectedCategory: string
+) => {
+  return characters.filter(({ name, charId, category }) => {
+    const isInSelectedCategory =
+      selectedCategory === "All" || category === selectedCategory;
+    const matchesQuery = [name, charId.toString()].some((property) =>
+      property.toLowerCase().includes(query.toLowerCase())
+    );
+    return isInSelectedCategory && matchesQuery;
+  });
+};
+
+export const getFilteredSuggestions = (
+  query: string,
+  selectedCategory: string
+) => {
+  const filteredCharacters = filterCharacters(
+    characters,
+    query,
+    selectedCategory
+  );
+  return filteredCharacters.map(({ name }) => name);
+};
+
+export const handleKeyDown = (
   e: KeyboardEvent<HTMLInputElement>,
   suggestions: string[],
   selectedSuggestionIndex: number,
@@ -18,15 +47,8 @@ const handleKeyDown = (
   setSelectedSuggestionIndex: (index: number) => void,
   setShowSuggestions: (show: boolean) => void
 ) => {
-  /*
-  <--------------- Variables --------------->
-  */
   const selectedIndex = selectedSuggestionIndex;
   const suggestionCount = suggestions.length;
-
-  /*
-  <--------------- Functions --------------->
-  */
 
   const handleArrowDown = () => {
     setSelectedSuggestionIndex((selectedIndex + 1) % suggestionCount);
@@ -58,10 +80,6 @@ const handleKeyDown = (
     setShowSuggestions(false);
   };
 
-  /*
-  <--------------- Key Bindings --------------->
-  */
-
   switch (e.key) {
     case "ArrowDown":
       e.preventDefault();
@@ -78,5 +96,3 @@ const handleKeyDown = (
       break;
   }
 };
-
-export default handleKeyDown;
