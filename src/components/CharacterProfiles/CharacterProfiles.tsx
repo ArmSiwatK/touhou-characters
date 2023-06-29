@@ -39,7 +39,7 @@ const CharacterProfiles: React.FC<CharacterProfilesProps> = ({
     setSelectedCharacter(character);
 
     if (selectedCategory === "All" || selectedCategory === "Others") {
-      const portraitDisplay = document.getElementById("portrait-display");
+      const portraitDisplay = document.getElementById("character-click-target");
       if (portraitDisplay) {
         portraitDisplay.scrollIntoView({ behavior: "smooth" });
       }

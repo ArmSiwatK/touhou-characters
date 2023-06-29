@@ -69,7 +69,7 @@ const EmotionButtons: React.FC<EmotionButtonsProps> = ({
   */
 
   return (
-    <div className="emotion-buttons">
+    <div className="emotion-buttons" id="character-click-target">
       {isMobile ? (
         <div className="responsive">
           <button onClick={() => selectEmotion(false)}>&#8249;</button>

@@ -23,7 +23,7 @@ const PortraitDisplayRendering: React.FC<PortraitDisplayRenderingProps> = ({
   <--------------- Rendering --------------->
   */
   return (
-    <div className="portrait-display" id="portrait-display">
+    <div className="portrait-display">
       {selectedCharacter && (
         <div className="character-info">
           <h2 className="character-name">{selectedCharacter.name}</h2>
