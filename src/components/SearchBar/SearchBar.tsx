@@ -83,13 +83,13 @@ const SearchBar: React.FC<SearchBarProps> = ({
     setSelectedCharacter(filteredCharacters[0] || characters[0]);
   };
 
-  const handleSuggestionHover = (index: number) => {
-    setSelectedSuggestionIndex(index);
-  };
-
   /*
   <--------------- Handler Functions --------------->
   */
+
+  const handleSuggestionHover = (index: number) => {
+    setSelectedSuggestionIndex(index);
+  };
 
   const handleFocus = () => {
     setDisableKeyBindings(true);
@@ -143,6 +143,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           )
         }
       />
+
       {showSuggestions && (
         <SearchSuggestions
           suggestions={suggestions}
@@ -152,6 +153,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           handleSuggestionHover={handleSuggestionHover}
         />
       )}
+
       <button onClick={handleSearch}>Search</button>
     </div>
   );
