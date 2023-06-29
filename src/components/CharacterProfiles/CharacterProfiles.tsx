@@ -38,16 +38,23 @@ const CharacterProfiles: React.FC<CharacterProfilesProps> = ({
   const gridTemplateColumns = `repeat(${columnCount}, 1fr)`;
 
   /*
-  <--------------- Functions --------------->
+  <--------------- Function --------------->
   */
 
   const handleCharacterClick = (character: Character) => {
     setSelectedCharacter(character);
 
     if (selectedCategory === "All" || selectedCategory === "Others") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      const portraitDisplay = document.getElementById("portrait-display");
+      if (portraitDisplay) {
+        portraitDisplay.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
+
+  /*
+  <--------------- Grid Sizing --------------->
+  */
 
   const handleResize = () => {
     const screenWidth = window.innerWidth;
@@ -72,10 +79,6 @@ const CharacterProfiles: React.FC<CharacterProfilesProps> = ({
 
     setShouldRender(screenWidth >= 768);
   };
-
-  /*
-  <--------------- useEffect Hooks --------------->
-  */
 
   useEffect(() => {
     handleResize();

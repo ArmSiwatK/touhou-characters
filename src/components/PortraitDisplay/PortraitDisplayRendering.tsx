@@ -27,7 +27,7 @@ const PortraitDisplayRendering: React.FC<PortraitDisplayRenderingProps> = ({
   handleNextCharacter,
 }) => {
   return (
-    <div className="portrait-display">
+    <div className="portrait-display" id="portrait-display">
       {selectedCharacter && (
         <div className="character-info">
           <h2 className="character-name">{selectedCharacter.name}</h2>
