@@ -26,9 +26,9 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   */
 
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  const [isImagesLoaded, setIsImagesLoaded] = useState<boolean>(false);
+  const [isPortraitsLoaded, setIsPortraitsLoaded] = useState<boolean>(false);
 
-  let imageCache: { [key: string]: HTMLImageElement } = {};
+  let portraitCache: { [key: string]: HTMLImageElement } = {};
 
   const { disableKeyBindings } = useKeyboardContext();
 
@@ -83,7 +83,7 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
       return new Promise<void>((resolve) => {
         const image = new Image();
         image.onload = () => {
-          imageCache[`${characterId}-${emotion.name}`] = image;
+          portraitCache[`${characterId}-${emotion.name}`] = image;
           resolve();
         };
         image.src = `${characterFolder}${characterId}-${emotion.name}.webp`;
@@ -95,7 +95,7 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
 
   useEffect(() => {
     const preloadImages = async () => {
-      setIsImagesLoaded(false);
+      setIsPortraitsLoaded(false);
 
       await Promise.all(
         characters.map((character) =>
@@ -103,7 +103,7 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
         )
       );
 
-      setIsImagesLoaded(true);
+      setIsPortraitsLoaded(true);
     };
 
     preloadImages();
@@ -151,7 +151,7 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   const previousCharacter = getPreviousCharacter();
   const nextCharacter = getNextCharacter();
 
-  if (!isImagesLoaded) {
+  if (!isPortraitsLoaded) {
     return <div className="portrait-display">Loading...</div>;
   }
 

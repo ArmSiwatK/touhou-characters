@@ -22,6 +22,7 @@ const CharacterProfiles: React.FC<CharacterProfilesProps> = ({
 
   const [columnCount, setColumnCount] = useState(9);
   const [shouldRender, setShouldRender] = useState(true);
+  const [isProfilesLoaded, setIsProfilesLoaded] = useState<boolean>(false);
 
   const filteredCharacters =
     selectedCategory === "All"
@@ -30,6 +31,7 @@ const CharacterProfiles: React.FC<CharacterProfilesProps> = ({
           (character) => character.category === selectedCategory
         );
   const gridTemplateColumns = `repeat(${columnCount}, 1fr)`;
+  let profileCache: { [key: string]: HTMLImageElement } = {};
 
   /*
   <--------------- Function --------------->
@@ -87,8 +89,36 @@ const CharacterProfiles: React.FC<CharacterProfilesProps> = ({
   }, []);
 
   /*
+  <--------------- Preloading Images --------------->
+  */
+
+  const preloadCharacterProfileImages = async () => {
+    setIsProfilesLoaded(false);
+
+    await Promise.all(
+      characters.map(async (character) => {
+        const image = new Image();
+        image.src = `/characters/${character.charId}/${character.charId}-profile.webp`;
+        await new Promise((resolve) => {
+          image.onload = resolve;
+        });
+        profileCache[character.charId] = image;
+      })
+    );
+    setIsProfilesLoaded(true);
+  };
+
+  useEffect(() => {
+    preloadCharacterProfileImages();
+  }, []);
+
+  /*
   <--------------- Rendering --------------->
   */
+
+  if (!isProfilesLoaded) {
+    return;
+  }
 
   return shouldRender ? (
     <div
