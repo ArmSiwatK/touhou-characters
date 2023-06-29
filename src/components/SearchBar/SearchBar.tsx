@@ -2,15 +2,10 @@
 <--------------- Imports and Interface --------------->
 */
 
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  ChangeEvent,
-  KeyboardEvent,
-} from "react";
+import React, { useState, useEffect, useRef, ChangeEvent } from "react";
 
 import SearchSuggestions from "./SearchSuggestions";
+import handleKeyDown from "./SearchBarKeys";
 import { filterCharacters, getFilteredSuggestions } from "./SearchBarUtils";
 import { Character } from "../../utilities/utilities";
 import { useKeyboardContext } from "../../utilities/KeyboardContext";
@@ -93,61 +88,6 @@ const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   /*
-  <--------------- Keydown Functions --------------->
-  */
-
-  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    const selectedIndex = selectedSuggestionIndex;
-    const suggestionCount = suggestions.length;
-
-    const handleArrowDown = () => {
-      setSelectedSuggestionIndex((selectedIndex + 1) % suggestionCount);
-      selectedSuggestionRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "nearest",
-      });
-    };
-
-    const handleArrowUp = () => {
-      setSelectedSuggestionIndex(
-        (selectedIndex - 1 + suggestionCount) % suggestionCount
-      );
-      selectedSuggestionRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "nearest",
-      });
-    };
-
-    const handleEnter = () => {
-      e.preventDefault();
-      if (selectedIndex !== -1) {
-        handleSuggestionClick(suggestions[selectedIndex]);
-      } else {
-        handleSearch();
-      }
-      setShowSuggestions(false);
-    };
-
-    switch (e.key) {
-      case "ArrowDown":
-        e.preventDefault();
-        handleArrowDown();
-        break;
-      case "ArrowUp":
-        e.preventDefault();
-        handleArrowUp();
-        break;
-      case "Enter":
-        handleEnter();
-        break;
-      default:
-        break;
-    }
-  };
-
-  /*
   <--------------- Handler Functions --------------->
   */
 
@@ -190,7 +130,18 @@ const SearchBar: React.FC<SearchBarProps> = ({
         onChange={handleInputChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        onKeyDown={handleKeyDown}
+        onKeyDown={(e) =>
+          handleKeyDown(
+            e,
+            suggestions,
+            selectedSuggestionIndex,
+            selectedSuggestionRef,
+            handleSuggestionClick,
+            handleSearch,
+            setSelectedSuggestionIndex,
+            setShowSuggestions
+          )
+        }
       />
       {showSuggestions && (
         <SearchSuggestions
