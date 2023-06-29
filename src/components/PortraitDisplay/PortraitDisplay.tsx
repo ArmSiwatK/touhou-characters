@@ -3,6 +3,7 @@
 */
 
 import React, { useState, useEffect } from "react";
+import PortraitDisplayRendering from "./PortraitDisplayRendering";
 import { Character, emotions } from "../../utilities/utilities";
 import { useKeyboardContext } from "../../utilities/KeyboardContext";
 import characters from "../../assets/characters.json";
@@ -74,6 +75,10 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
     setSelectedCharacter(getPreviousCharacter());
   };
 
+  /*
+  <--------------- Preloading Images --------------->
+  */
+
   const preloadCharacterEmotionImages = (characterId: string) => {
     const characterFolder = `./characters/${characterId}/`;
 
@@ -87,6 +92,22 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
 
     return Promise.all(promises);
   };
+
+  useEffect(() => {
+    const preloadImages = async () => {
+      setIsImagesLoaded(false);
+
+      await Promise.all(
+        characters.map((character) =>
+          preloadCharacterEmotionImages(character.charId)
+        )
+      );
+
+      setIsImagesLoaded(true);
+    };
+
+    preloadImages();
+  }, []);
 
   /*
   <--------------- useEffect Hooks --------------->
@@ -123,22 +144,6 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
     }
   }, [handleNextCharacter, handlePreviousCharacter]);
 
-  useEffect(() => {
-    const preloadImages = async () => {
-      setIsImagesLoaded(false);
-
-      await Promise.all(
-        characters.map((character) =>
-          preloadCharacterEmotionImages(character.charId)
-        )
-      );
-
-      setIsImagesLoaded(true);
-    };
-
-    preloadImages();
-  }, []);
-
   /*
   <--------------- Rendering --------------->
   */
@@ -151,71 +156,16 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   }
 
   return (
-    <div className="portrait-display">
-      {selectedCharacter && (
-        <div className="character-info">
-          <h2 className="character-name">{selectedCharacter.name}</h2>
-          <div className="portrait-gallery">
-            {!isMobile &&
-              [previousCharacter, selectedCharacter, nextCharacter].map(
-                (character) => (
-                  <div
-                    className={`portrait-item ${
-                      character.charId === selectedCharacter.charId
-                        ? "selected"
-                        : "side"
-                    }`}
-                    key={character.charId}
-                    onClick={() => setSelectedCharacter(character)}
-                  >
-                    {character.charId === selectedCharacter.charId ? (
-                      <a
-                        href={selectedCharacter.wikiUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <img
-                          src={`/characters/${character.charId}/${character.charId}-${selectedEmotion}.webp`}
-                          alt={`Character portrait – ${character.name}`}
-                        />
-                      </a>
-                    ) : (
-                      <img
-                        src={`/characters/${character.charId}/${character.charId}-neutral.webp`}
-                        alt={`Character portrait – ${character.name}`}
-                      />
-                    )}
-                  </div>
-                )
-              )}
-            {isMobile && (
-              <>
-                <div className="portrait-item selected">
-                  <a
-                    href={selectedCharacter.wikiUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={`/characters/${selectedCharacter.charId}/${selectedCharacter.charId}-${selectedEmotion}.webp`}
-                      alt={`Character portrait – ${selectedCharacter.name}`}
-                    />
-                  </a>
-                </div>
-                <h2 className="character-title">{selectedCharacter.title}</h2>
-                <div className="gallery-buttons">
-                  <button onClick={handlePreviousCharacter}>◄</button>
-                  <button onClick={handleNextCharacter}>►</button>
-                </div>
-              </>
-            )}
-          </div>
-          {!isMobile && (
-            <h2 className="character-title">{selectedCharacter.title}</h2>
-          )}
-        </div>
-      )}
-    </div>
+    <PortraitDisplayRendering
+      isMobile={isMobile}
+      previousCharacter={previousCharacter}
+      selectedCharacter={selectedCharacter}
+      nextCharacter={nextCharacter}
+      selectedEmotion={selectedEmotion}
+      setSelectedCharacter={setSelectedCharacter}
+      handlePreviousCharacter={handlePreviousCharacter}
+      handleNextCharacter={handleNextCharacter}
+    />
   );
 };
 
