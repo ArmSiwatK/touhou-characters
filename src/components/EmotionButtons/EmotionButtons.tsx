@@ -83,7 +83,13 @@ const EmotionButtons: React.FC<EmotionButtonsProps> = ({
         emotions.map((emotion) => (
           <button
             key={emotion.name}
-            onClick={() => setSelectedEmotion(emotion.name)}
+            onClick={() => {
+              const emotionIndex = emotions.findIndex(
+                (e) => e.name === emotion.name
+              );
+              setCurrentEmotionIndex(emotionIndex);
+              setSelectedEmotion(emotion.name);
+            }}
             className={selectedEmotion === emotion.name ? "selected" : ""}
           >
             {emotion.emoji}
