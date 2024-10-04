@@ -28,8 +28,8 @@ const CharacterProfiles: React.FC<CharacterProfilesProps> = ({
     selectedCategory === "All"
       ? characters
       : characters.filter(
-          (character) => character.category === selectedCategory
-        );
+        (character) => character.category === selectedCategory
+      );
   const gridTemplateColumns = `repeat(${columnCount}, 1fr)`;
   let profileCache: { [key: string]: HTMLImageElement } = {};
 
@@ -95,17 +95,34 @@ const CharacterProfiles: React.FC<CharacterProfilesProps> = ({
   const preloadCharacterProfileImages = async () => {
     setIsProfilesLoaded(false);
 
-    await Promise.all(
-      characters.map(async (character) => {
-        const image = new Image();
-        image.src = `/characters/${character.charId}/${character.charId}-profile.webp`;
-        await new Promise((resolve) => {
-          image.onload = resolve;
-        });
-        profileCache[character.charId] = image;
-      })
+    const results = await Promise.allSettled(
+      characters.map(loadImage)
     );
+
+    results.forEach((result, index) => {
+      if (result.status === 'rejected') {
+        console.warn(`Image loading failed for character ${characters[index].charId}: ${result.reason}`);
+      }
+    });
+
     setIsProfilesLoaded(true);
+  };
+
+  const loadImage = (character: Character): Promise<void> => {
+    return new Promise<void>((resolve, reject) => {
+      const image = new Image();
+      image.src = `/characters/${character.charId}/${character.charId}-profile.webp`;
+
+      image.onload = () => {
+        profileCache[character.charId] = image;
+        resolve();
+      };
+
+      image.onerror = () => {
+        console.error(`Failed to load image for character: ${character.charId}`);
+        reject(new Error(`Failed to load image for character: ${character.charId}`));
+      };
+    });
   };
 
   useEffect(() => {
@@ -127,9 +144,8 @@ const CharacterProfiles: React.FC<CharacterProfilesProps> = ({
     >
       {filteredCharacters.map((character) => (
         <div
-          className={`character-profile ${
-            selectedCharacter.charId === character.charId ? "selected" : ""
-          }`}
+          className={`character-profile ${selectedCharacter.charId === character.charId ? "selected" : ""
+            }`}
           key={character.charId}
           onClick={() => handleCharacterClick(character)}
         >

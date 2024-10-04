@@ -35,7 +35,7 @@ const App: React.FC = () => {
   return (
     <KeyboardProvider
       disableKeyBindings={false}
-      setDisableKeyBindings={() => {}}
+      setDisableKeyBindings={() => { }}
     >
       <div className="app">
         <CharacterSelection

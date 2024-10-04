@@ -26,8 +26,8 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({
     selectedCategory === "All"
       ? characters
       : characters.filter(
-          (character) => character.category === selectedCategory
-        );
+        (character) => character.category === selectedCategory
+      );
 
   /*
   <--------------- Functions --------------->
@@ -59,8 +59,8 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({
       selectedCategory === "All"
         ? characters[0]
         : characters.find(
-            (character) => character.category === selectedCategory
-          );
+          (character) => character.category === selectedCategory
+        );
 
     if (firstCharacter) {
       setSelectedCharacter(firstCharacter);
