@@ -55,39 +55,36 @@ const PortraitDisplay: React.FC<PortraitDisplayProps> = ({
   /*
   <--------------- Preloading Images --------------->
   */
+  const preloadImages = async () => {
+    setIsPortraitsLoaded(false);
+    const results = await Promise.allSettled(characters.map((character) => preloadCharacterEmotionImages(character.charId)));
+    results.forEach((result) => { if (result.status === 'rejected') console.warn(result.reason) });
+    setIsPortraitsLoaded(true);
+  };
 
-  const preloadCharacterEmotionImages = (characterId: string) => {
+  const preloadCharacterEmotionImages = (characterId: string): Promise<PromiseSettledResult<void>[]> => {
     const characterFolder = `./characters/${characterId}/`;
 
     const promises = emotions.map((emotion) => {
-      return new Promise<void>((resolve) => {
-        const image = new Image();
+      const image = new Image();
+      image.src = `${characterFolder}${characterId}-${emotion.name}.webp`;
+
+      return new Promise<void>((resolve, reject) => {
         image.onload = () => {
           portraitCache[`${characterId}-${emotion.name}`] = image;
           resolve();
         };
-        image.src = `${characterFolder}${characterId}-${emotion.name}.webp`;
+        image.onerror = () => {
+          console.error(`Failed to load image: ${image.src}`);
+          reject(new Error(`Image load failed: ${image.src}`));
+        };
       });
     });
 
-    return Promise.all(promises);
+    return Promise.allSettled(promises);
   };
 
-  useEffect(() => {
-    const preloadImages = async () => {
-      setIsPortraitsLoaded(false);
-
-      await Promise.all(
-        characters.map((character) =>
-          preloadCharacterEmotionImages(character.charId)
-        )
-      );
-
-      setIsPortraitsLoaded(true);
-    };
-
-    preloadImages();
-  }, []);
+  useEffect(() => { preloadImages() }, []);
 
   /*
   <--------------- useEffect Hooks --------------->
