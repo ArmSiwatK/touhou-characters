@@ -23,9 +23,6 @@ importers:
       globals:
         specifier: 17.6.0
         version: 17.6.0
-      sass:
-        specifier: 1.94.2
-        version: 1.94.2
       svelte:
         specifier: 5.38.10
         version: 5.38.10(@typescript-eslint/types@8.60.1)
@@ -1728,7 +1725,8 @@ snapshots:
 
   ignore@7.0.5: {}
 
-  immutable@5.1.6: {}
+  immutable@5.1.6:
+    optional: true
 
   imurmurhash@0.1.4: {}
 
@@ -1889,6 +1887,7 @@ snapshots:
       source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.5.6
+    optional: true
 
   semver@7.8.2: {}
 

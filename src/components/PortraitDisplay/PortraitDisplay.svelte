@@ -3,7 +3,6 @@
   import emotionsJson from '../../assets/emotions.json';
   import type { Character, Emotion } from '../../utilities/Interfaces';
   import { getNextCharacter, getPreviousCharacter } from './PortraitDisplayUtils';
-  import './PortraitDisplay.scss';
 
   type Props = {
     selectedCategory: string;
@@ -155,3 +154,118 @@
     </div>
   {/if}
 </div>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Julee&display=swap");
+
+  .portrait-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    font-family: "Julee", cursive;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .character-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .character-name,
+  .character-title {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .character-name {
+    margin: 0 20px 20px;
+  }
+
+  .character-title {
+    margin: 20px 10px;
+  }
+
+  .portrait-gallery {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .portrait-item {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .portrait-item.selected {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .portrait-item.selected:hover {
+    transform: scale(1.05);
+  }
+
+  .portrait-item.selected:active {
+    transform: scale(1);
+  }
+
+  .portrait-item.side {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+
+  .portrait-item.side:hover {
+    opacity: 0.75;
+    transform: scale(0.9);
+  }
+
+  .portrait-item.side:active {
+    transform: scale(0.8);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(to bottom, rgba(211, 211, 211, 0.25) 0%, white 100%);
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+    z-index: 1;
+  }
+
+  .portrait-gallery button:not(.portrait-item) {
+    margin: 0 24px;
+    padding: 8px 32px;
+    font-size: 32px;
+    color: #333;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  .portrait-gallery button:not(.portrait-item):hover {
+    background-color: #e6e6e6;
+    cursor: pointer;
+  }
+
+  .gallery-buttons {
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 768px) {
+    .portrait-display {
+      padding: 0;
+      box-shadow: none;
+    }
+
+    .portrait-gallery {
+      flex-direction: column;
+    }
+  }
+</style>

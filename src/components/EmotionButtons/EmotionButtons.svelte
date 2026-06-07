@@ -1,7 +1,6 @@
 <script lang="ts">
   import emotionsJson from '../../assets/emotions.json';
   import type { Emotion } from '../../utilities/Interfaces';
-  import './EmotionButtons.scss';
 
   type Props = {
     selectedEmotion: string;
@@ -84,3 +83,50 @@
     {/each}
   {/if}
 </div>
+<style>
+  .emotion-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  button {
+    margin: 0 5px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  button:hover {
+    opacity: 0.75;
+    transform: scale(1.05);
+    background-color: #e6e6e6;
+    cursor: pointer;
+  }
+
+  button:active {
+    transform: scale(0.95);
+    background-color: #ff9d9d;
+  }
+
+  button.selected {
+    opacity: 1;
+    background-color: #ff6666;
+    color: #fff;
+  }
+
+  .responsive {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .responsive button {
+    padding: 15px 30px;
+  }
+</style>

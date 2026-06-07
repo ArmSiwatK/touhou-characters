@@ -1,7 +1,6 @@
 <script lang="ts">
   import charactersJson from '../../assets/characters.json';
   import type { Character } from '../../utilities/Interfaces';
-  import './CharacterProfiles.scss';
 
   type Props = {
     selectedCategory: string;
@@ -114,3 +113,47 @@
     {/each}
   </div>
 {/if}
+<style>
+  .character-profiles {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+    margin-top: 30px;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .character-profile {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform-origin: center;
+  }
+
+  .character-profile:hover {
+    opacity: 0.75;
+    transform: scale(1.05);
+  }
+
+  .character-profile.selected {
+    opacity: 1;
+  }
+
+  .character-profile:active {
+    transform: scale(0.95);
+  }
+
+  img {
+    width: 150px;
+    border-radius: 50%;
+    background: linear-gradient(to top, rgba(211, 211, 211, 0.25) 0%, white 100%);
+    pointer-events: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+</style>

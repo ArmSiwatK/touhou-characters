@@ -3,7 +3,6 @@
   import charactersJson from '../../assets/characters.json';
   import type { Character } from '../../utilities/Interfaces';
   import { filterCharacters, getFilteredSuggestions } from './SearchBarUtils';
-  import './SearchBar.scss';
 
   type Props = {
     selectedCategory: string;
@@ -123,3 +122,76 @@
 
   <button type="button" onclick={handleSearch}>Search</button>
 </div>
+<style>
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 45px;
+    position: relative;
+  }
+
+  input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    z-index: 2;
+  }
+
+  .suggestions {
+    position: absolute;
+    top: 125%;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  li {
+    cursor: pointer;
+  }
+
+  li:hover,
+  li.selected {
+    background-color: #f2f2f2;
+  }
+
+  li button {
+    width: 100%;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 0;
+    color: #333;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .search-bar > button {
+    padding: 10px 20px;
+    margin-left: 15px;
+    font-size: 16px;
+    background-color: #ff6666;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  }
+
+  .search-bar > button:hover {
+    background-color: #ff5050;
+  }
+
+  .search-bar > button:active {
+    transform: scale(0.95);
+  }
+</style>

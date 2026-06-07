@@ -6,7 +6,6 @@
   import SearchBar from './components/SearchBar/SearchBar.svelte';
   import charactersJson from './assets/characters.json';
   import type { Character } from './utilities/Interfaces';
-  import './styles/App.scss';
 
   const characters = charactersJson as Character[];
   const firstCharacter = characters[0];
@@ -51,3 +50,10 @@
     onSelectCharacter={(character) => (selectedCharacter = character)}
   />
 </div>
+<style>
+  .app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>

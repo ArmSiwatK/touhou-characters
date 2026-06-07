@@ -2,7 +2,6 @@
   import charactersJson from '../../assets/characters.json';
   import categoriesJson from '../../assets/categories.json';
   import type { Character } from '../../utilities/Interfaces';
-  import './CharacterSelection.scss';
 
   type Props = {
     selectedCategory: string;
@@ -69,3 +68,40 @@
     </select>
   </div>
 </div>
+<style>
+  .character-selection {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .select-block {
+    margin: 20px;
+  }
+
+  label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  select {
+    width: 150px;
+    padding: 10px 16px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  select:focus {
+    outline: none;
+  }
+
+  @media (max-width: 768px) {
+    .character-selection {
+      flex-direction: column;
+    }
+  }
+</style>
